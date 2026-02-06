@@ -6,59 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Embrace Health | Personalized Healthcare</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #F9F7F2;
-        color: #1A1A1A;
-        margin: 0;
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="globals.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/"
       }
-      h1, h2, h3, .serif {
-        font-family: 'DM Serif Display', serif;
-        letter-spacing: -0.03em;
-      }
-      
-      /* Smooth Scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Animated Charts Scroll */
-      @keyframes chartScrollVertical {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-50%); }
-      }
-      .charts-stream {
-        animation: chartScrollVertical 60s linear infinite;
-      }
-
-      /* Entrance Animations */
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-reveal {
-        animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-      }
-
-      /* Custom Hover Shadow */
-      .card-shadow-hover:hover {
-        box-shadow: 0 40px 80px -20px rgba(0,0,0,0.15);
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

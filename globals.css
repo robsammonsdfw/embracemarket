@@ -1,0 +1,73 @@
+
+/* Global Brand Variables */
+:root {
+  --brand-teal: #00B6A0;
+  --brand-orange: #F26422;
+  --brand-dark-blue: #002534;
+  --brand-cream: #E6E7E9;
+  --accent-brown: #B87333;
+  --green-button: #0A2621;
+  --card-white: #ffffff;
+}
+
+/* Global Font and Body Settings */
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--brand-cream);
+  color: var(--brand-dark-blue);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: -0.04em;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar (Optional but looks premium) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-dark-blue);
+  border-radius: 10px;
+}
+
+/* Keyframe Animations */
+@keyframes chartScrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility Classes */
+.charts-stream {
+  animation: chartScrollVertical 60s linear infinite;
+}
+
+.animate-reveal {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 40px 80px -20px rgba(0, 37, 52, 0.1);
+}
+
+/* Brand Helpers */
+.text-brand-teal { color: var(--brand-teal); }
+.text-brand-orange { color: var(--brand-orange); }
+.bg-brand-cream { background-color: var(--brand-cream); }
