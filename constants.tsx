@@ -1,3 +1,4 @@
+
 import { ProductGroup } from './types';
 
 export const COLORS = {
@@ -15,7 +16,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     description: 'Access a range of GLP-1 treatment plans.',
     imageUrl: '/weight.png', 
     path: '/weight',
-    hoverBg: 'group-hover:bg-[#FFF1E7]', // Muted Orange
+    hoverBg: 'hover:bg-[#FFF1E7]', // Muted Orange
     prompt: "High-end product shot of GLP-1 vial, blue cap, clean pharmaceutical style.",
   },
   {
@@ -24,7 +25,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     description: 'Clinically proven solutions for performance and libido.',
     imageUrl: '/sex.png',
     path: '/sex',
-    hoverBg: 'group-hover:bg-[#E9F5FF]', // Muted Light Blue
+    hoverBg: 'hover:bg-[#E9F5FF]', // Muted Light Blue
     prompt: "Blue and tan pills on a minimalist white linen bed, editorial lighting.",
   },
   {
@@ -33,7 +34,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     description: 'Stop hair loss and start growing with prescription power.',
     imageUrl: '/hair.png',
     path: '/hair',
-    hoverBg: 'group-hover:bg-[#FFF0F0]', // Muted Red
+    hoverBg: 'hover:bg-[#FFF0F0]', // Muted Red
     prompt: "White and blue minoxidil pills, top-down clean studio shot.",
   },
   {
@@ -42,7 +43,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     description: 'Personalized plans to help you get your edge back.',
     imageUrl: '/testosterone.png',
     path: '/testosterone',
-    hoverBg: 'group-hover:bg-[#F9F3E7]', // Muted Tan
+    hoverBg: 'hover:bg-[#F9F3E7]', // Muted Tan/Yellowish
     prompt: "Yellow and black enclomiphene capsules floating, professional branding.",
   },
 ];

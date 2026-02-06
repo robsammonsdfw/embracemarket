@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PRODUCT_GROUPS } from '../constants';
 
@@ -28,15 +29,16 @@ const HeroGrid: React.FC = () => {
                       {group.title.split(' ').slice(1).join(' ')}
                     </span>
                   </h3>
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-100 transition-transform group-hover:rotate-45 group-hover:border-[#0A2621]/20">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-100 transition-all group-hover:rotate-45 group-hover:border-[#0A2621]/20">
                     <ArrowIcon />
                   </div>
                 </div>
-                <p className="text-sm max-w-[160px] leading-relaxed text-gray-400 transition-opacity group-hover:text-[#0A2621]/70 group-hover:opacity-100">
+                <p className="text-sm max-w-[160px] leading-relaxed text-gray-400 transition-all group-hover:text-[#0A2621]/80 group-hover:opacity-100">
                   {group.description}
                 </p>
               </div>
               
+              {/* Product "Pick Up" Animation */}
               <div className="absolute right-[-20px] bottom-[-20px] w-64 h-64 pointer-events-none transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-24 group-hover:scale-125 group-hover:-rotate-6">
                 <img 
                   src={group.imageUrl} 
@@ -46,7 +48,7 @@ const HeroGrid: React.FC = () => {
               </div>
 
               <div className="absolute bottom-10 left-10">
-                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-gray-100 text-gray-300 group-hover:border-[#0A2621]/10 group-hover:text-[#0A2621]/30 transition-colors">
+                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-gray-100 text-gray-300 group-hover:border-[#0A2621]/10 group-hover:text-[#0A2621]/40 transition-colors">
                   available now
                 </span>
               </div>
