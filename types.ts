@@ -1,4 +1,3 @@
-
 export interface ProductGroup {
   id: string;
   title: string;
@@ -6,6 +5,7 @@ export interface ProductGroup {
   imageUrl: string;
   prompt: string;
   path: string;
+  hoverBg: string;
 }
 
 export interface NavLink {

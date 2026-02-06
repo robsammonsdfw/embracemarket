@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PRODUCT_GROUPS } from '../constants';
 
@@ -18,28 +17,22 @@ const HeroGrid: React.FC = () => {
             <a 
               key={group.id} 
               href={`#${group.path}`}
-              className={`group relative overflow-visible p-10 rounded-[3rem] min-h-[420px] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal ${
-                idx === 2 ? 'bg-[#933333] text-white' : 'bg-white'
-              }`}
+              className={`group relative overflow-visible p-10 rounded-[3rem] min-h-[420px] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal bg-white ${group.hoverBg}`}
               style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
               <div className="relative z-20">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-3xl font-bold leading-[1.1] serif">
+                  <h3 className="text-3xl font-bold leading-[1.1] serif text-[#0A2621]">
                     {group.title.split(' ')[0]} <br />
-                    <span className={`${idx === 2 ? 'text-white/70' : 'text-[#B87333]'}`}>
+                    <span className="text-[#B87333]">
                       {group.title.split(' ').slice(1).join(' ')}
                     </span>
                   </h3>
-                  <div className={`w-10 h-10 flex items-center justify-center rounded-full border transition-transform group-hover:rotate-45 ${
-                    idx === 2 ? 'border-white/20' : 'border-gray-100'
-                  }`}>
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-100 transition-transform group-hover:rotate-45 group-hover:border-[#0A2621]/20">
                     <ArrowIcon />
                   </div>
                 </div>
-                <p className={`text-sm max-w-[160px] leading-relaxed transition-opacity group-hover:opacity-100 ${
-                  idx === 2 ? 'text-white/60' : 'text-gray-400 opacity-70'
-                }`}>
+                <p className="text-sm max-w-[160px] leading-relaxed text-gray-400 transition-opacity group-hover:text-[#0A2621]/70 group-hover:opacity-100">
                   {group.description}
                 </p>
               </div>
@@ -48,14 +41,12 @@ const HeroGrid: React.FC = () => {
                 <img 
                   src={group.imageUrl} 
                   alt={group.title}
-                  className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.12)] group-hover:drop-shadow-[0_80px_60px_rgba(0,0,0,0.3)]"
+                  className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.12)] group-hover:drop-shadow-[0_80px_60px_rgba(0,0,0,0.2)] transition-all duration-700"
                 />
               </div>
 
               <div className="absolute bottom-10 left-10">
-                <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${
-                   idx === 2 ? 'border-white/20 text-white/40' : 'border-gray-100 text-gray-300'
-                }`}>
+                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-gray-100 text-gray-300 group-hover:border-[#0A2621]/10 group-hover:text-[#0A2621]/30 transition-colors">
                   available now
                 </span>
               </div>
