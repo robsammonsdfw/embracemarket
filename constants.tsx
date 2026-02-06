@@ -2,11 +2,14 @@
 import { ProductGroup } from './types';
 
 export const COLORS = {
-  primary: '#0A2621',
-  secondary: '#E8EFE8',
-  accent: '#B87333',
-  bg: '#F9F7F2',
-  text: '#1A1A1A',
+  primary: '#002534', // Brand Dark Blue
+  secondary: '#E6E7E9', // Brand Cream/Off-white
+  brandTeal: '#00B6A0',
+  brandOrange: '#F26422',
+  accent: '#B87333', // User requested to keep this for buttons
+  greenButton: '#0A2621', // User requested to keep this for buttons
+  bg: '#E6E7E9',
+  text: '#002534',
 };
 
 export const PRODUCT_GROUPS: ProductGroup[] = [
@@ -15,8 +18,9 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     title: 'Lose weight',
     description: 'Access a range of GLP-1 treatment plans.',
     imageUrl: '/weight.png', 
+    shadowUrl: '/weight-shadow.png',
     path: '/weight',
-    hoverBg: 'hover:bg-[#FFF1E7]', // Muted Orange
+    hoverBg: 'hover:bg-[#FFF4ED]', // Pleasant Muted Orange
     prompt: "High-end product shot of GLP-1 vial, blue cap, clean pharmaceutical style.",
   },
   {
@@ -24,8 +28,9 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     title: 'Have better sex',
     description: 'Clinically proven solutions for performance and libido.',
     imageUrl: '/sex.png',
+    shadowUrl: '/sex-shadow.png',
     path: '/sex',
-    hoverBg: 'hover:bg-[#E9F5FF]', // Muted Light Blue
+    hoverBg: 'hover:bg-[#F2F8FF]', // Pleasant Muted Light Blue
     prompt: "Blue and tan pills on a minimalist white linen bed, editorial lighting.",
   },
   {
@@ -33,8 +38,9 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     title: 'Regrow hair',
     description: 'Stop hair loss and start growing with prescription power.',
     imageUrl: '/hair.png',
+    shadowUrl: '/hair-shadow.png',
     path: '/hair',
-    hoverBg: 'hover:bg-[#FFF0F0]', // Muted Red
+    hoverBg: 'hover:bg-[#FFF2F2]', // Pleasant Muted Red
     prompt: "White and blue minoxidil pills, top-down clean studio shot.",
   },
   {
@@ -42,8 +48,9 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     title: 'Boost testosterone',
     description: 'Personalized plans to help you get your edge back.',
     imageUrl: '/testosterone.png',
+    shadowUrl: '/testosterone-shadow.png',
     path: '/testosterone',
-    hoverBg: 'hover:bg-[#F9F3E7]', // Muted Tan/Yellowish
+    hoverBg: 'hover:bg-[#FAF6EE]', // Pleasant Muted Tan/Yellowish
     prompt: "Yellow and black enclomiphene capsules floating, professional branding.",
   },
 ];

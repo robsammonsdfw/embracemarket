@@ -38,13 +38,19 @@ const HeroGrid: React.FC = () => {
                 </p>
               </div>
               
-              {/* Product Animation Container */}
+              {/* Product Visual Container */}
               <div className="absolute right-[-20px] bottom-[-20px] w-64 h-64 pointer-events-none">
                 
-                {/* Fixed "Ground" Shadow - This stays at the bottom and only expands/softens */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[60%] h-6 bg-[#002534]/15 rounded-[100%] blur-xl transition-all duration-700 ease-out group-hover:scale-x-[1.8] group-hover:scale-y-[1.4] group-hover:bg-[#002534]/5 group-hover:blur-2xl" />
+                {/* 1. Ground Shadow Image - This asset you provide stays locked to the bottom */}
+                <div className="absolute inset-0 flex items-end justify-center">
+                  <img 
+                    src={group.shadowUrl} 
+                    alt="" 
+                    className="w-full h-full object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform origin-bottom group-hover:scale-x-125 group-hover:scale-y-110 group-hover:opacity-30 group-hover:blur-[4px]"
+                  />
+                </div>
 
-                {/* Floating Product Image - Only the image moves and scales */}
+                {/* 2. Floating Product Image - This performs the vertical 'lift' animation */}
                 <img 
                   src={group.imageUrl} 
                   alt={group.title}
