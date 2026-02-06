@@ -14,33 +14,33 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     id: 'weight',
     title: 'Lose weight',
     description: 'Access a range of GLP-1 treatment plans.',
-    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/weight.png', 
     path: '/weight',
-    prompt: "High-end product photography of a sleek amber glass medical vial with a minimalist 'Embrace' label. Sitting on a warm marble surface, soft morning light, 8k resolution, pharmaceutical luxury aesthetic.",
+    prompt: "High-end product shot of GLP-1 vial, blue cap, clean pharmaceutical style.",
   },
   {
     id: 'sex',
     title: 'Have better sex',
     description: 'Clinically proven solutions for performance and libido.',
-    imageUrl: 'https://images.unsplash.com/photo-1550573104-4776c02de124?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/sex.png',
     path: '/sex',
-    prompt: "A single minimalist teal hexagon pill with an engraved 'e' logo, resting on high-quality white linen, dramatic clean shadows, soft-focus bedroom background.",
+    prompt: "Blue and tan pills on a minimalist white linen bed, editorial lighting.",
   },
   {
     id: 'hair',
     title: 'Regrow hair',
     description: 'Stop hair loss and start growing with prescription power.',
-    imageUrl: 'https://images.unsplash.com/photo-1590159441119-064826b1580f?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/hair.png',
     path: '/hair',
-    prompt: "A modern white medical bottle with a forest green cap, sitting on a pale sage background. The lighting is editorial and soft, highlighting the clean design.",
+    prompt: "White and blue minoxidil pills, top-down clean studio shot.",
   },
   {
     id: 'testosterone',
     title: 'Boost testosterone',
     description: 'Personalized plans to help you get your edge back.',
-    imageUrl: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/testosterone.png',
     path: '/testosterone',
-    prompt: "A close-up of a charcoal-grey circular pill with a premium matte finish, studio lighting with sharp highlights, minimalist composition.",
+    prompt: "Yellow and black enclomiphene capsules floating, professional branding.",
   },
 ];
 
@@ -56,5 +56,5 @@ export const NAV_EXPLORE = [
 
 export const IMAGE_PROMPTS = {
   hero: "A high-end, minimalist lifestyle shot of a sun-drenched modern wellness space, clean lines, professional clinical but warm vibe.",
-  labs: "A plethora of medical health charts and data visualizations with a soft green and amber glow, modern UI style, professional clinical data look.",
+  labs: "Medical health charts and data visualizations with a soft green and amber glow, modern UI style.",
 };

@@ -13,45 +13,41 @@ const App: React.FC = () => {
       <Header />
       
       <main className="flex-grow">
-        {/* The 'Personalized to You' Grid Dashboard */}
         <HeroGrid />
 
-        {/* Access Range / GLP-1 Full Banner Area */}
-        <section className="bg-[#B87333] py-24 text-white">
-          <div className="max-w-[1200px] mx-auto px-6 text-center">
-            <h2 className="text-5xl md:text-7xl font-bold serif mb-10 leading-none">
-              Access a range of <br /> GLP-1 treatment plans
+        <section className="bg-[#B87333] py-40 text-white relative overflow-hidden">
+          <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
+            <h2 className="text-7xl md:text-9xl font-bold serif mb-12 leading-[0.85] tracking-tighter animate-reveal">
+              Access a range of <br /> GLP-1 treatments
             </h2>
-            <button className="px-12 py-5 bg-white text-[#B87333] font-bold rounded-full shadow-2xl hover:bg-gray-50 transition-all">
-              See plans
+            <button className="px-16 py-6 bg-white text-[#B87333] font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-xl">
+              See treatment plans
             </button>
           </div>
         </section>
 
-        {/* Dynamic Labs / Baseline Section */}
         <LabsSection />
 
-        {/* It's Personal Section */}
-        <section className="py-32 bg-[#2d1b10] text-white">
-          <div className="max-w-[1200px] mx-auto px-6 text-center">
-             <h2 className="text-5xl md:text-8xl font-bold serif mb-12 tracking-tighter">it's more than a plan, <br /> it's personal</h2>
-             <div className="relative max-w-4xl mx-auto mb-16 rounded-[4rem] overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80&w=1200" className="w-full" />
-                <div className="absolute top-10 right-10 p-6 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20">
-                   <p className="text-xs uppercase font-bold tracking-widest text-white/70">Bio-Insights Ready</p>
+        <section className="py-40 bg-[#2d1b10] text-white">
+          <div className="max-w-[1300px] mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
+             <div className="order-2 lg:order-1 animate-reveal">
+                <h2 className="text-7xl md:text-8xl font-bold serif mb-10 tracking-tighter leading-none">it's personal.</h2>
+                <p className="max-w-xl text-2xl text-white/50 mb-14 leading-relaxed font-light italic">
+                  "Personalized wellness isn't just a buzzword. It's about seeing your own data and acting on it."
+                </p>
+                <button className="px-14 py-6 bg-[#B87333] text-white font-bold rounded-full shadow-2xl transition-all text-xl">
+                  Get your plan
+                </button>
+             </div>
+             <div className="order-1 lg:order-2 relative animate-reveal">
+                <div className="rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 group">
+                   <img src="/hero.png" className="w-full aspect-[4/5] object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000" />
                 </div>
              </div>
-             <p className="max-w-2xl mx-auto text-xl text-white/60 mb-12">
-               A provider licensed in your state will review your information, so that they can combine guidance on nutrition, activity, sleep, and more into a plan designed around your body's needs.
-             </p>
-             <button className="px-12 py-5 bg-white text-[#2d1b10] font-bold rounded-full">Get started</button>
           </div>
         </section>
 
-        {/* Editorial Testosterone Feature */}
         <TestosteroneFeature />
-
-        {/* Prompts Guide for Final Asset Generation */}
         <PromptsList />
       </main>
 

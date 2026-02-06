@@ -14,35 +14,39 @@
         color: #1A1A1A;
         margin: 0;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
       h1, h2, h3, .serif {
         font-family: 'DM Serif Display', serif;
-        letter-spacing: -0.02em;
-      }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        letter-spacing: -0.03em;
       }
       
-      /* Animated Charts Background for Labs */
-      @keyframes chartScroll {
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Animated Charts Scroll */
+      @keyframes chartScrollVertical {
         0% { transform: translateY(0); }
         100% { transform: translateY(-50%); }
       }
-      .charts-bg {
-        animation: chartScroll 40s linear infinite;
+      .charts-stream {
+        animation: chartScrollVertical 60s linear infinite;
       }
-      
-      .pill-float {
-        animation: float 6s ease-in-out infinite;
+
+      /* Entrance Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-      @keyframes float {
-        0% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-15px) rotate(2deg); }
-        100% { transform: translateY(0px) rotate(0deg); }
+      .animate-reveal {
+        animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      }
+
+      /* Custom Hover Shadow */
+      .card-shadow-hover:hover {
+        box-shadow: 0 40px 80px -20px rgba(0,0,0,0.15);
       }
     </style>
   <script type="importmap">
