@@ -38,12 +38,17 @@ const HeroGrid: React.FC = () => {
                 </p>
               </div>
               
-              {/* Product "Pick Up" Animation */}
-              <div className="absolute right-[-20px] bottom-[-20px] w-64 h-64 pointer-events-none transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-24 group-hover:scale-125 group-hover:-rotate-6">
+              {/* Product Animation Container */}
+              <div className="absolute right-[-20px] bottom-[-20px] w-64 h-64 pointer-events-none">
+                
+                {/* Fixed "Ground" Shadow - This stays at the bottom and only expands/softens */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[60%] h-6 bg-[#002534]/15 rounded-[100%] blur-xl transition-all duration-700 ease-out group-hover:scale-x-[1.8] group-hover:scale-y-[1.4] group-hover:bg-[#002534]/5 group-hover:blur-2xl" />
+
+                {/* Floating Product Image - Only the image moves and scales */}
                 <img 
                   src={group.imageUrl} 
                   alt={group.title}
-                  className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.08)] group-hover:drop-shadow-[0_80px_60px_rgba(0,37,52,0.15)] transition-all duration-700"
+                  className="w-full h-full object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-24 group-hover:scale-115 group-hover:-rotate-3"
                 />
               </div>
 
