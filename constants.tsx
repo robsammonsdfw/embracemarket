@@ -53,6 +53,25 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     hoverBg: 'hover:bg-[#FAF6EE]', // Pleasant Muted Tan/Yellowish
     prompt: "Yellow and black enclomiphene capsules floating, professional branding.",
   },
+  {
+    id: 'skin',
+    title: 'Clear skin',
+    description: 'Prescription-grade dermatological care for a clearer complexion.',
+    imageUrl: '/skin.png',
+    shadowUrl: '/skin-shadow.png',
+    path: '/skin',
+    hoverBg: 'hover:bg-[#F2FAF6]', // Muted Greenish-Teal
+    prompt: "Minimalist apothecary bottle with professional labeling, soft natural lighting.",
+  },
+];
+
+// Create a new constant for the smaller widgets
+export const MINOR_TREATMENTS = [
+  { id: 'mental', title: 'Mental Health', path: '/mental', icon: '🧠' },
+  { id: 'sleep', title: 'Sleep Support', path: '/sleep', icon: '🌙' },
+  { id: 'immunity', title: 'Immunity', path: '/immunity', icon: '🛡️' },
+  { id: 'energy', title: 'Energy Boost', path: '/energy', icon: '⚡' },
+  { id: 'longevity', title: 'Longevity', path: '/longevity', icon: '⏳' },
 ];
 
 export const NAV_EXPLORE = [
@@ -65,7 +84,7 @@ export const NAV_EXPLORE = [
   { label: 'Skin', path: '/skin' },
 ];
 
-export const IMAGE_PROMPTS = {
-  hero: "A high-end, minimalist lifestyle shot of a sun-drenched modern wellness space, clean lines, professional clinical but warm vibe.",
-  labs: "Medical health charts and data visualizations with a soft green and amber glow, modern UI style.",
-};
+// export const IMAGE_PROMPTS = {
+//   hero: "A high-end, minimalist lifestyle shot of a sun-drenched modern wellness space, clean lines, professional clinical but warm vibe.",
+//   labs: "Medical health charts and data visualizations with a soft green and amber glow, modern UI style.",
+// };

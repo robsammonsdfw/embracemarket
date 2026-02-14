@@ -71,3 +71,32 @@ html {
 .text-brand-teal { color: var(--brand-teal); }
 .text-brand-orange { color: var(--brand-orange); }
 .bg-brand-cream { background-color: var(--brand-cream); }
+
+/* Add these to your globals.css */
+
+.hero-card-base {
+  @apply relative overflow-visible transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] bg-white;
+}
+
+/* Large Widget Specifics */
+.widget-large {
+  @apply p-8 rounded-[2.5rem] min-h-[400px];
+}
+
+/* Minor Widget Specifics */
+.widget-minor {
+  @apply flex items-center justify-between p-6 bg-white/50 border border-[#002534]/5 rounded-3xl transition-all duration-500;
+}
+
+.widget-minor:hover {
+  @apply bg-white shadow-lg;
+}
+
+/* Shared Image Lift Animation */
+.product-lift {
+  @apply transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)];
+}
+
+.group:hover .product-lift {
+  @apply -translate-y-16 scale-110;
+}

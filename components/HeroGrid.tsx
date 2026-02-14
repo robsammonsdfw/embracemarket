@@ -1,11 +1,10 @@
-
 import React from 'react';
-import { PRODUCT_GROUPS } from '../constants';
+import { PRODUCT_GROUPS, MINOR_TREATMENTS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   return (
     <section className="pt-32 pb-32 px-6 md:px-12 bg-[#E6E7E9]">
-      <div className="max-w-[1300px] mx-auto">
+      <div className="max-w-[1450px] mx-auto">
         <div className="mb-16 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <h1 className="text-6xl md:text-[9rem] font-bold text-[#002534] serif mb-6 tracking-tighter leading-[0.85]">
             personalized to you
@@ -13,55 +12,60 @@ const HeroGrid: React.FC = () => {
           <p className="text-[#002534]/40 text-2xl font-medium tracking-tight">Customized care starts here</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Large Widgets - 5 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
               key={group.id} 
               href={`#${group.path}`}
-              className={`group relative overflow-visible p-10 rounded-[3rem] min-h-[440px] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal bg-white ${group.hoverBg}`}
+              className={`group hero-card-base widget-large card-shadow-hover opacity-0 animate-reveal ${group.hoverBg}`}
               style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
               <div className="relative z-20">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-3xl font-bold leading-[1.1] serif text-[#002534]">
-                    {group.title.split(' ')[0]} <br />
-                    <span className="text-[#F26422]">
-                      {group.title.split(' ').slice(1).join(' ')}
-                    </span>
-                  </h3>
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-[#002534]/5 transition-all group-hover:rotate-45 group-hover:bg-[#002534] group-hover:text-white group-hover:border-transparent">
-                    <ArrowIcon />
-                  </div>
-                </div>
-                <p className="text-sm max-w-[180px] leading-relaxed text-[#002534]/40 transition-all group-hover:text-[#002534] group-hover:opacity-100">
+                <h3 className="text-2xl font-bold leading-[1.1] serif text-[#002534] mb-4">
+                  {group.title.split(' ')[0]} <br />
+                  <span className="text-[#F26422]">
+                    {group.title.split(' ').slice(1).join(' ')}
+                  </span>
+                </h3>
+                <p className="text-xs max-w-[150px] leading-relaxed text-[#002534]/40 transition-all group-hover:text-[#002534]">
                   {group.description}
                 </p>
               </div>
               
-              {/* Product Visual Container */}
-              <div className="absolute right-[-20px] bottom-[-20px] w-64 h-64 pointer-events-none">
-                
-                {/* 1. Ground Shadow Image - This asset you provide stays locked to the bottom */}
+              <div className="absolute right-[-10px] bottom-[-10px] w-48 h-48 pointer-events-none">
                 <div className="absolute inset-0 flex items-end justify-center">
                   <img 
                     src={group.shadowUrl} 
                     alt="" 
-                    className="w-full h-full object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform origin-bottom group-hover:scale-x-125 group-hover:scale-y-110 group-hover:opacity-30 group-hover:blur-[4px]"
+                    className="w-full h-full object-contain opacity-20 transition-transform duration-700 group-hover:scale-125"
                   />
                 </div>
-
-                {/* 2. Floating Product Image - This performs the vertical 'lift' animation */}
                 <img 
                   src={group.imageUrl} 
                   alt={group.title}
-                  className="w-full h-full object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-24 group-hover:scale-115 group-hover:-rotate-3"
+                  className="w-full h-full object-contain relative z-10 product-lift"
                 />
               </div>
+            </a>
+          ))}
+        </div>
 
-              <div className="absolute bottom-10 left-10">
-                <span className="text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#002534]/5 text-[#002534]/20 group-hover:border-[#002534]/10 group-hover:text-[#002534]/40 transition-colors bg-[#E6E7E9]/20">
-                  available now
-                </span>
+        {/* Minor Widgets - 5 Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {MINOR_TREATMENTS.map((item, idx) => (
+            <a 
+              key={item.id}
+              href={`#${item.path}`}
+              className="group widget-minor opacity-0 animate-reveal"
+              style={{ animationDelay: `${0.7 + idx * 0.1}s` }}
+            >
+              <div className="flex items-center space-x-4">
+                <span className="text-2xl">{item.icon}</span>
+                <span className="font-bold text-[#002534] text-xs uppercase tracking-widest">{item.title}</span>
+              </div>
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity text-[#002534]">
+                <ArrowIcon />
               </div>
             </a>
           ))}
@@ -72,7 +76,7 @@ const HeroGrid: React.FC = () => {
 };
 
 const ArrowIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17l10-10M17 17V7H7"/></svg>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17l10-10M17 17V7H7"/></svg>
 );
 
 export default HeroGrid;
