@@ -19,7 +19,7 @@ const HeroGrid: React.FC = () => {
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
               key={group.id} 
-              href={`#${group.path}`}
+              href={group.path}
               // RESTORED: bg-white base, specific hoverBg color, explicit transitions
               className={`group relative overflow-hidden p-8 rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal ${group.hoverBg}`}
               style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
@@ -74,7 +74,7 @@ const HeroGrid: React.FC = () => {
             {MINOR_TREATMENTS.map((item, idx) => (
                 <a 
                 key={item.id}
-                href={`#${item.path}`}
+                href={item.path}
                 // Similar clean white styling for minor items
                 className="group flex items-center justify-between p-5 bg-white rounded-3xl card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal"
                 style={{ animationDelay: `${0.7 + idx * 0.1}s` }}
