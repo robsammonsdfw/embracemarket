@@ -6,12 +6,28 @@ const HeroGrid: React.FC = () => {
   return (
     <section className="pt-32 pb-32 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
-        <div className="mb-16 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
-          <h1 className="text-6xl md:text-[9rem] font-bold text-[#002534] serif mb-6 tracking-tighter leading-[0.85]">
-            personalized to you
-          </h1>
-          <p className="text-[#002534]/40 text-2xl font-medium tracking-tight">Customized care starts here</p>
-        </div>
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
+  {/* Left Half: Smaller Heading */}
+  <div className="md:w-1/2">
+    <h1 className="text-5xl md:text-[6rem] font-bold text-[#002534] serif tracking-tighter leading-[0.85] mb-4">
+      personalized to you
+    </h1>
+    <p className="text-[#002534]/40 text-xl font-medium tracking-tight">
+      Customized care starts here
+    </p>
+  </div>
+
+  {/* Right Half: Employer/Broker Link */}
+  <div className="md:w-1/2 md:text-right pb-4">
+    <a 
+      href="#" 
+      className="inline-block text-lg font-bold text-[#002534] hover:text-[#00B6A0] transition-colors border-b-2 border-[#00B6A0]/20 hover:border-[#00B6A0]"
+    >
+      Are you an Employer/Broker here for employees and clients? <br className="hidden lg:block" />
+      <span className="text-[#F26422]">Click here</span>
+    </a>
+  </div>
+</div>
 
         {/* --- LARGE WIDGETS (5 Columns) --- */}
         {/* Changed grid-cols-4 to grid-cols-5 */}
