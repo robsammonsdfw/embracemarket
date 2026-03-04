@@ -6,26 +6,32 @@ const HeroGrid: React.FC = () => {
   return (
     <section className="pt-32 pb-32 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
-  {/* Left Half: Smaller Heading */}
-  <div className="md:w-1/2">
-    <h1 className="text-5xl md:text-[6rem] font-bold text-[#002534] serif tracking-tighter leading-[0.85] mb-4">
+      <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
+  
+  {/* Left Side: Large, Single-Line Heading */}
+  <div className="lg:w-3/5">
+    <h1 className="text-5xl md:text-[6.5rem] font-bold text-[#002534] serif tracking-tighter leading-none whitespace-nowrap">
       personalized to you
     </h1>
-    <p className="text-[#002534]/40 text-xl font-medium tracking-tight">
+    <p className="text-[#002534]/40 text-2xl font-medium tracking-tight mt-4">
       Customized care starts here
     </p>
   </div>
 
-  {/* Right Half: Employer/Broker Link */}
-  <div className="md:w-1/2 md:text-right pb-4">
-    <a 
-      href="#" 
-      className="inline-block text-lg font-bold text-[#002534] hover:text-[#00B6A0] transition-colors border-b-2 border-[#00B6A0]/20 hover:border-[#00B6A0]"
-    >
-      Are you an Employer/Broker here for employees and clients? <br className="hidden lg:block" />
-      <span className="text-[#F26422]">Click here</span>
-    </a>
+  {/* Right Side: Proportioned Employer/Broker Call-to-Action */}
+  <div className="lg:w-1/3 lg:text-right">
+    <div className="border-l-4 lg:border-l-0 lg:border-r-4 border-[#B87333] pl-6 lg:pl-0 lg:pr-6 py-2">
+      <p className="text-xl md:text-2xl font-bold text-[#002534] serif leading-tight mb-3">
+        Are you an Employer or Broker <br className="hidden xl:block" /> 
+        here for employees and clients?
+      </p>
+      <a 
+        href="#" 
+        className="text-lg font-black uppercase tracking-widest text-[#B87333] hover:text-[#00B6A0] transition-colors"
+      >
+        Click here
+      </a>
+    </div>
   </div>
 </div>
 
