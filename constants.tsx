@@ -47,8 +47,8 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     id: 'sleep',
     title: 'Sleep Health', // Updated from Testosterone
     description: 'Personalized plans to help you get your rest back.',
-    imageUrl: '/testosterone.png', // Keep asset for now or swap to sleep asset
-    shadowUrl: '/testosterone-shadow.png',
+    imageUrl: '/sleep.png', // Keep asset for now or swap to sleep asset
+    shadowUrl: '/sleep-shadow.png',
     path: 'https://shop.embracehealth.ai/collections/sleep', // Shopify Link
     hoverBg: 'hover:bg-[#FAF6EE]', 
     prompt: "Sleep support solutions floating, professional branding.",
