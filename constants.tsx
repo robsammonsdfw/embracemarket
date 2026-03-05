@@ -57,8 +57,8 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     id: 'labs',
     title: 'Labs & DNA Tests', // Updated from Clear Skin
     description: 'Genetic insights and clinical testing reimagined for you.',
-    imageUrl: '/skin.png', // Swap to DNA kit image if available
-    shadowUrl: '/skin-shadow.png',
+    imageUrl: '/body.png', // Swap to DNA kit image if available
+    shadowUrl: '/body-shadow.png',
     path: 'https://shop.embracehealth.ai/pages/dna-test-kits', // Shopify Link
     hoverBg: 'hover:bg-[#F2FAF6]', 
     prompt: "DNA Kit professional labeling, soft natural lighting.",
