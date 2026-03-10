@@ -1,39 +1,57 @@
+/* robsammonsdfw/embracemarket/embracemarket-03c72df43bf88efdbcd5bec56b84cde56511c93a/components/HeroGrid.tsx */
+
 import React from 'react';
-import { PRODUCT_GROUPS, MINOR_TREATMENTS } from '../constants';
-import { ArrowUpRight } from 'lucide-react'; // Assuming you are using lucide-react based on standard icon usage, if not, I've provided an SVG fallback below.
+import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants'; // Added COLORS import
 
 const HeroGrid: React.FC = () => {
   return (
     <section className="pt-32 pb-32 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
-      <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
-  
-  {/* Left Side: Large, Single-Line Heading */}
-  <div className="lg:w-3/5">
-    <h1 className="text-5xl md:text-[6.5rem] font-bold text-[#002534] serif tracking-tighter leading-none whitespace-nowrap">
-      personalized to you
-    </h1>
-    <p className="text-[#002534]/40 text-2xl font-medium tracking-tight mt-4">
-      Customized care starts here
-    </p>
-  </div>
+        {/* Updated Header Section: Split 50/50 */}
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-20 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
+          
+          {/* Left Side: Scaled down Heading */}
+          <div className="lg:w-1/2">
+            <h1 className="text-5xl md:text-[5.5rem] font-bold text-[#002534] serif tracking-tighter leading-none">
+              personalized to you
+            </h1>
+            <p className="text-[#002534]/40 text-2xl font-medium tracking-tight mt-4">
+              Customized care starts here
+            </p>
+          </div>
 
-  {/* Right Side: Proportioned Employer/Broker Call-to-Action */}
-  <div className="lg:w-1/3 lg:text-right">
-    <div className="border-l-4 lg:border-l-0 lg:border-r-4 border-[#B87333] pl-6 lg:pl-0 lg:pr-6 py-2">
-      <p className="text-xl md:text-2xl font-bold text-[#002534] serif leading-tight mb-3">
-        Are you an Employer or Broker <br className="hidden xl:block" /> 
-        here for employees and clients?
-      </p>
-      <a 
-        href="#" 
-        className="text-lg font-black uppercase tracking-widest text-[#B87333] hover:text-[#00B6A0] transition-colors"
-      >
-        Click here
-      </a>
-    </div>
-  </div>
-</div>
+          {/* Right Side: Dual Widgets */}
+          <div className="lg:w-1/2 w-full">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#002534]/40 mb-4 ml-2">
+              Are you here as
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Coaches Widget - Brand Teal */}
+              <a 
+                href="#" 
+                className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
+                style={{ backgroundColor: COLORS.brandTeal }}
+              >
+                <span className="text-white text-xl md:text-2xl font-bold serif leading-tight">Coaches</span>
+                <span className="text-white/70 text-[10px] font-black uppercase tracking-widest mt-1 group-hover:text-white transition-colors">
+                  Click here
+                </span>
+              </a>
+
+              {/* Employers/Brokers Widget - Brand Orange */}
+              <a 
+                href="#" 
+                className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
+                style={{ backgroundColor: COLORS.brandOrange }}
+              >
+                <span className="text-white text-xl md:text-2xl font-bold serif leading-tight">Employers/Brokers</span>
+                <span className="text-white/70 text-[10px] font-black uppercase tracking-widest mt-1 group-hover:text-white transition-colors">
+                  Click here
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* --- LARGE WIDGETS (5 Columns) --- */}
         {/* Changed grid-cols-4 to grid-cols-5 */}
