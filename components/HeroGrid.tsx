@@ -1,16 +1,14 @@
 /* robsammonsdfw/embracemarket/embracemarket-03c72df43bf88efdbcd5bec56b84cde56511c93a/components/HeroGrid.tsx */
 
 import React from 'react';
-import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants'; // Added COLORS import
+import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   return (
     <section className="pt-32 pb-32 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
-        {/* Updated Header Section: Split 50/50 */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-20 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
           
-          {/* Left Side: Scaled down Heading */}
           <div className="lg:w-1/2">
             <h1 className="text-5xl md:text-[5.5rem] font-bold text-[#002534] serif tracking-tighter leading-none">
               personalized to you
@@ -20,13 +18,12 @@ const HeroGrid: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Side: Dual Widgets */}
           <div className="lg:w-1/2 w-full">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#002534]/40 mb-4 ml-2">
+            {/* Updated Label: Centered and much larger */}
+            <p className="text-xl md:text-2xl font-bold text-[#002534] serif text-center mb-6">
               Are you here as
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {/* Coaches Widget - Brand Teal */}
               <a 
                 href="#" 
                 className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
@@ -38,7 +35,6 @@ const HeroGrid: React.FC = () => {
                 </span>
               </a>
 
-              {/* Employers/Brokers Widget - Brand Orange */}
               <a 
                 href="#" 
                 className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
