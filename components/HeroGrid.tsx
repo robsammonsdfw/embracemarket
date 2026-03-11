@@ -5,13 +5,11 @@ import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   return (
-    <section className="pt-20 pb-20 px-6 md:px-12 bg-[#E6E7E9]">
+    <section className="pt-16 pb-20 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
-        {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-center mb-12 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
-          
-          {/* Left Side: Heading */}
+        {/* Header Section - Tightened spacing to move widgets up */}
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-10 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <div className="lg:w-1/2">
             <h1 className="text-5xl md:text-[6.5rem] font-bold text-[#002534] serif tracking-tighter leading-none">
               personalized to you
@@ -21,13 +19,11 @@ const HeroGrid: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Side: Are you here as + Dual Widgets */}
           <div className="lg:w-1/2 w-full">
             <p className="text-xl md:text-2xl font-bold text-[#002534] serif text-center mb-6">
               Are you here as
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {/* Coaches Widget */}
               <a 
                 href="#" 
                 className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
@@ -39,7 +35,6 @@ const HeroGrid: React.FC = () => {
                 </span>
               </a>
 
-              {/* Employers/Brokers Widget */}
               <a 
                 href="#" 
                 className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
@@ -54,8 +49,8 @@ const HeroGrid: React.FC = () => {
           </div>
         </div>
 
-        {/* --- TOP 5 WIDGETS (Primary/Prominent) --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-10">
+        {/* --- TOP 5 WIDGETS (Primary) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
               key={group.id} 
@@ -77,11 +72,9 @@ const HeroGrid: React.FC = () => {
                     </svg>
                 </div>
               </div>
-
               <p className="text-xs max-w-[150px] leading-relaxed text-[#002534]/40 transition-all group-hover:text-[#002534] relative z-20 mb-8">
                 {group.description}
               </p>
-              
               <div className="absolute right-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]" >
                 <img 
                   src={group.imageUrl} 
@@ -93,19 +86,19 @@ const HeroGrid: React.FC = () => {
           ))}
         </div>
 
-        {/* --- BOTTOM 5 WIDGETS (Secondary - App Screenshots) --- */}
+        {/* --- BOTTOM 5 WIDGETS (Secondary - 1/3 size of top) --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {MINOR_TREATMENTS.map((item, idx) => (
             <a 
               key={item.id}
               href={item.path}
-              className="group relative overflow-hidden bg-white rounded-[2rem] min-h-[220px] card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal flex flex-col"
+              className="group relative overflow-hidden bg-white rounded-[2rem] min-h-[140px] card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal flex flex-col"
               style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
             >
-              {/* Card Header Overlay */}
-              <div className="p-4 relative z-20 bg-white/90 backdrop-blur-sm border-b border-gray-50">
+              {/* Header: More compact for 140px card */}
+              <div className="p-4 relative z-20 bg-white/80 backdrop-blur-sm">
                 <div className="flex justify-between items-center">
-                  <span className="font-bold text-[#002534] text-[9px] uppercase tracking-widest leading-tight">
+                  <span className="font-bold text-[#002534] text-[9px] uppercase tracking-[0.15em] leading-tight">
                     {item.title}
                   </span>
                   <div className="text-[#002534]/30 transition-all duration-500 group-hover:text-[#F26422] group-hover:translate-x-1">
@@ -116,12 +109,12 @@ const HeroGrid: React.FC = () => {
                 </div>
               </div>
 
-              {/* Screenshot Preview Container */}
-              <div className="flex-grow relative overflow-hidden bg-gray-50 flex items-start justify-center pt-2 px-3">
+              {/* Image: Scaled to fit 120x88 native-style without stretching */}
+              <div className="flex-grow flex items-center justify-center px-4 pb-4">
                 <img 
                   src={item.imageUrl} 
                   alt={item.title} 
-                  className="w-full h-auto object-top rounded-t-lg shadow-sm transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-2 group-hover:scale-105"
+                  className="w-auto h-auto max-w-[120px] max-h-[88px] object-contain shadow-sm rounded-lg transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>
             </a>
