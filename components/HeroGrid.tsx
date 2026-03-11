@@ -5,13 +5,11 @@ import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   return (
-    <section className="pt-32 pb-32 px-6 md:px-12 bg-[#E6E7E9]">
+    <section className="pt-24 pb-24 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
-        {/* Header Section (Restored 50/50 split and typography) */}
+        {/* Header Section: Original 50/50 Split and Font Size */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-20 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
-          
-          {/* Left Side: Restored smaller heading size and single line */}
           <div className="lg:w-1/2">
             <h1 className="text-5xl md:text-[5.5rem] font-bold text-[#002534] serif tracking-tighter leading-none">
               personalized to you
@@ -21,13 +19,11 @@ const HeroGrid: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Side: Dual Widgets */}
           <div className="lg:w-1/2 w-full">
             <p className="text-xl md:text-2xl font-bold text-[#002534] serif text-center mb-6">
               Are you here as
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {/* Coaches Widget */}
               <a 
                 href="#" 
                 className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
@@ -39,7 +35,6 @@ const HeroGrid: React.FC = () => {
                 </span>
               </a>
 
-              {/* Employers/Brokers Widget */}
               <a 
                 href="#" 
                 className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
@@ -54,7 +49,7 @@ const HeroGrid: React.FC = () => {
           </div>
         </div>
 
-        {/* --- TOP 5 WIDGETS (Primary) --- */}
+        {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
@@ -82,27 +77,34 @@ const HeroGrid: React.FC = () => {
                 {group.description}
               </p>
               
-              <div className="absolute right-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]" >
+              {/* Product Image and Dedicated Shadow Layer */}
+              <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
+                {/* Fixed Shadow Image: Expands slightly on hover */}
+                <img 
+                  src={group.shadowUrl} 
+                  alt="" 
+                  className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
+                />
+                {/* Main Floating Product Image: Lifts up on hover */}
                 <img 
                   src={group.imageUrl} 
                   alt={group.title}
-                  className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 image-shadow"
+                  className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105"
                 />
               </div>
             </a>
           ))}
         </div>
 
-        {/* --- BOTTOM 5 WIDGETS (Secondary - Compact) --- */}
+        {/* --- BOTTOM 5 WIDGETS (Secondary - Compact App Preview) --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {MINOR_TREATMENTS.map((item, idx) => (
             <a 
               key={item.id}
               href={item.path}
-              className="group relative overflow-hidden bg-white rounded-[2rem] min-h-[140px] card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal flex flex-col"
+              className="group relative overflow-hidden bg-white rounded-[2rem] min-h-[150px] card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal flex flex-col"
               style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
             >
-              {/* Card Header Overlay */}
               <div className="p-4 relative z-20 bg-white/90 backdrop-blur-sm border-b border-gray-50">
                 <div className="flex justify-between items-center">
                   <span className="font-bold text-[#002534] text-[9px] uppercase tracking-widest leading-tight">
@@ -116,8 +118,7 @@ const HeroGrid: React.FC = () => {
                 </div>
               </div>
 
-              {/* Screenshot Container */}
-              <div className="flex-grow flex items-center justify-center px-4 pb-4">
+              <div className="flex-grow flex items-center justify-center px-4 pb-4 bg-gray-50/50">
                 <img 
                   src={item.imageUrl} 
                   alt={item.title} 
@@ -127,7 +128,6 @@ const HeroGrid: React.FC = () => {
             </a>
           ))}
         </div>
-
       </div>
     </section>
   );
