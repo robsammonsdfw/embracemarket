@@ -68,23 +68,42 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             
-            {/* Physical Intelligence Landing Page */}
-            <Route path="/app/physical-intelligence" element={
-              <FeatureLandingPage 
-                h1="Train with feedback you can actually use"
-                subhead="Form coaching, 3D scanning, vitals sync, workout planning, and running support—built into one connected system."
-                directAnswer="EmbraceHealth Physical Intelligence combines camera-based movement analysis, body visualization, wearable sync, workout planning, and running support so users can train with clearer feedback and less friction."
-                sections={[
-                  { title: "Move with better mechanics", body: "AI Form Coach gives users a simple score, clear cues, and a visible history of improvement. Instead of filming a lift and guessing what went wrong later, users can see what needs work." },
-                  { title: "See progress beyond the scale", body: "3D body scans, guided progress photos, and body evolution views make change easier to trust. When users can see shape and posture, consistency becomes easier to maintain." },
-                  { title: "Keep your data in one place", body: "Vision Sync and wearable-linked views reduce manual entry. Steps, sleep, and calories become part of one progress workflow instead of living across disconnected apps." }
-                ]}
-                faqs={[
-                  { q: "Do I need special hardware?", a: "No, our AI Form Coach works directly through your smartphone camera." },
-                  { q: "Which wearables sync?", a: "We support Apple Health, Google Fit, Oura, and Garmin." }
-                ]}
-              />
-            } />
+{/* 1. Physical Intelligence */}
+<Route path="/app/physical-intelligence" element={
+  <FeatureLandingPage 
+    h1="Train with feedback you can actually use"
+    subhead="Form coaching, 3D scanning, vitals sync, workout planning, and running support—built into one connected system."
+    directAnswer="EmbraceHealth Physical Intelligence combines camera-based movement analysis, body visualization, wearable sync, workout planning, and running support so users can train with clearer feedback and less friction."
+    heroVideo="/fitness_int.mp4" // Correctly calling your new video file
+    sections={[
+      { 
+        title: "Move with better mechanics", 
+        body: "AI Form Coach gives users a simple score, clear cues, and a visible history of improvement.",
+        detail: "Instead of filming a lift and guessing later, users see what needs work and what already improved in real-time." 
+      },
+      { 
+        title: "See progress beyond the scale", 
+        body: "3D body scans, guided progress photos, and body evolution views make change easier to trust.",
+        detail: "When users can see shape, posture, and visual momentum, consistency becomes easier to maintain." 
+      },
+      { 
+        title: "Keep your data in one place", 
+        body: "Vision Sync and wearable-linked views reduce manual entry for steps, sleep, and calories.",
+        detail: "Your daily signals become part of one progress workflow instead of living across disconnected apps." 
+      }
+    ]}
+    comparison={[
+      { label: "Real-time Feedback", us: "AI Form Coach (Sency.ai)", them: "Manual Video Review" },
+      { label: "Visual Progress", us: "3D Body Evolutions", them: "Standard Scale Weight" },
+      { label: "Data Hub", us: "One Dashboard", them: "5+ Disconnected Apps" }
+    ]}
+    faqs={[
+      { q: "Do I need special hardware?", a: "No, our AI Form Coach works directly through your smartphone camera." },
+      { q: "Which wearables sync?", a: "We support Apple Health, Google Fit, Oura, and Garmin." },
+      { q: "What about running?", a: "The app includes a dedicated Running Coach for gait and performance tracking." }
+    ]}
+  />
+} />
 
             {/* Nutrition & Kitchen Intelligence Landing Page */}
             <Route path="/app/nutrition-kitchen" element={
