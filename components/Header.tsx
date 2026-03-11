@@ -31,7 +31,7 @@ const Header: React.FC = () => {
           <a href="/" className="text-2xl font-bold text-[#002534] flex items-center">
             <span className="text-[#00B6A0]">embrace</span>
             <span className="text-[#F26422]">health</span>
-            <span className="opacity-30 font-light text-xl">.ai</span>
+            <span className="opacity-30 font-light ">.ai</span>
           </a>
         </div>
 
