@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
 import LabsSection from './components/LabsSection';
@@ -176,6 +176,8 @@ const App: React.FC = () => {
                 ]}
               />
             } />
+{/* Catch-all route to prevent blank screens. Sends users home if a link is broken. */}
+<Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 

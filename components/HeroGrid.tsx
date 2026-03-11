@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
+import { Link } from 'react-router-dom';
 
 const HeroGrid: React.FC = () => {
   return (
@@ -99,7 +100,7 @@ const HeroGrid: React.FC = () => {
         {/* --- BOTTOM 5 WIDGETS (Secondary - Compact App Preview) --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {MINOR_TREATMENTS.map((item, idx) => (
-            <a 
+            <Link
               key={item.id}
               href={item.path}
               className="group relative overflow-hidden bg-white rounded-[2rem] min-h-[150px] card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal flex flex-col"
@@ -125,7 +126,7 @@ const HeroGrid: React.FC = () => {
                   className="w-auto h-auto max-w-[120px] max-h-[88px] object-contain shadow-sm rounded-lg transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>
-            </a>
+              </Link>
           ))}
         </div>
       </div>
