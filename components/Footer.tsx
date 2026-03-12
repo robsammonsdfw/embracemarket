@@ -35,9 +35,9 @@ const Footer: React.FC = () => {
           <div>
              <p className="text-[10px] font-bold tracking-widest text-white/20 mb-8 uppercase">LEGAL</p>
              <ul className="space-y-4 text-white/50 font-medium text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Telehealth Consent</a></li>
+              <li><a href="https://shop.embracehealth.ai/pages/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="https://shop.embracehealth.ai/pages/terms-of-services" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="https://shop.embracehealth.ai/pages/telemedicineconsent" className="hover:text-white transition-colors">Telehealth Consent</a></li>
             </ul>
           </div>
         </div>
