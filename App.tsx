@@ -79,17 +79,20 @@ const App: React.FC = () => {
       { 
         title: "Move with better mechanics", 
         body: "AI Form Coach gives users a simple score, clear cues, and a visible history of improvement.",
-        detail: "Instead of filming a lift and guessing later, users see what needs work and what already improved in real-time." 
+        detail: "Instead of filming a lift and guessing later, users see what needs work and what already improved in real-time." ,
+      image: "/nutrition_macro.png"
       },
       { 
         title: "See progress beyond the scale", 
         body: "3D body scans, guided progress photos, and body evolution views make change easier to trust.",
-        detail: "When users can see shape, posture, and visual momentum, consistency becomes easier to maintain." 
+        detail: "When users can see shape, posture, and visual momentum, consistency becomes easier to maintain." ,
+        image: "/nutrition_macro.png"
       },
       { 
         title: "Keep your data in one place", 
         body: "Vision Sync and wearable-linked views reduce manual entry for steps, sleep, and calories.",
-        detail: "Your daily signals become part of one progress workflow instead of living across disconnected apps." 
+        detail: "Your daily signals become part of one progress workflow instead of living across disconnected apps." ,
+        image: "/nutrition_macro.png"
       }
     ]}
     comparison={[
@@ -105,23 +108,45 @@ const App: React.FC = () => {
   />
 } />
 
-            {/* Nutrition & Kitchen Intelligence Landing Page */}
-            <Route path="/app/nutrition-kitchen" element={
-              <FeatureLandingPage 
-                h1="Stop guessing, start logging with vision"
-                subhead="Photo macro logging, pantry-based AI recipes, and metabolic insights designed to fit your kitchen."
-                directAnswer="Kitchen Intelligence removes the friction of manual logging by using photo-recognition to identify macros and AI to turn what you already have into personalized, goal-aligned meals."
-                sections={[
-                  { title: "Photo Macro Logging", body: "Skip the database search. Take a photo of your meal and let the AI identify ingredients and estimate macros in seconds." },
-                  { title: "The Pantry Chef", body: "Tell the app what is in your kitchen and get immediate recipes that match your current goals and inventory." },
-                  { title: "Metabolic Insights", body: "Visualize the relationship between what you eat and how you feel, tracking energy levels against nutritional intake." }
-                ]}
-                faqs={[
-                  { q: "How accurate is photo logging?", a: "Our computer-vision model is trained specifically on food volume and density to provide high-accuracy macro estimates." },
-                  { q: "Can it handle restaurant meals?", a: "Yes, the AI Replicator can estimate nutrition facts from menu descriptions or photos of restaurant dishes." }
-                ]}
-              />
-            } />
+{/* 2. Nutrition & Kitchen Intelligence */}
+<Route path="/app/nutrition-kitchen" element={
+  <FeatureLandingPage 
+    h1="Nutrition that starts with your camera"
+    subhead="Photo-based food logging, recipe generation, meal planning, and kitchen workflows that make healthy eating easier to follow."
+    directAnswer="EmbraceHealth Nutrition helps users log food faster, generate ideas from what they already have, build condition-aware meal plans, and turn plans into grocery action."
+    heroVideo="/nutrition_hero.mp4" 
+    sections={[
+      { 
+        title: "Log food faster", 
+        body: "Photo Macro Logging reduces the friction of manual food search.",
+        detail: "Instead of typing every item, users can snap a meal, review the estimate, and move on with their day.",
+        image: "/nutrition_macro.png" // <--- Adds an image to Section 1
+      },
+      { 
+        title: "Turn ingredients into decisions", 
+        body: "Pantry Chef and MasterChef Replicator take uncertainty out of eating.",
+        detail: "Users can scan a fridge for ideas or reverse-engineer a restaurant meal into a smarter at-home version.",
+        image: "/pantry_chef.png" // <--- Adds an image to Section 2
+      },
+      { 
+        title: "Plan what you'll actually follow", 
+        body: "Clinical Meal Planner and Kitchen Library help users build repeatable meal systems, not random one-off recipes.",
+        detail: "Drag-and-drop planning and grocery automation turn good intentions into execution.",
+        image: "/meal_planner.png" // <--- Adds an image to Section 3
+      }
+    ]}
+    comparison={[
+      { label: "Food Logging", us: "Photo Macro Logging", them: "Manual Database Search (MyFitnessPal)" },
+      { label: "Recipe Ideas", us: "AI Pantry Chef & Replicator", them: "Generic Recipe Blogs" },
+      { label: "Meal Planning", us: "Clinical & Condition-Aware", them: "Rigid PDF Plans" }
+    ]}
+    faqs={[
+      { q: "How accurate is the photo logging?", a: "Our computer-vision model is trained on food volume and density to provide highly accurate macro and calorie estimates." },
+      { q: "Can it handle restaurant meals?", a: "Yes, the MasterChef Replicator can estimate nutrition facts from menu descriptions or photos of restaurant dishes." },
+      { q: "Does it build grocery lists automatically?", a: "Yes, when you build a meal plan in the Kitchen Library, the app automatically converts the ingredients into a sorted grocery list." }
+    ]}
+  />
+} />
 
             {/* Mental Health Landing Page */}
             <Route path="/app/mental-health" element={

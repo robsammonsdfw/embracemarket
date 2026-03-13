@@ -5,13 +5,21 @@ interface FAQ {
   a: string;
 }
 
+interface SectionData {
+  title: string;
+  body: string;
+  detail?: string;
+  image?: string; // Added so you can pass an image filename
+  video?: string; // Added so you can pass a video filename
+}
+
 interface LandingPageProps {
   h1: string;
   subhead: string;
   directAnswer: string;
   heroImage?: string;
-  heroVideo?: string; // New prop for your Midjourney loops
-  sections: { title: string; body: string; detail?: string }[];
+  heroVideo?: string; 
+  sections: SectionData[];
   comparison: { label: string; us: string; them: string }[];
   faqs: FAQ[];
 }
@@ -38,7 +46,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </div>
         </header>
 
-        {/* --- DYNAMIC MEDIA CONTAINER --- */}
+        {/* --- DYNAMIC HERO MEDIA CONTAINER --- */}
         <div className="mb-20 rounded-[3rem] overflow-hidden shadow-2xl bg-white border border-[#002534]/5 animate-reveal relative aspect-video">
           {heroVideo ? (
             <video 
@@ -72,15 +80,30 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
         <div className="space-y-32 mb-32">
           {sections.map((section, idx) => (
             <div key={idx} className={`flex flex-col md:flex-row gap-16 items-center animate-reveal ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+              
+              {/* Text Side */}
               <div className="md:w-1/2">
                 <div className="w-16 h-1 bg-[#B87333] mb-8" />
                 <h2 className="text-4xl font-bold text-[#002534] serif mb-6">{section.title}</h2>
                 <p className="text-xl text-[#002534]/70 leading-relaxed mb-6">{section.body}</p>
                 {section.detail && <p className="text-lg text-[#002534]/50 leading-relaxed border-l-2 border-[#002534]/10 pl-6 italic">{section.detail}</p>}
               </div>
-              <div className="md:w-1/2 w-full aspect-square bg-white rounded-[2.5rem] shadow-sm border border-[#002534]/5 flex items-center justify-center p-12">
-                 <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center">In-app Screenshot / <br/> Loop Video Placeholder</p>
+              
+              {/* Media Side (Now accepts your specific images/videos) */}
+              <div className="md:w-1/2 w-full aspect-square bg-white rounded-[2.5rem] shadow-sm border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
+                {section.video ? (
+                  <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                    <source src={section.video} type="video/mp4" />
+                  </video>
+                ) : section.image ? (
+                  <img src={section.image} alt={section.title} className="w-full h-full object-cover" />
+                ) : (
+                   <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
+                     In-app Screenshot / <br/> Loop Video Placeholder
+                   </p>
+                )}
               </div>
+
             </div>
           ))}
         </div>
