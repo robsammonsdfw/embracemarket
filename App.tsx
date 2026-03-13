@@ -80,19 +80,19 @@ const App: React.FC = () => {
         title: "Move with better mechanics", 
         body: "AI Form Coach gives users a simple score, clear cues, and a visible history of improvement.",
         detail: "Instead of filming a lift and guessing later, users see what needs work and what already improved in real-time." ,
-      image: "/nutrition_macro.png"
+      image: "/ai_form.png"
       },
       { 
         title: "See progress beyond the scale", 
         body: "3D body scans, guided progress photos, and body evolution views make change easier to trust.",
         detail: "When users can see shape, posture, and visual momentum, consistency becomes easier to maintain." ,
-        image: "/nutrition_macro.png"
+        image: "/3d_scan.png"
       },
       { 
         title: "Keep your data in one place", 
         body: "Vision Sync and wearable-linked views reduce manual entry for steps, sleep, and calories.",
         detail: "Your daily signals become part of one progress workflow instead of living across disconnected apps." ,
-        image: "/nutrition_macro.png"
+        image: "/vision_scan.png"
       }
     ]}
     comparison={[
