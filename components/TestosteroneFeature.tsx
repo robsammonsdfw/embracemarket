@@ -35,12 +35,13 @@ const TestosteroneFeature: React.FC = () => {
               Hormone Health
             </p>
             
-            {/* White text with a thin black outline so it stays readable over the moving video */}
-            <h2 className="text-5xl md:text-7xl font-bold serif mb-6 tracking-tighter leading-[1.05] text-white [-webkit-text-stroke:1px_#000]">
+            {/* Pure white text, outline removed */}
+            <h2 className="text-5xl md:text-7xl font-bold serif mb-6 tracking-tighter leading-[1.05] text-white drop-shadow-lg">
               Optimize your hormones with clinical precision.
             </h2>
             
-            <p className="text-xl md:text-2xl text-white mb-10 max-w-lg font-light leading-relaxed [-webkit-text-stroke:0.5px_#000]">
+            {/* Pure white text, outline removed */}
+            <p className="text-xl md:text-2xl text-white mb-10 max-w-lg font-light leading-relaxed drop-shadow-md">
               Stop guessing about your energy and drive. Get a comprehensive diagnostic panel and a personalized treatment plan based on your unique data.
             </p>
             
