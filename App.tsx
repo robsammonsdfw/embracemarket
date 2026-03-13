@@ -148,38 +148,42 @@ const App: React.FC = () => {
   />
 } />
 
-            {/* Mental Health Landing Page */}
-            <Route path="/app/mental-health" element={
+{/* 3. Mental Health */}
+<Route path="/app/mental-health" element={
               <FeatureLandingPage 
-                h1="Connect your mind to your metrics"
-                subhead="Mood tracking, AI journaling, and personal resilience scores that link lifestyle to mental clarity."
-                directAnswer="Our Mental Health feature helps you identify patterns between your physical habits and your state of mind through interactive journaling and data-driven insights."
+                h1="Know your capacity before your day starts"
+                subhead="Readiness scoring, self-awareness assessments, mood check-ins, and sleep pathways designed to support follow-through."
+                directAnswer="EmbraceHealth Mental Health combines recovery signals, self-assessments, and daily pulse check-ins so users can better understand their energy, motivation, and consistency patterns."
+                heroVideo="/mental_hero.mp4" 
                 sections={[
-                  { title: "Mood & Signal Tracking", body: "Identify specific patterns between your sleep, diet, and mental clarity to understand what drives your best days." },
-                  { title: "AI Interactive Journaling", body: "Capture your thoughts through voice or text check-ins. The AI identifies trends and helps you visualize your mental state over time." },
-                  { title: "Personal Resilience Score", body: "A daily metric that tells you your current capacity for stress and focus based on your combined biometric data." }
+                  { 
+                    title: "Start with a clearer read on your day", 
+                    body: "Readiness Score helps users make more grounded decisions about effort, recovery, and expectations.",
+                    detail: "It turns recovery-related inputs into something easier to understand and act on.",
+                    image: "/readiness_score.png"
+                  },
+                  { 
+                    title: "Learn your own patterns", 
+                    body: "Assessment Hub gives users a structured place to explore self-awareness, motivation, and behavior patterns.",
+                    detail: "Instead of vague wellness content, users get a clearer lens on themselves.",
+                    image: "/assessment_hub.png"
+                  },
+                  { 
+                    title: "Keep the habit loop alive", 
+                    body: "Pulse Mood & Habits makes daily check-ins lightweight enough to sustain.",
+                    detail: "That matters because a feature only helps if users actually keep using it.",
+                    image: "/pulse_mood.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Daily Insights", us: "Biometric Readiness Score", them: "Subjective Guessing" },
+                  { label: "Check-ins", us: "Frictionless Pulse Mood", them: "Heavy Text Journaling" },
+                  { label: "Guidance", us: "Personalized Assessment Hub", them: "Generic Wellness Articles" }
                 ]}
                 faqs={[
-                  { q: "Is my journaling private?", a: "Yes, all mental health data is encrypted and only accessible to you within your secure Health Wallet." },
-                  { q: "How does it link to physical data?", a: "The app automatically correlates your mood logs with your sleep and activity data from the same day." }
-                ]}
-              />
-            } />
-
-            {/* Progress Tracking Landing Page */}
-            <Route path="/app/progress-tracking" element={
-              <FeatureLandingPage 
-                h1="Your health data, finally integrated"
-                subhead="A digital twin dashboard and secure health wallet that brings clinical and app data into one view."
-                directAnswer="Progress Tracking at EmbraceHealth isn't just a list of numbers; it's a secure ecosystem that pulls your clinical results and daily habits into a single, visual Digital Twin."
-                sections={[
-                  { title: "Digital Twin Dashboard", body: "Visualize your entire health profile in one place. See how your labs, movements, and nutrition work together to form your current baseline." },
-                  { title: "The Health Wallet", body: "A secure, portable record of your progress. Keep your clinical standards, telehealth consents, and data history in your pocket." },
-                  { title: "Automated Data Sync", body: "Reduce friction by letting the app pull data automatically from your connected devices and previous lab results." }
-                ]}
-                faqs={[
-                  { q: "Can I export my data?", a: "Yes, the Health Wallet allows you to export summaries to share with your outside clinical providers." },
-                  { q: "How often does it update?", a: "Your dashboard updates in real-time as data is received from your synced wearables and apps." }
+                  { q: "How is the Readiness Score calculated?", a: "It analyzes your sleep patterns, heart rate variability (HRV), and previous daily activity to gauge your recovery." },
+                  { q: "Are my assessments and mood logs private?", a: "Absolutely. All mental health and personal reflection data is encrypted and securely stored in your Health Wallet." },
+                  { q: "Do I have to type long journal entries?", a: "No. Pulse Mood & Habits is designed for quick, one-tap daily check-ins so you stay consistent without feeling burdened." }
                 ]}
               />
             } />
