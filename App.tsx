@@ -188,6 +188,45 @@ const App: React.FC = () => {
               />
             } />
 
+            {/* 4. Progress Tracking */}
+            <Route path="/app/progress-tracking" element={
+              <FeatureLandingPage 
+                h1="Your health data, finally integrated"
+                subhead="A digital twin dashboard and secure health wallet that brings clinical and app data into one view."
+                directAnswer="Progress Tracking at EmbraceHealth isn't just a list of numbers; it's a secure ecosystem that pulls your clinical results and daily habits into a single, visual Digital Twin."
+                heroVideo="/progress_hero.mp4" 
+                sections={[
+                  { 
+                    title: "See your whole picture", 
+                    body: "The Digital Twin Dashboard visualizes your entire health profile in one place.",
+                    detail: "See exactly how your lab results, daily movements, and nutrition work together to form your current baseline.",
+                    image: "/digital_twin.png"
+                  },
+                  { 
+                    title: "Own your medical history", 
+                    body: "The Health Wallet creates a secure, portable record of your progress.",
+                    detail: "Keep your clinical standards, telehealth consents, and historical lab data right in your pocket.",
+                    image: "/health_wallet.png"
+                  },
+                  { 
+                    title: "Eliminate manual entry", 
+                    body: "Automated Data Sync reduces friction by pulling data automatically.",
+                    detail: "Connected devices and previous lab results populate your dashboard without you having to type a thing.",
+                    image: "/auto_sync.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Data View", us: "Unified Digital Twin", them: "Scattered PDF Lab Results" },
+                  { label: "Storage", us: "Secure Health Wallet", them: "Unsecure Email Attachments" },
+                  { label: "Updates", us: "Real-time Automated Sync", them: "Manual Typing & Uploads" }
+                ]}
+                faqs={[
+                  { q: "Can I export my data?", a: "Yes, the Health Wallet allows you to securely export summaries to share with your outside clinical providers." },
+                  { q: "How often does it update?", a: "Your dashboard updates in real-time as data is received from your synced wearables and lab partners." }
+                ]}
+              />
+            } />
+
             {/* Browse All App Features */}
             <Route path="/app/features" element={
               <FeatureLandingPage 
