@@ -227,20 +227,41 @@ const App: React.FC = () => {
               />
             } />
 
-            {/* Browse All App Features */}
+            {/* 5. Browse All App Features */}
             <Route path="/app/features" element={
               <FeatureLandingPage 
                 h1="One ecosystem for your total health"
                 subhead="Physical, Nutrition, Mental, and Clinical data working together to help you find your baseline."
                 directAnswer="The EmbraceHealth app is a connected system where every feature informs the other, giving you a comprehensive view of your wellness that disconnected apps can't provide."
+                heroVideo="/features_hero.mp4" 
                 sections={[
-                  { title: "Integrated Intelligence", body: "Experience how your Physical Intelligence data informs your Nutrition needs and impacts your Mental clarity." },
-                  { title: "Unified Workflow", body: "Stop jumping between five different apps. Manage your labs, track your lifts, and log your meals in one place." },
-                  { title: "AI-Driven Results", body: "Benefit from a system that identifies cross-feature patterns to give you insights that manual tracking misses." }
+                  { 
+                    title: "Integrated Intelligence", 
+                    body: "Experience how your Physical Intelligence data informs your Nutrition needs and impacts your Mental clarity.",
+                    detail: "When your app knows how you slept and lifted, it can tell you exactly what to eat.",
+                    image: "/integrated_intel.png"
+                  },
+                  { 
+                    title: "Unified Workflow", 
+                    body: "Stop jumping between five different apps.",
+                    detail: "Manage your clinical labs, track your lifts, and log your meals in one seamless environment.",
+                    image: "/unified_workflow.png"
+                  },
+                  { 
+                    title: "AI-Driven Results", 
+                    body: "Benefit from a system that identifies cross-feature patterns.",
+                    detail: "Get actionable insights that manual tracking across disconnected platforms completely misses.",
+                    image: "/ai_results.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Data Interaction", us: "Cross-Feature Insights", them: "Isolated Silos" },
+                  { label: "App Workflow", us: "One Unified Hub", them: "Juggling 5+ Apps" },
+                  { label: "Personalization", us: "Adapts to Live Biometrics", them: "Static Daily Goals" }
                 ]}
                 faqs={[
-                  { q: "Is the app free?", a: "Core tracking features are available to all members, with advanced AI coaching included in specific treatment plans." },
-                  { q: "Can I use it without a prescription?", a: "Yes, the App Intelligence features can be used independently of our clinical treatment plans." }
+                  { q: "Is the app free?", a: "Core tracking features are available to all members, with advanced AI coaching included in specific clinical treatment plans." },
+                  { q: "Can I use it without a prescription?", a: "Yes, the App Intelligence features can be used independently to track and optimize your baseline, even without a clinical plan." }
                 ]}
               />
             } />
