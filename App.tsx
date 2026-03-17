@@ -265,6 +265,58 @@ const App: React.FC = () => {
                 ]}
               />
             } />
+
+            {/* 6. Sleep Health Landing Page */}
+    <Route path="/app/sleep-health" element={
+      <FeatureLandingPage 
+        h1="A simple path to better sleep"
+        subhead="Frictionless, at-home sleep apnea testing and personalized, non-invasive treatment plans designed for your baseline."
+        directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
+        heroVideo="/sleep_hero.mp4" // Point to your generated hero video
+        topCtaText="Take The First Step"
+        topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+        bottomCtaText="Take The First Step"
+        bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+        sections={[
+          { 
+            title: "Your Easy Process", 
+            body: "The journey to better sleep is straightforward and fully guided, taking you from qualification to treatment with ease.",
+            detail: "Our 5-step journey removes clinical friction: 1. Qualify (via Quiz), 2. Sleep Test, 3. Check Insurance, 4. Oral Appliance, 5. Sleep Better.",
+            image: "/sleep_process.png" // consolidated prompt below
+          },
+          { 
+            title: "The frictionless home test", 
+            body: "Forget cumbersome, expensive, in-lab sleep studies. EmbraceHealth brings the test directly to your door.",
+            detail: "The at-home WatchPAT® ONE test is disposable, accurate, provides results within 24-48 hours, and costs only $259. Experience an 89% correlation with PSG gold standard, all from the comfort of your own bed.",
+            image: "/diagnostics_compare.png" // prompt below
+          },
+          { 
+            title: "A better way to treat sleep apnea", 
+            body: "If CPAP therapy has been a struggle, we offer proven, comfortable CPAP alternatives like personalized oral sleep appliances.",
+            detail: "Our non-invasive therapies deliver improved real-world outcomes: better sleep, reduced blood pressure, and improved cognition. They are comfortable, quiet, portable, and deliver proven 90%+ compliance compared to just 50% for standard CPAP.",
+            image: "/therapy_compare.png" // prompt below
+          },
+          { 
+            title: "Meet Dr. Amit Kumar", 
+            body: "Your Sleep Health journey is guided by an award-winning leader in integrated medicine.",
+            detail: "Recognized as 'Dentist of the Year' by Congressman Danny Davis, Dr. Kumar is dedicated to integrating medicine and dentistry to improve patient health.",
+            image: "/dr_kumar.png" // POINTING TO THE GENERATED IMAGE ABOVE
+          }
+        ]}
+        comparison={[
+          { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
+          { label: "Test Method", us: "At-Home WatchPAT® (98% success rate)", them: "In-Lab Sleep Study ( cumbersome)" },
+          { label: "Therapy Options", us: "Comfortable CPAP Alternatives (Custom Oral Appliances)", them: "Generic CPAP Machines" },
+          { label: "Patient Compliance", us: "Proven 90%+", them: "~50% for CPAP" }
+        ]}
+        faqs={[
+          { q: "Is the home sleep test accurate?", a: "Yes, the WatchPAT® test is FDA-cleared and provides a highly accurate correlation (89%) with the gold standard gold in-lab PSG tests." },
+          { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for your convenience." },
+          { q: "Do I have to wear a large CPAP mask?", a: "No. Our personalized therapies use comfortable oral appliances that are quiet, non-invasive, and require no hoses or straps." }
+        ]}
+      />
+    } />
+
 {/* Catch-all route to prevent blank screens. Sends users home if a link is broken. */}
 <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

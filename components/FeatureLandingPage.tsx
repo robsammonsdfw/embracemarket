@@ -1,3 +1,4 @@
+/* components/FeatureLandingPage.tsx */
 import React from 'react';
 
 interface FAQ {
@@ -9,23 +10,35 @@ interface SectionData {
   title: string;
   body: string;
   detail?: string;
-  image?: string; // Added so you can pass an image filename
-  video?: string; // Added so you can pass a video filename
+  image?: string;
+  video?: string;
+}
+
+interface ComparisonData {
+  label: string;
+  us: string;
+  them: string;
 }
 
 interface LandingPageProps {
   h1: string;
   subhead: string;
   directAnswer: string;
+  heroVideo?: string;
   heroImage?: string;
-  heroVideo?: string; 
+  topCtaText: string;
+  topCtaSubtext: string;
+  bottomCtaText: string;
+  bottomCtaSubtext: string;
   sections: SectionData[];
-  comparison: { label: string; us: string; them: string }[];
+  comparison: ComparisonData[];
   faqs: FAQ[];
 }
 
 const FeatureLandingPage: React.FC<LandingPageProps> = ({ 
-  h1, subhead, directAnswer, heroImage, heroVideo, sections, comparison, faqs 
+  h1, subhead, directAnswer, heroVideo, heroImage,
+  topCtaText, topCtaSubtext, bottomCtaText, bottomCtaSubtext,
+  sections, comparison, faqs 
 }) => {
   return (
     <div className="pt-32 pb-20 bg-[#E6E7E9] min-h-screen font-['Outfit']">
@@ -39,32 +52,29 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           <p className="text-2xl text-[#002534]/60 max-w-3xl font-medium italic mb-10 leading-relaxed">
             {subhead}
           </p>
-          <div className="flex space-x-4">
-            <button className="px-10 py-4 bg-[#002534] text-white font-bold rounded-full hover:bg-black transition-all shadow-lg">
-              Register Now
-            </button>
+          <div className="flex flex-col items-start gap-3">
+             <button className="px-10 py-4 bg-[#002534] text-white font-bold rounded-full hover:bg-black transition-all shadow-lg">
+                {topCtaText}
+             </button>
+             <p className="text-sm text-[#002534]/70 italic pl-2">{topCtaSubtext}</p>
           </div>
         </header>
 
-        {/* --- DYNAMIC HERO MEDIA CONTAINER --- */}
+        {/* --- DYNAMIC MEDIA CONTAINER --- */}
         <div className="mb-20 rounded-[3rem] overflow-hidden shadow-2xl bg-white border border-[#002534]/5 animate-reveal relative aspect-video">
           {heroVideo ? (
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
-              className="w-full h-full object-top"
-            >
+            <video autoPlay muted loop playsInline className="w-full h-full object-cover">
               <source src={heroVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          ) : heroImage ? (
+             <img src={heroImage} alt="Feature Interface" className="w-full h-full object-cover" />
           ) : (
-            <img 
-              src={heroImage} 
-              alt="Feature Interface" 
-              className="w-full h-full object-top" 
-            />
+             <div className="w-full h-full flex items-center justify-center bg-white">
+                <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
+                   Hero Video Placeholder
+                </p>
+             </div>
           )}
         </div>
 
@@ -80,30 +90,21 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
         <div className="space-y-32 mb-32">
           {sections.map((section, idx) => (
             <div key={idx} className={`flex flex-col md:flex-row gap-16 items-center animate-reveal ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              
-              {/* Text Side */}
               <div className="md:w-1/2">
                 <div className="w-16 h-1 bg-[#B87333] mb-8" />
                 <h2 className="text-4xl font-bold text-[#002534] serif mb-6">{section.title}</h2>
                 <p className="text-xl text-[#002534]/70 leading-relaxed mb-6">{section.body}</p>
                 {section.detail && <p className="text-lg text-[#002534]/50 leading-relaxed border-l-2 border-[#002534]/10 pl-6 italic">{section.detail}</p>}
               </div>
-              
-              {/* Media Side (Now accepts your specific images/videos) */}
-              <div className="md:w-1/2 w-full aspect-square bg-white rounded-[2.5rem] shadow-sm border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
-                {section.video ? (
-                  <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-                    <source src={section.video} type="video/mp4" />
-                  </video>
-                ) : section.image ? (
-                  <img src={section.image} alt={section.title} className="w-full h-full object-cover" />
-                ) : (
-                   <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
-                     In-app Screenshot / <br/> Loop Video Placeholder
-                   </p>
-                )}
+              <div className="md:w-1/2 w-full aspect-square bg-white rounded-[2.5rem] shadow-sm border border-[#002534]/5 flex items-center justify-center p-12 overflow-hidden relative">
+                 {section.image ? (
+                    <img src={section.image} alt={section.title} className="w-full h-full object-cover" />
+                 ) : (
+                    <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
+                      Screenshot / Video Placeholder
+                    </p>
+                 )}
               </div>
-
             </div>
           ))}
         </div>
@@ -149,9 +150,12 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
         {/* --- FINAL CONVERSION --- */}
         <div className="text-center py-20 bg-white rounded-[4rem] border border-[#002534]/5 shadow-sm">
           <h3 className="text-4xl font-bold serif text-[#002534] mb-8">Ready to find your baseline?</h3>
-          <button className="px-16 py-6 bg-[#B87333] text-white font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-xl">
-            Signup Now
-          </button>
+          <div className="flex flex-col items-center gap-4">
+             <button className="px-16 py-6 bg-[#B87333] text-white font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-xl">
+                {bottomCtaText}
+             </button>
+             <p className="text-sm text-[#002534]/70 italic">{bottomCtaSubtext}</p>
+          </div>
         </div>
 
       </div>
