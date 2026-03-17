@@ -49,7 +49,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     description: 'Personalized plans to help you get your rest back.',
     imageUrl: '/sleep.png', // Keep asset for now or swap to sleep asset
     shadowUrl: '/sleep-shadow.png',
-    path: 'https://shop.embracehealth.ai/collections/sleep', // Shopify Link
+    path: '/app/sleep-health', // Shopify Link
     hoverBg: 'hover:bg-[#FAF6EE]', 
     prompt: "Sleep support solutions floating, professional branding.",
   },

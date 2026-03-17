@@ -266,17 +266,23 @@ const App: React.FC = () => {
               />
             } />
 
-            {/* 6. Sleep Health Landing Page */}
-    <Route path="/app/sleep-health" element={
+{/* 6. Sleep Health Landing Page */}
+<Route path="/app/sleep-health" element={
       <FeatureLandingPage 
         h1="A simple path to better sleep"
         subhead="Frictionless, at-home sleep apnea testing and personalized, non-invasive treatment plans designed for your baseline."
         directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
-        heroVideo="/sleep_hero.mp4" // Point to your generated hero video
+        heroVideo="/sleep_hero.mp4" 
+        
+        // --- NEW: CTA Data Passed In Here ---
+        ctaLink="https://dummy-quiz-link.com/sleep-test" // Change this when your quiz is ready
         topCtaText="Take The First Step"
         topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+        bottomCtaHeader="Ready to sleep better?"
         bottomCtaText="Take The First Step"
         bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+        // ------------------------------------
+
         sections={[
           { 
             title: "Your Easy Process", 

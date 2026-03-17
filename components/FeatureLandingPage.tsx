@@ -1,4 +1,3 @@
-/* components/FeatureLandingPage.tsx */
 import React from 'react';
 
 interface FAQ {
@@ -26,10 +25,15 @@ interface LandingPageProps {
   directAnswer: string;
   heroVideo?: string;
   heroImage?: string;
-  topCtaText: string;
-  topCtaSubtext: string;
-  bottomCtaText: string;
-  bottomCtaSubtext: string;
+  
+  // NEW: Optional CTA Props
+  topCtaText?: string;
+  topCtaSubtext?: string;
+  bottomCtaHeader?: string;
+  bottomCtaText?: string;
+  bottomCtaSubtext?: string;
+  ctaLink?: string; 
+  
   sections: SectionData[];
   comparison: ComparisonData[];
   faqs: FAQ[];
@@ -37,7 +41,7 @@ interface LandingPageProps {
 
 const FeatureLandingPage: React.FC<LandingPageProps> = ({ 
   h1, subhead, directAnswer, heroVideo, heroImage,
-  topCtaText, topCtaSubtext, bottomCtaText, bottomCtaSubtext,
+  topCtaText, topCtaSubtext, bottomCtaHeader, bottomCtaText, bottomCtaSubtext, ctaLink,
   sections, comparison, faqs 
 }) => {
   return (
@@ -52,12 +56,16 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           <p className="text-2xl text-[#002534]/60 max-w-3xl font-medium italic mb-10 leading-relaxed">
             {subhead}
           </p>
-          <div className="flex flex-col items-start gap-3">
-             <button className="px-10 py-4 bg-[#002534] text-white font-bold rounded-full hover:bg-black transition-all shadow-lg">
-                {topCtaText}
-             </button>
-             <p className="text-sm text-[#002534]/70 italic pl-2">{topCtaSubtext}</p>
-          </div>
+          
+          {/* Dynamic Top CTA Button - Only renders if props are provided */}
+          {topCtaText && ctaLink && (
+            <div className="flex flex-col items-start gap-3">
+               <a href={ctaLink} className="px-10 py-4 bg-[#002534] text-white font-bold rounded-full hover:bg-black transition-all shadow-lg inline-block text-center">
+                  {topCtaText}
+               </a>
+               {topCtaSubtext && <p className="text-sm text-[#002534]/70 italic pl-2">{topCtaSubtext}</p>}
+            </div>
+          )}
         </header>
 
         {/* --- DYNAMIC MEDIA CONTAINER --- */}
@@ -65,14 +73,13 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           {heroVideo ? (
             <video autoPlay muted loop playsInline className="w-full h-full object-cover">
               <source src={heroVideo} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
           ) : heroImage ? (
              <img src={heroImage} alt="Feature Interface" className="w-full h-full object-cover" />
           ) : (
              <div className="w-full h-full flex items-center justify-center bg-white">
                 <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
-                   Hero Video Placeholder
+                   Hero Media Placeholder
                 </p>
              </div>
           )}
@@ -135,7 +142,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
         </div>
 
         {/* --- FAQ SECTION --- */}
-        <div className="max-w-3xl mb-32">
+        <div className="max-w-3xl mb-20">
           <h2 className="text-4xl font-bold text-[#002534] serif mb-12">Common Questions</h2>
           <div className="space-y-12">
             {faqs.map((faq, idx) => (
@@ -147,16 +154,18 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </div>
         </div>
 
-        {/* --- FINAL CONVERSION --- */}
-        <div className="text-center py-20 bg-white rounded-[4rem] border border-[#002534]/5 shadow-sm">
-          <h3 className="text-4xl font-bold serif text-[#002534] mb-8">Ready to find your baseline?</h3>
-          <div className="flex flex-col items-center gap-4">
-             <button className="px-16 py-6 bg-[#B87333] text-white font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-xl">
-                {bottomCtaText}
-             </button>
-             <p className="text-sm text-[#002534]/70 italic">{bottomCtaSubtext}</p>
+        {/* --- DYNAMIC FINAL CONVERSION --- Only renders if props are provided */}
+        {bottomCtaText && ctaLink && (
+          <div className="text-center py-20 bg-white rounded-[4rem] border border-[#002534]/5 shadow-sm mb-20">
+            {bottomCtaHeader && <h3 className="text-4xl font-bold serif text-[#002534] mb-8">{bottomCtaHeader}</h3>}
+            <div className="flex flex-col items-center gap-4">
+               <a href={ctaLink} className="px-16 py-6 bg-[#B87333] text-white font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-xl inline-block">
+                  {bottomCtaText}
+               </a>
+               {bottomCtaSubtext && <p className="text-sm text-[#002534]/70 italic max-w-md mx-auto">{bottomCtaSubtext}</p>}
+            </div>
           </div>
-        </div>
+        )}
 
       </div>
     </div>
