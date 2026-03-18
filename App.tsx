@@ -345,7 +345,63 @@ processFlow={{
         ]}
       />
     } />
+{/* 7. The Science of GLP-1 Article */}
+<Route path="/article/science-of-glp1" element={
+              <FeatureLandingPage 
+                h1="The Science of GLP-1"
+                subhead="How modern medicine is changing weight loss."
+                directAnswer="GLP-1 receptor agonists are not stimulants or crash diets. They are clinically proven biological tools that mimic naturally occurring hormones to regulate appetite, slow gastric emptying, and improve metabolic function—addressing the physiological root causes of weight retention."
+                heroVideo="/glp1_hero.mp4" 
+                
+                topCtaText="Consult a Physician"
+                topCtaSubtext="See if a GLP-1 treatment plan is clinically appropriate for your baseline."
+                bottomCtaHeader="Ready to address your metabolic health?"
+                bottomCtaText="Start Your Evaluation"
+                bottomCtaSubtext="Complete your secure intake form to begin."
+                ctaLink="/app/weight-loss-quiz" // Update this to your actual intake flow
 
+                sections={[
+                  { 
+                    title: "The Biology of Fullness", 
+                    body: "GLP-1 (Glucagon-like peptide-1) is a hormone naturally produced in your intestines after you eat. It communicates directly with the appetite centers in your brain to signal satiety.",
+                    detail: "Medications like Semaglutide and Tirzepatide mimic this natural hormone. They keep you fuller for longer and drastically reduce the psychological 'food noise' that often derails traditional diet attempts.",
+                    image: "/glp1_biology.png"
+                  },
+                  { 
+                    title: "Beyond Calorie Counting", 
+                    body: "For decades, weight loss was treated strictly as a willpower issue. Modern endocrinology reveals it is largely a metabolic and hormonal condition.",
+                    detail: "By addressing biological resistance to weight loss and stabilizing insulin responses, these treatments allow your body to process energy efficiently instead of aggressively storing it as fat.",
+                    image: "/metabolic_baseline.png"
+                  },
+                  { 
+                    title: "Proven Clinical Efficacy", 
+                    body: "The peer-reviewed data represents a paradigm shift in obesity medicine, demonstrating weight loss percentages historically only seen with bariatric surgery.",
+                    detail: "In landmark, double-blind clinical trials, patients using high-dose once-weekly Semaglutide lost an average of 14.9% of their body weight, while those on Tirzepatide saw sustained reductions of up to 20.9%.",
+                    image: "/clinical_efficacy.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Mechanism of Action", us: "Biological Hormone Regulation", them: "Metabolism Stimulants / Caffeine" },
+                  { label: "Appetite Control", us: "Eliminates 'Food Noise' via the Brain", them: "Relies on Pure Willpower" },
+                  { label: "Clinical Weight Loss", us: "15% - 20% Average Reduction", them: "3% - 5% Average Reduction" },
+                  { label: "Metabolic Impact", us: "Improves Insulin Sensitivity", them: "Temporary Water/Muscle Loss" }
+                ]}
+                faqs={[
+                  { 
+                    q: "Are these treatments safe?", 
+                    a: "Yes. GLP-1 medications are FDA-approved for weight management in adults with obesity or overweight with weight-related conditions. The most common side effects are transient gastrointestinal issues (like mild nausea) which typically subside as your body adjusts to the medication." 
+                  },
+                  { 
+                    q: "Do I have to take it forever?", 
+                    a: "Obesity is widely recognized by the medical community as a chronic metabolic disease. While some patients successfully taper off by utilizing the physical and nutritional intelligence tools in the EmbraceHealth app to maintain their new baseline, others may require long-term maintenance dosing to prevent weight regain." 
+                  },
+                  { 
+                    q: "Clinical References & Citations", 
+                    a: "1. Wilding, J. P. H., et al. (2021). 'Once-Weekly Semaglutide in Adults with Overweight or Obesity.' The New England Journal of Medicine, 384, 989-1002. | 2. Jastreboff, A. M., et al. (2022). 'Tirzepatide Once Weekly for the Treatment of Obesity.' The New England Journal of Medicine, 387, 205-216." 
+                  }
+                ]}
+              />
+            } />
 {/* Catch-all route to prevent blank screens. Sends users home if a link is broken. */}
 <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
