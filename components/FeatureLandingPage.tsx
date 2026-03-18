@@ -19,10 +19,11 @@ interface ComparisonData {
   them: string;
 }
 
-// NEW: Interface for your cohesive 3-step process
+// NEW: Added the optional 'image' property to accept your icon files
 interface ProcessStep {
   title: string;
   bullets: string[];
+  image?: string; 
 }
 
 interface LandingPageProps {
@@ -39,7 +40,6 @@ interface LandingPageProps {
   bottomCtaSubtext?: string;
   ctaLink?: string; 
   
-  // NEW: Optional cohesive process flow
   processFlow?: {
     heading: string;
     subheading?: string;
@@ -104,7 +104,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </p>
         </div>
 
-        {/* --- NEW: CONNECTED PROCESS FLOW (The 3 Steps) --- */}
+        {/* --- CONNECTED PROCESS FLOW --- */}
         {processFlow && (
           <div className="mb-32 bg-white rounded-[3rem] p-12 shadow-sm border border-[#002534]/5 animate-reveal">
             <div className="text-center mb-16">
@@ -113,18 +113,24 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
             </div>
             
             <div className="relative">
-              {/* The Connecting Line (Hidden on mobile, visible on desktop) */}
-              <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-1 bg-[#E6E7E9] z-0">
+              {/* Adjusted the connecting line to align perfectly with the middle of the new, larger icon containers */}
+              <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-[#E6E7E9] z-0">
                  <div className="h-full bg-[#00B6A0] w-full origin-left scale-x-100 transition-transform duration-1000"></div>
               </div>
 
               <div className="grid md:grid-cols-3 gap-12 relative z-10">
                 {processFlow.steps.map((step, idx) => (
                   <div key={idx} className="flex flex-col items-center">
-                    {/* The Step Number Badge */}
-                    <div className="w-16 h-16 rounded-full bg-[#002534] text-white flex items-center justify-center text-2xl font-bold border-4 border-white shadow-lg mb-8">
-                      {idx + 1}
+                    
+                    {/* The Image/Number Container */}
+                    <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center border-4 border-[#00B6A0] shadow-lg mb-8 relative z-10 overflow-hidden p-4">
+                      {step.image ? (
+                        <img src={step.image} alt={step.title} className="w-full h-full object-contain" />
+                      ) : (
+                        <span className="text-3xl font-bold text-[#002534]">{idx + 1}</span>
+                      )}
                     </div>
+
                     {/* The Content */}
                     <h3 className="text-2xl font-bold text-[#F26422] mb-6 text-center">{step.title}</h3>
                     <ul className="space-y-4 w-full">
@@ -165,9 +171,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           ))}
         </div>
 
-        {/* --- THE COMPETITIVE EDGE & FAQS & FOOTER CTA REMAIN EXACTLY THE SAME --- */}
-        {/* ... (Keep the rest of your FeatureLandingPage code exactly the same from here down) ... */}
-        
+        {/* --- THE COMPETITIVE EDGE (Comparison Chart) --- */}
         <div className="bg-[#002534] rounded-[3rem] p-12 md:p-20 text-white mb-32">
           <h2 className="text-4xl md:text-5xl font-bold serif mb-12 text-center">Why this is different</h2>
           <div className="overflow-x-auto">
@@ -192,6 +196,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </div>
         </div>
 
+        {/* --- FAQ SECTION --- */}
         <div className="max-w-3xl mb-20">
           <h2 className="text-4xl font-bold text-[#002534] serif mb-12">Common Questions</h2>
           <div className="space-y-12">
@@ -204,6 +209,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </div>
         </div>
 
+        {/* --- DYNAMIC FINAL CONVERSION --- */}
         {bottomCtaText && ctaLink && (
           <div className="text-center py-20 bg-white rounded-[4rem] border border-[#002534]/5 shadow-sm mb-20">
             {bottomCtaHeader && <h3 className="text-4xl font-bold serif text-[#002534] mb-8">{bottomCtaHeader}</h3>}
@@ -215,6 +221,7 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
             </div>
           </div>
         )}
+
       </div>
     </div>
   );

@@ -281,46 +281,43 @@ const App: React.FC = () => {
         bottomCtaText="Take The First Step"
         bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
 
-        // --- NEW: THE CONNECTED 3-STEP PROCESS ---
-        processFlow={{
-          heading: "A simple, transparent process",
-          subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
-          steps: [
-            {
-              title: "Start Your Journey",
-              bullets: [
-                "Select Your Treatment Focus",
-                "Choose Your Medication",
-                "Checkout & Complete Your Health Questionnaire"
-              ]
-            },
-            {
-              title: "Doctor Review",
-              bullets: [
-                "A licensed US physician reviews your information.",
-                "Physician will determine what is medically appropriate for you.",
-                "Your prescription is sent to our pharmacy."
-              ]
-            },
-            {
-              title: "Discrete Delivery",
-              bullets: [
-                "Shipping is included.",
-                "Discreet packaging is used.",
-                "Delivered to your doorstep."
-              ]
-            }
-          ]
-        }}
-        // ------------------------------------------
+// --- THE CONNECTED 3-STEP PROCESS ---
+processFlow={{
+  heading: "A simple, transparent process",
+  subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
+  steps: [
+    {
+      title: "Start Your Journey",
+      image: "/step1_phone.png", // <--- ADD THIS
+      bullets: [
+        "Select Your Treatment Focus",
+        "Choose Your Medication",
+        "Checkout & Complete Your Health Questionnaire"
+      ]
+    },
+    {
+      title: "Doctor Review",
+      image: "/step2_rx.png", // <--- ADD THIS
+      bullets: [
+        "A licensed US physician reviews your information.",
+        "Physician will determine what is medically appropriate for you.",
+        "Your prescription is sent to our pharmacy."
+      ]
+    },
+    {
+      title: "Discrete Delivery",
+      image: "/step3_box.png", // <--- ADD THIS
+      bullets: [
+        "Shipping is included.",
+        "Discreet packaging is used.",
+        "Delivered to your doorstep."
+      ]
+    }
+  ]
+}}
 
         sections={[
-          { 
-            title: "Your Easy Process", 
-            body: "The journey to better sleep is straightforward and fully guided, taking you from qualification to treatment with ease.",
-            detail: "Our 5-step journey removes clinical friction: 1. Qualify (via Quiz), 2. Sleep Test, 3. Check Insurance, 4. Oral Appliance, 5. Sleep Better.",
-            image: "/sleep_process.png" // consolidated prompt below
-          },
+
           { 
             title: "The frictionless home test", 
             body: "Forget cumbersome, expensive, in-lab sleep studies. EmbraceHealth brings the test directly to your door.",
