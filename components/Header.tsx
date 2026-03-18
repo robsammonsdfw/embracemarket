@@ -82,11 +82,15 @@ const Header: React.FC = () => {
           {/* Middle Section: Visual Cards */}
           <div className="flex-1 px-12 flex space-x-8">
             <div className="flex-1 group cursor-pointer">
+           {/* Changed from a <div> to an <a> tag and added the href path */}
+           <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
               <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
+                {/* Note: Don't forget to swap this placeholder image with your actual generated image later! */}
                 <img src="https://picsum.photos/seed/glp1/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="GLP-1 Science" />
               </div>
               <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
               <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
+            </a>
             </div>
 
             <div className="flex-1 group cursor-pointer">
