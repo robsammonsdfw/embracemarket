@@ -19,6 +19,12 @@ interface ComparisonData {
   them: string;
 }
 
+// NEW: Interface for your cohesive 3-step process
+interface ProcessStep {
+  title: string;
+  bullets: string[];
+}
+
 interface LandingPageProps {
   h1: string;
   subhead: string;
@@ -26,7 +32,6 @@ interface LandingPageProps {
   heroVideo?: string;
   heroImage?: string;
   
-  // NEW: Optional CTA Props
   topCtaText?: string;
   topCtaSubtext?: string;
   bottomCtaHeader?: string;
@@ -34,6 +39,13 @@ interface LandingPageProps {
   bottomCtaSubtext?: string;
   ctaLink?: string; 
   
+  // NEW: Optional cohesive process flow
+  processFlow?: {
+    heading: string;
+    subheading?: string;
+    steps: ProcessStep[];
+  };
+
   sections: SectionData[];
   comparison: ComparisonData[];
   faqs: FAQ[];
@@ -42,7 +54,7 @@ interface LandingPageProps {
 const FeatureLandingPage: React.FC<LandingPageProps> = ({ 
   h1, subhead, directAnswer, heroVideo, heroImage,
   topCtaText, topCtaSubtext, bottomCtaHeader, bottomCtaText, bottomCtaSubtext, ctaLink,
-  sections, comparison, faqs 
+  processFlow, sections, comparison, faqs 
 }) => {
   return (
     <div className="pt-32 pb-20 bg-[#E6E7E9] min-h-screen font-['Outfit']">
@@ -57,7 +69,6 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
             {subhead}
           </p>
           
-          {/* Dynamic Top CTA Button - Only renders if props are provided */}
           {topCtaText && ctaLink && (
             <div className="flex flex-col items-start gap-3">
                <a href={ctaLink} className="px-10 py-4 bg-[#002534] text-white font-bold rounded-full hover:bg-black transition-all shadow-lg inline-block text-center">
@@ -93,6 +104,44 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </p>
         </div>
 
+        {/* --- NEW: CONNECTED PROCESS FLOW (The 3 Steps) --- */}
+        {processFlow && (
+          <div className="mb-32 bg-white rounded-[3rem] p-12 shadow-sm border border-[#002534]/5 animate-reveal">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-[#002534] serif mb-4">{processFlow.heading}</h2>
+              {processFlow.subheading && <p className="text-xl text-[#002534]/60">{processFlow.subheading}</p>}
+            </div>
+            
+            <div className="relative">
+              {/* The Connecting Line (Hidden on mobile, visible on desktop) */}
+              <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-1 bg-[#E6E7E9] z-0">
+                 <div className="h-full bg-[#00B6A0] w-full origin-left scale-x-100 transition-transform duration-1000"></div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-12 relative z-10">
+                {processFlow.steps.map((step, idx) => (
+                  <div key={idx} className="flex flex-col items-center">
+                    {/* The Step Number Badge */}
+                    <div className="w-16 h-16 rounded-full bg-[#002534] text-white flex items-center justify-center text-2xl font-bold border-4 border-white shadow-lg mb-8">
+                      {idx + 1}
+                    </div>
+                    {/* The Content */}
+                    <h3 className="text-2xl font-bold text-[#F26422] mb-6 text-center">{step.title}</h3>
+                    <ul className="space-y-4 w-full">
+                      {step.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx} className="flex items-start text-[#002534]/80 font-medium">
+                          <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                          <span className="leading-relaxed">{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* --- DETAILED CONTENT SECTIONS --- */}
         <div className="space-y-32 mb-32">
           {sections.map((section, idx) => (
@@ -116,7 +165,9 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           ))}
         </div>
 
-        {/* --- THE COMPETITIVE EDGE (Comparison Chart) --- */}
+        {/* --- THE COMPETITIVE EDGE & FAQS & FOOTER CTA REMAIN EXACTLY THE SAME --- */}
+        {/* ... (Keep the rest of your FeatureLandingPage code exactly the same from here down) ... */}
+        
         <div className="bg-[#002534] rounded-[3rem] p-12 md:p-20 text-white mb-32">
           <h2 className="text-4xl md:text-5xl font-bold serif mb-12 text-center">Why this is different</h2>
           <div className="overflow-x-auto">
@@ -141,7 +192,6 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </div>
         </div>
 
-        {/* --- FAQ SECTION --- */}
         <div className="max-w-3xl mb-20">
           <h2 className="text-4xl font-bold text-[#002534] serif mb-12">Common Questions</h2>
           <div className="space-y-12">
@@ -154,7 +204,6 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
           </div>
         </div>
 
-        {/* --- DYNAMIC FINAL CONVERSION --- Only renders if props are provided */}
         {bottomCtaText && ctaLink && (
           <div className="text-center py-20 bg-white rounded-[4rem] border border-[#002534]/5 shadow-sm mb-20">
             {bottomCtaHeader && <h3 className="text-4xl font-bold serif text-[#002534] mb-8">{bottomCtaHeader}</h3>}
@@ -166,7 +215,6 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
             </div>
           </div>
         )}
-
       </div>
     </div>
   );

@@ -274,14 +274,45 @@ const App: React.FC = () => {
         directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
         heroVideo="/sleep_hero.mp4" 
         
-        // --- NEW: CTA Data Passed In Here ---
-        ctaLink="https://dummy-quiz-link.com/sleep-test" // Change this when your quiz is ready
+        ctaLink="https://dummy-quiz-link.com/sleep-test" 
         topCtaText="Take The First Step"
         topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
         bottomCtaHeader="Ready to sleep better?"
         bottomCtaText="Take The First Step"
         bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
-        // ------------------------------------
+
+        // --- NEW: THE CONNECTED 3-STEP PROCESS ---
+        processFlow={{
+          heading: "A simple, transparent process",
+          subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
+          steps: [
+            {
+              title: "Start Your Journey",
+              bullets: [
+                "Select Your Treatment Focus",
+                "Choose Your Medication",
+                "Checkout & Complete Your Health Questionnaire"
+              ]
+            },
+            {
+              title: "Doctor Review",
+              bullets: [
+                "A licensed US physician reviews your information.",
+                "Physician will determine what is medically appropriate for you.",
+                "Your prescription is sent to our pharmacy."
+              ]
+            },
+            {
+              title: "Discrete Delivery",
+              bullets: [
+                "Shipping is included.",
+                "Discreet packaging is used.",
+                "Delivered to your doorstep."
+              ]
+            }
+          ]
+        }}
+        // ------------------------------------------
 
         sections={[
           { 
@@ -302,12 +333,7 @@ const App: React.FC = () => {
             detail: "Our non-invasive therapies deliver improved real-world outcomes: better sleep, reduced blood pressure, and improved cognition. They are comfortable, quiet, portable, and deliver proven 90%+ compliance compared to just 50% for standard CPAP.",
             image: "/therapy_compare.png" // prompt below
           },
-          { 
-            title: "Meet Dr. Amit Kumar", 
-            body: "Your Sleep Health journey is guided by an award-winning leader in integrated medicine.",
-            detail: "Recognized as 'Dentist of the Year' by Congressman Danny Davis, Dr. Kumar is dedicated to integrating medicine and dentistry to improve patient health.",
-            image: "/dr_kumar.png" // POINTING TO THE GENERATED IMAGE ABOVE
-          }
+
         ]}
         comparison={[
           { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
