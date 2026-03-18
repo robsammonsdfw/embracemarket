@@ -8,16 +8,16 @@ const Header: React.FC = () => {
     { name: 'Lose Weight', path: `${SHOPIFY_BASE}/collections/weight-loss` },
     { name: 'Have Better Sex', path: `${SHOPIFY_BASE}/collections/erectile-dysfunction` },
     { name: 'Regrow Hair', path: `${SHOPIFY_BASE}/collections/hair-loss` },
-    { name: 'Sleep Health', path: `${SHOPIFY_BASE}/collections/sleep` },
+    { name: 'Sleep Health', path: `/app/sleep-health` },
     { name: 'Labs & DNA', path: `${SHOPIFY_BASE}/pages/dna-test-kits` },
   ];
 
   const EXPLORE_FEATURES = [
-    { name: 'Physical Intelligence', path: '#' },
-    { name: 'Nutrition & Kitchen Intelligence', path: '#' },
-    { name: 'Mental Health', path: '#' },
-    { name: 'Progress Tracking', path: '#' },
-    { name: 'Browse All App Features', path: '#' },
+    { name: 'Physical Intelligence',path: "/app/physical-intelligence" },
+    { name: 'Nutrition & Kitchen Intelligence', path: "/app/nutrition-kitchen" },
+    { name: 'Mental Health', path: "/app/mental-health" },
+    { name: 'Progress Tracking', path: "/app/progress-tracking" },
+    { name: 'Browse All App Features', path: "/app/features" },
   ];
 
   return (
