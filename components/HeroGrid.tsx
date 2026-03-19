@@ -47,12 +47,18 @@ const HeroGrid: React.FC = () => {
              </div>
 
              {/* Immediate Comprehension Image Placeholder inside the 2/3 block */}
-             <div className="md:w-2/5 h-full w-full min-h-[250px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
-                <img 
-                  src="/hero_comprehension.png" 
-                  alt="App Ecosystem" 
-                  className="w-full h-full object-cover mix-blend-multiply"
-                />
+{/* Immediate Comprehension Video inside the 2/3 block */}
+<div className="md:w-2/5 h-full w-full min-h-[250px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-full object-cover"
+                >
+                  {/* Note: Ensure the video file is placed in your public folder */}
+                  <source src="/phone_video.mp4" type="video/mp4" />
+                </video>
              </div>
           </div>
 
