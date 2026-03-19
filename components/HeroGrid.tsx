@@ -147,33 +147,38 @@ const HeroGrid: React.FC = () => {
           ))}
         </div>
 
-        {/* --- BOTTOM 5 WIDGETS (Secondary - Compact App Preview) --- */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+{/* --- BOTTOM 5 WIDGETS (Now upgraded to match the Top 5 size and animation) --- */}
+        {/* Updated grid gap and columns to match the top row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {MINOR_TREATMENTS.map((item, idx) => (
             <a
               key={item.id}
               href={item.path}
-              className="group relative overflow-hidden bg-white rounded-[2rem] min-h-[150px] card-shadow-hover transition-all duration-500 hover:scale-[1.02] opacity-0 animate-reveal flex flex-col"
+              // Applied the exact same card sizing, padding, and easing transitions as the top 5
+              className="group relative overflow-hidden p-10 rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal hover:bg-gray-50/80"
               style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
             >
-              <div className="p-4 relative z-20 bg-white/90 backdrop-blur-sm border-b border-gray-50">
-                <div className="flex justify-between items-center">
-                  <span className="font-bold text-[#002534] text-[9px] uppercase tracking-widest leading-tight">
-                    {item.title}
-                  </span>
-                  <div className="text-[#002534]/30 transition-all duration-500 group-hover:text-[#F26422] group-hover:translate-x-1">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
+              {/* Header section matching the top cards */}
+              <div className="flex justify-between items-start mb-4 relative z-20">
+                <h3 className="text-xl md:text-2xl font-bold leading-[1.1] serif text-[#002534] pr-4">
+                  {item.title}
+                </h3>
+                <div className="text-[#002534]/30 transition-transform duration-700 group-hover:rotate-45 group-hover:text-[#F26422] flex-shrink-0">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
                     </svg>
-                  </div>
                 </div>
               </div>
 
-              <div className="flex-grow flex items-center justify-center px-4 pb-4 bg-gray-50/50">
+              {/* Product Image Layer matching the top animations */}
+              <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
                 <img 
                   src={item.imageUrl} 
                   alt={item.title} 
-                  className="w-auto h-auto max-w-[120px] max-h-[88px] object-contain shadow-sm rounded-lg transition-transform duration-700 ease-out group-hover:scale-110"
+                  // Exact same lift-and-scale animation as the top cards. 
+                  // Added drop-shadow-2xl to compensate for the lack of a shadowUrl in the data.
+                  className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl"
                 />
               </div>
             </a>
