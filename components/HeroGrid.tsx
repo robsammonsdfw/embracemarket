@@ -1,50 +1,92 @@
-/* robsammonsdfw/embracemarket/embracemarket-03c72df43bf88efdbcd5bec56b84cde56511c93a/components/HeroGrid.tsx */
-
 import React from 'react';
 import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   return (
-    <section className="pt-24 pb-24 px-6 md:px-12 bg-[#E6E7E9]">
+    {/* 1. Reduced the top/bottom padding to tighten the white space */}
+    <section className="pt-32 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
-        {/* Header Section: Original 50/50 Split and Font Size */}
-        <div className="flex flex-col lg:flex-row justify-between items-center mb-20 gap-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
-          <div className="lg:w-1/2">
-            <h1 className="text-5xl md:text-[5.5rem] font-bold text-[#002534] serif tracking-tighter leading-none">
-              personalized to you
-            </h1>
-            <p className="text-[#002534]/40 text-2xl font-medium tracking-tight mt-4">
-              Customized care starts here
-            </p>
+        {/* --- REBUILT HERO SECTION: 2/3 and 1/3 Split --- */}
+        <div className="flex flex-col lg:flex-row gap-6 mb-12 opacity-0 animate-reveal" style={{ animationDelay: '0.1s' }}>
+          
+          {/* LEFT 2/3 COLUMN: Immediate Comprehension & Conversion */}
+          <div className="lg:w-2/3 bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col md:flex-row gap-8 items-center relative overflow-hidden">
+             
+             {/* Text Content */}
+             <div className="md:w-3/5 relative z-10">
+                <h1 className="text-4xl md:text-5xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-4">
+                  One app to see your body, understand your food, and take action.
+                </h1>
+                
+                {/* 3 Dense Bullets for immediate comprehension */}
+                <ul className="mb-8 space-y-3 mt-6">
+                  <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong className="font-bold">Know what's working:</strong> 3D body scans you can actually see.</span>
+                  </li>
+                  <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong className="font-bold">Make food simpler:</strong> Photo-based food logging & meal plans.</span>
+                  </li>
+                  <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong className="font-bold">Turn insight into action:</strong> Connect to our telemedicine shop.</span>
+                  </li>
+                </ul>
+
+                <div className="flex items-center gap-4">
+                  <a href="https://app.embracehealth.ai" className="px-8 py-3.5 bg-[#002534] text-white font-bold rounded-full shadow-lg hover:bg-black transition-all text-sm">
+                    Get the App
+                  </a>
+                  <p className="text-[9px] text-[#002534]/40 max-w-[180px] leading-tight">
+                    *Care is provided by licensed clinicians when telemedicine is applicable.
+                  </p>
+                </div>
+             </div>
+
+             {/* Immediate Comprehension Image Placeholder inside the 2/3 block */}
+             <div className="md:w-2/5 h-full w-full min-h-[250px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
+                <img 
+                  src="/hero_comprehension.png" // Point to your new image
+                  alt="App Ecosystem" 
+                  className="w-full h-full object-cover mix-blend-multiply"
+                />
+                {!true && <span className="text-[10px] uppercase tracking-widest font-bold opacity-20">App Visual</span>}
+             </div>
           </div>
 
-          <div className="lg:w-1/2 w-full">
-            <p className="text-xl md:text-2xl font-bold text-[#002534] serif text-center mb-6">
-              Are you here as
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <a 
-                href="#" 
-                className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
-                style={{ backgroundColor: COLORS.brandTeal }}
-              >
-                <span className="text-white text-xl md:text-2xl font-bold serif leading-tight">Coaches</span>
-                <span className="text-white/70 text-[10px] font-black uppercase tracking-widest mt-1 group-hover:text-white transition-colors">
-                  Click here
-                </span>
-              </a>
+          {/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
+          <div className="lg:w-1/3 flex flex-col justify-center">
+            <div className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center">
+              <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight">
+                Are you here as
+              </p>
+              
+              {/* Stacked vertically to crowd the space and fit the 1/3 width */}
+              <div className="flex flex-col gap-4">
+                <a 
+                  href="#coaches" 
+                  className="group p-5 rounded-[1.5rem] transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col items-center justify-center text-center"
+                  style={{ backgroundColor: COLORS.brandTeal }}
+                >
+                  <span className="text-white text-xl font-bold serif leading-tight">Coaches</span>
+                  <span className="text-white/70 text-[10px] font-black uppercase tracking-widest mt-1 group-hover:text-white transition-colors">
+                    Click here
+                  </span>
+                </a>
 
-              <a 
-                href="#" 
-                className="group p-6 rounded-3xl transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col justify-center"
-                style={{ backgroundColor: COLORS.brandOrange }}
-              >
-                <span className="text-white text-xl md:text-2xl font-bold serif leading-tight">Employers/Brokers</span>
-                <span className="text-white/70 text-[10px] font-black uppercase tracking-widest mt-1 group-hover:text-white transition-colors">
-                  Click here
-                </span>
-              </a>
+                <a 
+                  href="#brokers" 
+                  className="group p-5 rounded-[1.5rem] transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col items-center justify-center text-center"
+                  style={{ backgroundColor: COLORS.brandOrange }}
+                >
+                  <span className="text-white text-xl font-bold serif leading-tight">Employers/Brokers</span>
+                  <span className="text-white/70 text-[10px] font-black uppercase tracking-widest mt-1 group-hover:text-white transition-colors">
+                    Click here
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
