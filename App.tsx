@@ -402,6 +402,53 @@ processFlow={{
                 ]}
               />
             } />
+
+            {/* 8. About Us */}
+            <Route path="/about" element={
+              <FeatureLandingPage 
+                h1="Redefining healthcare"
+                subhead="Personalized, affordable, and science-backed solutions designed to fit your needs."
+                directAnswer="Welcome to EmbraceHealth.ai, where science meets simplicity. Our mission is to empower individuals with accessible, science-backed health solutions that foster confidence, improve well-being, and create lasting change."
+                heroVideo="/about_hero.mp4" 
+                
+                topCtaText="Explore Treatments"
+                ctaLink="https://shop.embracehealth.ai" 
+                bottomCtaHeader="Ready to redefine your health journey?"
+                bottomCtaText="Visit the Telemedicine Shop"
+                bottomCtaSubtext="Explore our science-backed treatment options."
+
+                sections={[
+                  { 
+                    title: "About Us", 
+                    body: "We tailor every step to your unique biology and health goals.",
+                    detail: "Welcome to Embrace Health.ai, where science meets simplicity to transform your health journey. At our core, we are dedicated to increasing access to care, offering solutions that are affordable, transparent, and supported by the latest advancements in science. Whether you're striving to lose weight, improve nutrition, address hair loss, or enhance men’s health, we’re here with a personalized approach designed to fit your needs.",
+                    image: "/about_personalized.png"
+                  },
+                  { 
+                    title: "Our Mission", 
+                    body: "Our solutions are rooted in proven clinical research and advanced technology.",
+                    detail: "To empower individuals with accessible, science-backed health solutions that foster confidence, improve well-being, and create lasting change.",
+                    image: "/about_science.png"
+                  },
+                  { 
+                    title: "Convenience & Support", 
+                    body: "All-in-one health support through a single, empathetic ecosystem.",
+                    detail: "Access everything through our app and website, enjoy discreet home delivery of medications, and receive expert support from our dedicated clinical partners.",
+                    image: "/about_support.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Pricing", us: "Upfront & Cost Transparent", them: "Hidden Fees & Surprises" },
+                  { label: "Approach", us: "Personalized to your Biology", them: "One-Size-Fits-All" },
+                  { label: "Technology", us: "3D AI & DNA Integration", them: "Standard Symptom Guesswork" },
+                  { label: "Delivery", us: "All-in-One App + Home Delivery", them: "Disjointed Clinics & Pharmacies" }
+                ]}
+                faqs={[
+                  { q: "What is your core mission?", a: "To empower individuals with accessible, science-backed health solutions that foster confidence, improve well-being, and create lasting change." },
+                  { q: "What makes EmbraceHealth different?", a: "We combine cutting-edge science (like DNA testing and 3D body mapping) with absolute cost transparency and expert medical empathy, ensuring your path to better health is clear, affordable, and fully supported." }
+                ]}
+              />
+            } />
 {/* Catch-all route to prevent blank screens. Sends users home if a link is broken. */}
 <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

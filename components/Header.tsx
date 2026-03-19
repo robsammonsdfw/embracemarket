@@ -5,11 +5,9 @@ const Header: React.FC = () => {
   const SHOPIFY_BASE = "https://shop.embracehealth.ai";
 
   const TOP_NAV = [
-    { name: 'Lose Weight', path: `${SHOPIFY_BASE}/collections/weight-loss` },
-    { name: 'Have Better Sex', path: `${SHOPIFY_BASE}/collections/erectile-dysfunction` },
-    { name: 'Regrow Hair', path: `${SHOPIFY_BASE}/collections/hair-loss` },
-    { name: 'Sleep Health', path: `/app/sleep-health` },
-    { name: 'Labs & DNA', path: `${SHOPIFY_BASE}/pages/dna-test-kits` },
+    { name: 'The Embrace Ecosystem', path: 'https://app.embracehealth.ai' },
+    { name: 'Telemedicine Shop', path: 'https://shop.embracehealth.ai' },
+    { name: 'About Us', path: '/about' },
   ];
 
   const EXPLORE_FEATURES = [
