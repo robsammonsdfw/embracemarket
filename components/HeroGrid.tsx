@@ -1,5 +1,3 @@
-/* robsammonsdfw/embracemarket/embracemarket-03c72df43bf88efdbcd5bec56b84cde56511c93a/components/HeroGrid.tsx */
-
 import React from 'react';
 import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
@@ -46,9 +44,8 @@ const HeroGrid: React.FC = () => {
                 </div>
              </div>
 
-             {/* Immediate Comprehension Image Placeholder inside the 2/3 block */}
-{/* Immediate Comprehension Video inside the 2/3 block */}
-<div className="md:w-2/5 h-full w-full min-h-[250px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
+             {/* Immediate Comprehension Video inside the 2/3 block */}
+             <div className="md:w-2/5 h-full w-full min-h-[250px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
                 <video 
                   autoPlay 
                   loop 
@@ -56,34 +53,27 @@ const HeroGrid: React.FC = () => {
                   playsInline 
                   className="w-full h-full object-cover"
                 >
-                  {/* Note: Ensure the video file is placed in your public folder */}
-                  <source src="/phone_video.mp4" type="video/mp4" />
+                  <source src="/phone video.mp4" type="video/mp4" />
                 </video>
              </div>
           </div>
 
           {/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
-{/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
-<div className="lg:w-1/3 flex flex-col justify-center">
-            {/* UPDATED DIV: Added relative, overflow-hidden, and inline style for background image */}
+          <div className="lg:w-1/3 flex flex-col justify-center">
             <div 
               className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center relative overflow-hidden"
               style={{
-                backgroundImage: 'url(/wmimg.png)', // Point to your generated image
-                backgroundSize: '300px', // Adjust this size to control how dense the pattern looks
+                backgroundImage: 'url(/pro_watermark.png)', 
+                backgroundSize: '300px', 
                 backgroundPosition: 'center',
-                backgroundRepeat: 'repeat', // Makes it act like a true dense pattern/watermark
+                backgroundRepeat: 'repeat', 
               }}
             >
-              {/* Optional: A very high-opacity white overlay in case the image is too dark, just to be safe */}
               <div className="absolute inset-0 bg-white/95 z-0" />
-
-              {/* Added relative z-10 to text */}
               <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight relative z-10">
                 Are you here as
               </p>
               
-              {/* Added relative z-10 to buttons container */}
               <div className="flex flex-col gap-4 relative z-10">
                 <a 
                   href="#coaches" 
@@ -109,9 +99,7 @@ const HeroGrid: React.FC = () => {
               </div>
             </div>
           </div>
-
-        {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
-        {/* The rest of the file stays exactly the same as your current code... */}
+        </div>
 
         {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
@@ -189,7 +177,7 @@ const HeroGrid: React.FC = () => {
                   className="w-auto h-auto max-w-[120px] max-h-[88px] object-contain shadow-sm rounded-lg transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>
-              </a>
+            </a>
           ))}
         </div>
       </div>
