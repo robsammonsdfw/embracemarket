@@ -1,9 +1,10 @@
+/* robsammonsdfw/embracemarket/embracemarket-03c72df43bf88efdbcd5bec56b84cde56511c93a/components/HeroGrid.tsx */
+
 import React from 'react';
 import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   return (
-    {/* 1. Reduced the top/bottom padding to tighten the white space */}
     <section className="pt-32 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
@@ -48,11 +49,10 @@ const HeroGrid: React.FC = () => {
              {/* Immediate Comprehension Image Placeholder inside the 2/3 block */}
              <div className="md:w-2/5 h-full w-full min-h-[250px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
                 <img 
-                  src="/hero_comprehension.png" // Point to your new image
+                  src="/hero_comprehension.png" 
                   alt="App Ecosystem" 
                   className="w-full h-full object-cover mix-blend-multiply"
                 />
-                {!true && <span className="text-[10px] uppercase tracking-widest font-bold opacity-20">App Visual</span>}
              </div>
           </div>
 
@@ -90,6 +90,9 @@ const HeroGrid: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
+        {/* The rest of the file stays exactly the same as your current code... */}
 
         {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
