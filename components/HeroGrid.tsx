@@ -92,7 +92,7 @@ const HeroGrid: React.FC = () => {
                 
                 {/* The main subject image */}
                 <img 
-                  src="/telemed_hero.png" 
+                  src="/telemed_hero.mp4" 
                   alt="Telemedicine Delivery" 
                   className="h-[80%] w-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl" 
                 />
