@@ -11,29 +11,33 @@ const HeroGrid: React.FC = () => {
           
           {/* LEFT 50% COLUMN: The App Ecosystem */}
           <div className="lg:w-1/2 bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group">
-             
-             {/* Text Content */}
              <div className="relative z-10 mb-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-4">
-                  One app to see your body, understand your food, and take action.
+                  One app to see your body, track food, and take action.
                 </h1>
                 
                 <ul className="mb-8 space-y-3 mt-6">
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
-                    <span><strong className="font-bold">Know what's working:</strong> 3D body scans you can actually see.</span>
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">3D Body Scans:</strong> See changes beyond the scale with computer vision.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
-                    <span><strong className="font-bold">Make food simpler:</strong> Photo-based food logging & meal plans.</span>
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">AI Nutrition:</strong> Snap a photo or scan a barcode for instant nutrient data.</span>
+                  </li>
+                  <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">Activity Hub:</strong> Sync GPS workouts and wearables for total analysis.</span>
+                  </li>
+                  <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">Global Community:</strong> Tools for motivation and comparison worldwide.</span>
                   </li>
                 </ul>
 
-                <div className="flex items-center gap-4">
-                  <a href="https://app.embracehealth.ai" className="px-8 py-3.5 bg-[#002534] text-white font-bold rounded-full shadow-lg hover:bg-black transition-all text-sm">
-                    Get the App
-                  </a>
-                </div>
+                <a href="https://app.embracehealth.ai" className="inline-block px-8 py-3.5 bg-[#002534] text-white font-bold rounded-full shadow-lg hover:bg-black transition-all text-sm">
+                  Get the App
+                </a>
              </div>
 
              {/* Immediate Comprehension Video */}
@@ -49,26 +53,27 @@ const HeroGrid: React.FC = () => {
 
           {/* RIGHT 50% COLUMN: The Telemedicine Shop */}
           <div className="lg:w-1/2 bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group">
-             
-             {/* Text Content */}
              <div className="relative z-10 mb-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-[#B87333] serif tracking-tighter leading-[1.05] mb-4">
-                  Clinical care and prescriptions, delivered to your door.
+                  Clinical care, prescriptions, and labs at your door.
                 </h1>
                 
-                {/* Abstracted 3-Step Telemedicine Process */}
                 <ul className="mb-8 space-y-3 mt-6">
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong className="font-bold">Start Your Journey:</strong> Skip the waiting room with secure online intakes.</span>
+                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">Start Your Journey:</strong> Secure online intakes—no waiting rooms.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong className="font-bold">Doctor Review:</strong> Personalized plans from licensed US physicians.</span>
+                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">Doctor Review:</strong> Personalized plans from US-licensed physicians.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong className="font-bold">Discreet Delivery:</strong> Fast, free shipping directly to your home.</span>
+                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">Discreet Delivery:</strong> Fast, free shipping for medication and lab kits.</span>
+                  </li>
+                  <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
+                    <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <span><strong className="font-bold">Sleep Wellness:</strong> Diagnostics and therapies for apnea and snoring.</span>
                   </li>
                 </ul>
 
@@ -76,8 +81,8 @@ const HeroGrid: React.FC = () => {
                   <a href="https://shop.embracehealth.ai" className="px-8 py-3.5 bg-[#B87333] text-white font-bold rounded-full shadow-lg hover:bg-[#8A5626] transition-all text-sm">
                     Explore Treatments
                   </a>
-                  <p className="text-[9px] text-[#002534]/40 max-w-[180px] leading-tight">
-                    *Available in all 50 states. Subject to medical approval.
+                  <p className="text-[9px] text-[#002534]/40 max-w-[150px] leading-tight">
+                    *Telemedicine available in US Market only.
                   </p>
                 </div>
              </div>
