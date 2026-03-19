@@ -53,7 +53,7 @@ const HeroGrid: React.FC = () => {
                   playsInline 
                   className="w-full h-full object-cover"
                 >
-                  <source src="/phone video.mp4" type="video/mp4" />
+                  <source src="/phone_video.mp4" type="video/mp4" />
                 </video>
              </div>
           </div>
@@ -63,7 +63,7 @@ const HeroGrid: React.FC = () => {
             <div 
               className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center relative overflow-hidden"
               style={{
-                backgroundImage: 'url(/pro_watermark.png)', 
+                backgroundImage: 'url(/wmimg.png)', 
                 backgroundSize: '300px', 
                 backgroundPosition: 'center',
                 backgroundRepeat: 'repeat', 
