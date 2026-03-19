@@ -82,20 +82,23 @@ const HeroGrid: React.FC = () => {
                 </div>
              </div>
 
-             {/* Immediate Comprehension Visual for Telemedicine */}
-             <div className="w-full h-[280px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
-                {/* Re-using the watermark you already have as a subtle texture here */}
+{/* Immediate Comprehension Visual for Telemedicine */}
+<div className="w-full h-[280px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
                 <div 
                   className="absolute inset-0 bg-cover bg-center opacity-[0.15] mix-blend-multiply" 
                   style={{ backgroundImage: 'url(/wmimg.png)', backgroundSize: '200px' }}
                 />
                 
-                {/* The main subject image */}
-                <img 
-                  src="/telemed_hero.mp4" 
-                  alt="Telemedicine Delivery" 
-                  className="h-[80%] w-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl" 
-                />
+                {/* CHANGED: Swapped <img> for <video> to support telemed_hero.mp4 */}
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
+                >
+                  <source src="/telemed_hero.mp4" type="video/mp4" />
+                </video>
              </div>
           </div>
         </div>
