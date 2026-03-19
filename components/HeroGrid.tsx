@@ -63,14 +63,28 @@ const HeroGrid: React.FC = () => {
           </div>
 
           {/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
-          <div className="lg:w-1/3 flex flex-col justify-center">
-            <div className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center">
-              <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight">
+{/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
+<div className="lg:w-1/3 flex flex-col justify-center">
+            {/* UPDATED DIV: Added relative, overflow-hidden, and inline style for background image */}
+            <div 
+              className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center relative overflow-hidden"
+              style={{
+                backgroundImage: 'url(/wmimg.png)', // Point to your generated image
+                backgroundSize: '300px', // Adjust this size to control how dense the pattern looks
+                backgroundPosition: 'center',
+                backgroundRepeat: 'repeat', // Makes it act like a true dense pattern/watermark
+              }}
+            >
+              {/* Optional: A very high-opacity white overlay in case the image is too dark, just to be safe */}
+              <div className="absolute inset-0 bg-white/95 z-0" />
+
+              {/* Added relative z-10 to text */}
+              <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight relative z-10">
                 Are you here as
               </p>
               
-              {/* Stacked vertically to crowd the space and fit the 1/3 width */}
-              <div className="flex flex-col gap-4">
+              {/* Added relative z-10 to buttons container */}
+              <div className="flex flex-col gap-4 relative z-10">
                 <a 
                   href="#coaches" 
                   className="group p-5 rounded-[1.5rem] transition-all duration-500 hover:scale-[1.02] shadow-sm flex flex-col items-center justify-center text-center"
@@ -95,7 +109,6 @@ const HeroGrid: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
 
         {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
         {/* The rest of the file stays exactly the same as your current code... */}
