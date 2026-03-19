@@ -47,13 +47,18 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* NEW: "Are you here as" Navigation Links (Placed right before the Log In button) */}
-        <div className="hidden xl:flex items-center space-x-6 ml-8 pl-8 border-l border-[#002534]/10">
-          <span className="text-[9px] font-bold uppercase tracking-widest text-[#002534]/40">For Partners:</span>
-          <a href="#coaches" className="text-[11px] font-black uppercase tracking-[0.1em] text-[#00B6A0] hover:text-[#002534] transition-colors">
+        {/* UPDATED: Rectangular Colored Buttons for Partners */}
+        <div className="hidden xl:flex items-center space-x-3 ml-8 pl-8 border-l border-[#002534]/10">
+          <a 
+            href="#coaches" 
+            className="px-5 py-2.5 bg-[#00B6A0] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all shadow-sm"
+          >
             Coaches
           </a>
-          <a href="#brokers" className="text-[11px] font-black uppercase tracking-[0.1em] text-[#F26422] hover:text-[#002534] transition-colors">
+          <a 
+            href="#brokers" 
+            className="px-5 py-2.5 bg-[#F26422] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all shadow-sm"
+          >
             Employers
           </a>
         </div>
@@ -74,7 +79,6 @@ const Header: React.FC = () => {
       >
         <div className="max-w-[1450px] mx-auto px-12 py-12 flex">
           
-          {/* Left Column: Explore Features */}
           <div className="w-1/4 pr-12 border-r border-[#002534]/5">
             <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em] mb-8">Explore Features</p>
             <ul className="space-y-5">
@@ -88,16 +92,15 @@ const Header: React.FC = () => {
             </ul>
           </div>
 
-          {/* Middle Section: Visual Cards */}
           <div className="flex-1 px-12 flex space-x-8">
             <div className="flex-1 group cursor-pointer">
-           <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
-              <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
-                <img src="https://picsum.photos/seed/glp1/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="GLP-1 Science" />
-              </div>
-              <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
-              <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
-            </a>
+              <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
+                <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
+                  <img src="https://picsum.photos/seed/glp1/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="GLP-1 Science" />
+                </div>
+                <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
+                <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
+              </a>
             </div>
 
             <div className="flex-1 group cursor-pointer">
@@ -109,7 +112,6 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: CTA */}
           <div className="w-1/4 pl-12">
             <div className="bg-[#002534] rounded-[2.5rem] p-8 text-white h-full flex flex-col justify-between">
               <div>
@@ -121,7 +123,6 @@ const Header: React.FC = () => {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </header>
