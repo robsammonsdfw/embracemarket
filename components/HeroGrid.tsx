@@ -58,8 +58,8 @@ const HeroGrid: React.FC = () => {
              </div>
           </div>
 
-          {/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
-          <div className="lg:w-1/3 flex flex-col justify-center">
+{/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
+<div className="lg:w-1/3 flex flex-col justify-center">
             <div 
               className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center relative overflow-hidden"
               style={{
@@ -69,7 +69,8 @@ const HeroGrid: React.FC = () => {
                 backgroundRepeat: 'repeat', 
               }}
             >
-              <div className="absolute inset-0 bg-white/95 z-0" />
+              {/* I REMOVED the bg-white/95 overlay from here so your image actually shows up! */}
+              
               <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight relative z-10">
                 Are you here as
               </p>
@@ -99,7 +100,6 @@ const HeroGrid: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
 
         {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
