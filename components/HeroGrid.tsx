@@ -21,15 +21,15 @@ const HeroGrid: React.FC = () => {
                 {/* 3 Dense Bullets for immediate comprehension */}
                 <ul className="mb-8 space-y-3 mt-6">
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                     <span><strong className="font-bold">Know what's working:</strong> 3D body scans you can actually see.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                     <span><strong className="font-bold">Make food simpler:</strong> Photo-based food logging & meal plans.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
-                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                     <span><strong className="font-bold">Turn insight into action:</strong> Connect to our telemedicine shop.</span>
                   </li>
                 </ul>
@@ -58,8 +58,8 @@ const HeroGrid: React.FC = () => {
              </div>
           </div>
 
-{/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
-<div className="lg:w-1/3 flex flex-col justify-center">
+          {/* RIGHT 1/3 COLUMN: Are you here as (Stacked) */}
+          <div className="lg:w-1/3 flex flex-col justify-center">
             <div 
               className="bg-white p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 h-full flex flex-col justify-center relative overflow-hidden"
               style={{
@@ -69,7 +69,7 @@ const HeroGrid: React.FC = () => {
                 backgroundRepeat: 'repeat', 
               }}
             >
-              {/* I REMOVED the bg-white/95 overlay from here so your image actually shows up! */}
+              {/* White overlay completely removed. Watermark will show clearly. */}
               
               <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight relative z-10">
                 Are you here as
@@ -100,6 +100,7 @@ const HeroGrid: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
 
         {/* --- TOP 5 WIDGETS (Primary - Restored Shadows) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
@@ -119,8 +120,8 @@ const HeroGrid: React.FC = () => {
                 </h3>
                 <div className="text-[#002534] transition-transform duration-700 group-hover:rotate-45">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
                     </svg>
                 </div>
               </div>
@@ -131,13 +132,11 @@ const HeroGrid: React.FC = () => {
               
               {/* Product Image and Dedicated Shadow Layer */}
               <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
-                {/* Fixed Shadow Image: Expands slightly on hover */}
                 <img 
                   src={group.shadowUrl} 
                   alt="" 
                   className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
                 />
-                {/* Main Floating Product Image: Lifts up on hover */}
                 <img 
                   src={group.imageUrl} 
                   alt={group.title}
@@ -164,7 +163,7 @@ const HeroGrid: React.FC = () => {
                   </span>
                   <div className="text-[#002534]/30 transition-all duration-500 group-hover:text-[#F26422] group-hover:translate-x-1">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
