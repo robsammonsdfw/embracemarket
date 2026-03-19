@@ -20,19 +20,46 @@ const ScrollToTop = () => {
 const HomePage = () => (
   <>
     <HeroGrid />
-    <section className="bg-[#B87333] py-40 text-white relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
-        <h2 className="text-7xl md:text-9xl font-bold serif mb-12 leading-[0.85] tracking-tighter animate-reveal">
-          Access a range of <br /> GLP-1 treatments
-        </h2>
-        <button className="px-16 py-6 bg-white text-[#B87333] font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-xl">
-          See treatment plans
-        </button>
+
+    {/* SLIM BRANDING BAR: Replaces the massive 'Access a range...' py-40 block */}
+    <section className="bg-[#B87333] py-8 text-white relative overflow-hidden">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
+        
+        {/* Left Side: Headline */}
+        <div className="flex items-center gap-5">
+          <div className="hidden md:flex bg-white/20 p-2 rounded-xl backdrop-blur-md">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold serif tracking-tighter leading-tight">
+            Access a range of GLP-1 treatments
+          </h2>
+        </div>
+
+        {/* Right Side: Trust signals and Button */}
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="hidden xl:flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
+            <span>Licensed MDs</span>
+            <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+            <span>Free Shipping</span>
+            <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+            <span>100% Online</span>
+          </div>
+          <a 
+            href="https://shop.embracehealth.ai/collections/weight-loss" 
+            className="px-10 py-4 bg-white text-[#B87333] font-bold rounded-full shadow-lg hover:scale-105 transition-all text-sm whitespace-nowrap"
+          >
+            See treatment plans
+          </a>
+        </div>
       </div>
     </section>
 
     <LabsSection />
 
+    {/* "It's Personal" section remains for branding depth lower down */}
     <section className="py-40 bg-[#2d1b10] text-white">
       <div className="max-w-[1300px] mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
          <div className="order-2 lg:order-1 animate-reveal">
@@ -46,7 +73,7 @@ const HomePage = () => (
          </div>
          <div className="order-1 lg:order-2 relative animate-reveal">
             <div className="rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 group">
-               <img src="/hero.png" className="w-full aspect-[4/5] object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000" />
+               <img src="/hero.png" className="w-full aspect-[4/5] object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000" alt="Personal Wellness" />
             </div>
          </div>
       </div>
