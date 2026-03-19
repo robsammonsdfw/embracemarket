@@ -19,7 +19,7 @@ const ScrollToTop = () => {
 
 const HomePage = () => (
   <>
-{/*     <HeroGrid />
+    <HeroGrid />
     <section className="bg-[#B87333] py-40 text-white relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
         <h2 className="text-7xl md:text-9xl font-bold serif mb-12 leading-[0.85] tracking-tighter animate-reveal">
@@ -30,7 +30,7 @@ const HomePage = () => (
         </button>
       </div>
     </section>
- */}
+
     <LabsSection />
 
     <section className="py-40 bg-[#2d1b10] text-white">
