@@ -71,7 +71,7 @@ const HeroGrid: React.FC = () => {
             >
               {/* White overlay completely removed. Watermark will show clearly. */}
               
-              <p className="text-3xl font-bold text-[#002534] serif mb-6 text-center tracking-tight relative z-10">
+              <p className="text-5xl font-bold text-[#002534] serif mb-6 text-center tracking-tight relative z-10">
                 Are you here as
               </p>
               
