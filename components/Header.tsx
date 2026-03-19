@@ -47,7 +47,18 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* Action Button */}
+        {/* NEW: "Are you here as" Navigation Links (Placed right before the Log In button) */}
+        <div className="hidden xl:flex items-center space-x-6 ml-8 pl-8 border-l border-[#002534]/10">
+          <span className="text-[9px] font-bold uppercase tracking-widest text-[#002534]/40">For Partners:</span>
+          <a href="#coaches" className="text-[11px] font-black uppercase tracking-[0.1em] text-[#00B6A0] hover:text-[#002534] transition-colors">
+            Coaches
+          </a>
+          <a href="#brokers" className="text-[11px] font-black uppercase tracking-[0.1em] text-[#F26422] hover:text-[#002534] transition-colors">
+            Employers
+          </a>
+        </div>
+
+        {/* Action Button (Log In) */}
         <div className="flex items-center ml-auto">
           <button className="px-8 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#002534] bg-white border border-[#002534]/10 rounded-full hover:bg-gray-50 transition-all shadow-sm">
             Log in
@@ -80,10 +91,8 @@ const Header: React.FC = () => {
           {/* Middle Section: Visual Cards */}
           <div className="flex-1 px-12 flex space-x-8">
             <div className="flex-1 group cursor-pointer">
-           {/* Changed from a <div> to an <a> tag and added the href path */}
            <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
               <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
-                {/* Note: Don't forget to swap this placeholder image with your actual generated image later! */}
                 <img src="https://picsum.photos/seed/glp1/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="GLP-1 Science" />
               </div>
               <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
