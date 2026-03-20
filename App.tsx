@@ -293,7 +293,7 @@ const App: React.FC = () => {
                 h1="Your health data, finally integrated"
                 subhead="A digital twin dashboard and secure health wallet that brings clinical and app data into one view."
                 directAnswer="Progress Tracking at EmbraceHealth isn't just a list of numbers; it's a secure ecosystem that pulls your clinical results and daily habits into a single, visual Digital Twin."
-                heroVideo="/progress_hero.mp4" 
+                heroVideo="https://gemini.google.com/share/33cd2698aeca" 
                 sections={[
                   { 
                     title: "See your whole picture", 
