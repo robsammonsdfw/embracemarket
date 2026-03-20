@@ -91,28 +91,60 @@ const HomePage = () => (
   </div>
 </section>
 
-    {/* 3. THE MASTERY SECTION: High-Contrast Premium (Deep Navy Background) */}
-    <section className="py-32 bg-[#002534] text-white">
-      <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-24 items-center">
-        <div className="order-2 lg:order-1 relative">
-          {/* Subtle Glow behind the product */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#00B6A0]/10 blur-[100px] rounded-full"></div>
-          <div className="bg-white rounded-[4rem] p-16 shadow-2xl relative z-10">
-             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B6A0] mb-6 block text-center">Biological Mastery</span>
-             <h3 className="text-4xl font-bold text-[#002534] serif mb-8 text-center">Testosterone Rx</h3>
-             <img src="/testo_pills.png" className="w-64 mx-auto drop-shadow-xl" alt="Hormone optimization" />
-          </div>
+{/* --- SECTION: RESTORED TESTOSTERONE FEATURE --- */}
+<section className="py-32 bg-[#002534] text-white relative overflow-hidden">
+      
+      {/* 1. The Dynamic Background (lowt_scale.mp4) */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover grayscale brightness-50"
+        >
+          <source src="/lowt_scale.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#002534] via-transparent to-[#002534]/80"></div>
+      </div>
+
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-24 items-center relative z-20">
+        
+        {/* LEFT SIDE: The lowtman.png OVER the moving charts */}
+        <div className="relative order-2 lg:order-1 flex justify-center items-end h-[450px] md:h-[650px]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] bg-[#00B6A0]/10 blur-[120px] rounded-full"></div>
+          
+          <img 
+            src="/lowtman.png" 
+            className="h-full w-auto object-contain relative z-20 drop-shadow-[0_35px_35px_rgba(0,0,0,0.4)] animate-reveal"
+            style={{ animationDelay: '0.2s' }}
+            alt="Hormone optimization" 
+          />
         </div>
+
+        {/* RIGHT SIDE: Strategic Verbiage */}
         <div className="order-1 lg:order-2 animate-reveal">
+          <span className="inline-block px-4 py-1.5 bg-[#00B6A0]/10 border border-[#00B6A0]/20 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-[#00B6A0] mb-8">
+            Biological Mastery
+          </span>
           <h2 className="text-6xl md:text-8xl font-bold serif tracking-tighter leading-[0.85] mb-8">
             Optimize <br /> your drive.
           </h2>
           <p className="text-xl text-white/50 mb-12 max-w-lg leading-relaxed italic">
             "Reclaim your metabolic baseline. Stop guessing about your energy and start acting on unique clinical data."
           </p>
-          <button className="px-14 py-6 bg-[#00B6A0] text-[#002534] font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-white transition-all shadow-xl">
-            Get Started
-          </button>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <a 
+              href="/treatments/testosterone" 
+              className="w-full sm:w-auto px-12 py-5 bg-[#00B6A0] text-[#002534] font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-white transition-all shadow-xl text-center"
+            >
+              Start Free Consultation
+            </a>
+            <p className="text-[9px] text-white/30 max-w-[140px] leading-tight uppercase tracking-tighter font-bold">
+              *Requires clinical labs and physician approval.
+            </p>
+          </div>
         </div>
       </div>
     </section>
