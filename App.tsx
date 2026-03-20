@@ -52,33 +52,44 @@ const HomePage = () => (
 
     {/* 2. THE BASELINE SECTION: Conversational logic (White Background) */}
     <section className="py-24 bg-white">
-      <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
-        <div className="animate-reveal">
-          <h2 className="text-6xl md:text-8xl font-bold serif text-[#002534] tracking-tighter leading-[0.85] mb-8">
-            Find your <br /> baseline.
-          </h2>
-          <p className="text-2xl text-[#002534]/50 mb-10 leading-relaxed font-light italic max-w-lg">
-            "Better data leads to better decisions. Clinical testing reimagined for your home."
-          </p>
-          <div className="grid grid-cols-2 gap-6 mb-12">
-            <div>
-              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Diagnostics</p>
-              <p className="text-[#002534] font-bold">98% Accuracy</p>
-            </div>
-            <div>
-              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Speed</p>
-              <p className="text-[#002534] font-bold">48hr Results</p>
-            </div>
-          </div>
-          <button className="px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all">
-            Start My Lab Test
-          </button>
+  <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
+    <div className="animate-reveal">
+      <h2 className="text-6xl md:text-8xl font-bold serif text-[#002534] tracking-tighter leading-[0.85] mb-8">
+        Find your <br /> baseline.
+      </h2>
+      <p className="text-2xl text-[#002534]/50 mb-10 leading-relaxed font-light italic max-w-lg">
+        "Better data leads to better decisions. Clinical testing reimagined for your home."
+      </p>
+      <div className="grid grid-cols-2 gap-6 mb-12">
+        <div>
+          <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Diagnostics</p>
+          <p className="text-[#002534] font-bold">98% Accuracy</p>
         </div>
-        <div className="relative bg-[#F9F7F2] rounded-[4rem] p-12 overflow-hidden flex justify-center items-center shadow-inner">
-           <img src="/labs_widget.png" className="w-[80%] h-auto object-contain z-10 drop-shadow-2xl" alt="At home labs" />
+        <div>
+          <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Speed</p>
+          <p className="text-[#002534] font-bold">48hr Results</p>
         </div>
       </div>
-    </section>
+      <button className="px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all">
+        Start My Lab Test
+      </button>
+    </div>
+
+    {/* RIGHT SIDE: Video replaces the static image */}
+    <div className="relative bg-[#F9F7F2] rounded-[4rem] p-4 md:p-8 overflow-hidden flex justify-center items-center shadow-inner group">
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="w-full h-auto rounded-[3rem] z-10 drop-shadow-2xl transition-transform duration-1000 group-hover:scale-[1.02]"
+      >
+        <source src="/labsviles.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
 
     {/* 3. THE MASTERY SECTION: High-Contrast Premium (Deep Navy Background) */}
     <section className="py-32 bg-[#002534] text-white">
