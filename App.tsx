@@ -21,11 +21,9 @@ const HomePage = () => (
   <>
     <HeroGrid />
 
-    {/* SLIM BRANDING BAR: Replaces the massive 'Access a range...' py-40 block */}
+    {/* 1. THE ACTION BAR: Immediate high-value trust signals */}
     <section className="bg-[#B87333] py-8 text-white relative overflow-hidden">
       <div className="max-w-[1450px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
-        
-        {/* Left Side: Headline */}
         <div className="flex items-center gap-5">
           <div className="hidden md:flex bg-white/20 p-2 rounded-xl backdrop-blur-md">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
@@ -37,8 +35,6 @@ const HomePage = () => (
             Access a range of GLP-1 treatments
           </h2>
         </div>
-
-        {/* Right Side: Trust signals and Button */}
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="hidden xl:flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
             <span>Licensed MDs</span>
@@ -47,39 +43,69 @@ const HomePage = () => (
             <span className="w-1 h-1 bg-white/30 rounded-full"></span>
             <span>100% Online</span>
           </div>
-          <a 
-            href="https://shop.embracehealth.ai/collections/weight-loss" 
-            className="px-10 py-4 bg-white text-[#B87333] font-bold rounded-full shadow-lg hover:scale-105 transition-all text-sm whitespace-nowrap"
-          >
+          <a href="https://shop.embracehealth.ai/collections/weight-loss" className="px-10 py-4 bg-white text-[#B87333] font-bold rounded-full shadow-lg hover:scale-105 transition-all text-sm">
             See treatment plans
           </a>
         </div>
       </div>
     </section>
 
-    <LabsSection />
-
-    {/* "It's Personal" section remains for branding depth lower down */}
-    <section className="py-40 bg-[#2d1b10] text-white">
-      <div className="max-w-[1300px] mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
-         <div className="order-2 lg:order-1 animate-reveal">
-            <h2 className="text-7xl md:text-8xl font-bold serif mb-10 tracking-tighter leading-none">it's personal.</h2>
-            <p className="max-w-xl text-2xl text-white/50 mb-14 leading-relaxed font-light italic">
-              "Personalized wellness isn't just a buzzword. It's about seeing your own data and acting on it."
-            </p>
-            <button className="px-14 py-6 bg-[#B87333] text-white font-bold rounded-full shadow-2xl transition-all text-xl">
-              Get your plan
-            </button>
-         </div>
-         <div className="order-1 lg:order-2 relative animate-reveal">
-            <div className="rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 group">
-               <img src="/hero.png" className="w-full aspect-[4/5] object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000" alt="Personal Wellness" />
+    {/* 2. THE BASELINE SECTION: Conversational logic (White Background) */}
+    <section className="py-24 bg-white">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
+        <div className="animate-reveal">
+          <h2 className="text-6xl md:text-8xl font-bold serif text-[#002534] tracking-tighter leading-[0.85] mb-8">
+            Find your <br /> baseline.
+          </h2>
+          <p className="text-2xl text-[#002534]/50 mb-10 leading-relaxed font-light italic max-w-lg">
+            "Better data leads to better decisions. Clinical testing reimagined for your home."
+          </p>
+          <div className="grid grid-cols-2 gap-6 mb-12">
+            <div>
+              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Diagnostics</p>
+              <p className="text-[#002534] font-bold">98% Accuracy</p>
             </div>
-         </div>
+            <div>
+              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Speed</p>
+              <p className="text-[#002534] font-bold">48hr Results</p>
+            </div>
+          </div>
+          <button className="px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all">
+            Start My Lab Test
+          </button>
+        </div>
+        <div className="relative bg-[#F9F7F2] rounded-[4rem] p-12 overflow-hidden flex justify-center items-center shadow-inner">
+           <img src="/labs_widget.png" className="w-[80%] h-auto object-contain z-10 drop-shadow-2xl" alt="At home labs" />
+        </div>
       </div>
     </section>
 
-    <TestosteroneFeature />
+    {/* 3. THE MASTERY SECTION: High-Contrast Premium (Deep Navy Background) */}
+    <section className="py-32 bg-[#002534] text-white">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-24 items-center">
+        <div className="order-2 lg:order-1 relative">
+          {/* Subtle Glow behind the product */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#00B6A0]/10 blur-[100px] rounded-full"></div>
+          <div className="bg-white rounded-[4rem] p-16 shadow-2xl relative z-10">
+             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B6A0] mb-6 block text-center">Biological Mastery</span>
+             <h3 className="text-4xl font-bold text-[#002534] serif mb-8 text-center">Testosterone Rx</h3>
+             <img src="/testo_pills.png" className="w-64 mx-auto drop-shadow-xl" alt="Hormone optimization" />
+          </div>
+        </div>
+        <div className="order-1 lg:order-2 animate-reveal">
+          <h2 className="text-6xl md:text-8xl font-bold serif tracking-tighter leading-[0.85] mb-8">
+            Optimize <br /> your drive.
+          </h2>
+          <p className="text-xl text-white/50 mb-12 max-w-lg leading-relaxed italic">
+            "Reclaim your metabolic baseline. Stop guessing about your energy and start acting on unique clinical data."
+          </p>
+          <button className="px-14 py-6 bg-[#00B6A0] text-[#002534] font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-white transition-all shadow-xl">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+
     <PromptsList />
   </>
 );
