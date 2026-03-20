@@ -55,7 +55,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
   },
   {
     id: 'labs',
-    title: 'Labs & DNA Tests', // Updated from Clear Skin
+    title: 'DNA Tests', // Updated from Clear Skin
     description: 'Genetic insights and clinical testing reimagined for you.',
     imageUrl: '/body.png', // Swap to DNA kit image if available
     shadowUrl: '/body-shadow.png',
