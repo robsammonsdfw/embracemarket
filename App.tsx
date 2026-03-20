@@ -71,7 +71,7 @@ const HomePage = () => (
         </div>
       </div>
       <button className="px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all">
-        Start My Lab Test
+        Start My DNA Test
       </button>
     </div>
 
