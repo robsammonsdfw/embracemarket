@@ -67,10 +67,10 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
 
 // THESE ARE THE "WAIT, THERE'S MORE" LOWER 5 WIDGETS
 export const MINOR_TREATMENTS = [
-  { id: 'physical', title: 'Physical Intelligence', path: '/app/physical-intelligence', imageUrl: '/physintimg1.png' },
-  { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', path: '/app/nutrition-kitchen', imageUrl: '/kitchenimg1.png' },
-  { id: 'mental', title: 'Mental Health', path: '/app/mental-health', imageUrl: '/mentalimg1.png' },
-  { id: 'tracking', title: 'Progress Tracking', path: '/app/progress-tracking', imageUrl: '/progtrkimg1.png' },
-  { id: 'features', title: 'Browse All App Features', path: '/app/features', imageUrl: '/allappsimg1.png' },
+  { id: 'physical', title: 'Physical Intelligence', path: '/app/physical-intelligence', imageUrl: '/physint.png' },
+  { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', path: '/app/nutrition-kitchen', imageUrl: '/kitchen.png' },
+  { id: 'mental', title: 'Mental Health', path: '/app/mental-health', imageUrl: '/mental.png' },
+  { id: 'tracking', title: 'Progress Tracking', path: '/app/progress-tracking', imageUrl: '/progtrk.png' },
+  { id: 'features', title: 'Browse All App Features', path: '/app/features', imageUrl: '/allapps.png' },
 ];
 export const NAV_EXPLORE = PRODUCT_GROUPS.map(g => ({ label: g.title, path: g.path }));
