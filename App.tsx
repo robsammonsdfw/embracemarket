@@ -70,9 +70,14 @@ const HomePage = () => (
           <p className="text-[#002534] font-bold">48hr Results</p>
         </div>
       </div>
-      <button className="px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all">
-        Start My DNA Test
-      </button>
+      <a 
+  href="https://shop.embracehealth.ai/pages/dna-test-kits"
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="inline-block px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all text-center"
+>
+  Start My DNA Test
+</a>
     </div>
 
     {/* RIGHT SIDE: Video replaces the static image */}
