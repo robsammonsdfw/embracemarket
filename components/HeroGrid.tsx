@@ -115,42 +115,51 @@ const HeroGrid: React.FC = () => {
             <a 
               key={group.id} 
               href={group.path}
-              className={`group relative overflow-hidden p-10 rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal ${group.hoverBg}`}
+              className={`group relative overflow-hidden rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal ${group.hoverBg}`}
               style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
-              <div className="flex justify-between items-start mb-4 relative z-20">
-                <h3 className="text-2xl font-bold leading-[1.1] serif text-[#002534]">
-                  {group.id === 'sleep' ? 'Snoring &' : group.title.split(' ')[0]} <br />
-                  <span className="text-[#F26422]">
-                    {group.id === 'sleep' ? 'Sleep Apnea' : group.title.split(' ').slice(1).join(' ')}
-                  </span>
-                </h3>
-                <div className="text-[#002534] transition-transform duration-700 group-hover:rotate-45">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <line x1="7" y1="17" x2="17" y2="7" />
-                        <polyline points="7 7 17 7 17 17" />
-                    </svg>
+              {/* BLACK CAP (z-10) */}
+              <div className="absolute top-0 left-0 right-0 h-28 bg-[#002534] rounded-t-[2.5rem] z-10" />
+
+              {/* Inner Content Wrapper */}
+              <div className="p-10 h-full w-full">
+                <div className="flex justify-between items-start mb-4 relative z-20">
+                  <h3 className="text-2xl font-bold leading-[1.1] serif text-white">
+                    {group.id === 'sleep' ? 'Snoring &' : group.title.split(' ')[0]} <br />
+                    <span className="text-[#F26422]">
+                      {group.id === 'sleep' ? 'Sleep Apnea' : group.title.split(' ').slice(1).join(' ')}
+                    </span>
+                  </h3>
+                  
+                  {/* Updated Arrow Icon */}
+                  <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full transition-transform duration-700 group-hover:rotate-45 relative z-20 flex-shrink-0">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#002534" strokeWidth="2.5">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                  </div>
                 </div>
-              </div>
-              
-              <p className="text-xs max-w-[150px] leading-relaxed text-[#002534]/40 transition-all group-hover:text-[#002534] relative z-20 mb-8">
-                {group.id === 'sex' ? 'Clinically proven solutions for performance and libido for men.' : 
-                 group.id === 'sleep' ? 'Get diagnosed with convenient home sleep testing.' :
-                 group.id === 'labs' ? 'Genetic Insights for Obesity Phenotyping' :
-                 group.description}
-              </p>
-              
-              <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
-                <img 
-                  src={group.shadowUrl} 
-                  alt="" 
-                  className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
-                />
-                <img 
-                  src={group.imageUrl}
-                  alt={group.title}
-                  className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105"
-                />
+                
+                <p className="text-xs max-w-[150px] leading-relaxed text-white/70 transition-all group-hover:text-white relative z-20 mb-8">
+                  {group.id === 'sex' ? 'Clinically proven solutions for performance and libido for men.' : 
+                   group.id === 'sleep' ? 'Get diagnosed with convenient home sleep testing.' :
+                   group.id === 'labs' ? 'Genetic Insights for Obesity Phenotyping' :
+                   group.description}
+                </p>
+                
+                <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
+                  <img 
+                    src={group.shadowUrl} 
+                    alt="" 
+                    className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
+                  />
+                  <img 
+                    // FIXED: Reverted hard-coded path to use dynamic group.imageUrl from constants
+                    src={group.imageUrl}
+                    alt={group.title}
+                    className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105"
+                  />
+                </div>
               </div>
             </a>
           ))}
@@ -162,31 +171,39 @@ const HeroGrid: React.FC = () => {
             <a
               key={item.id}
               href={item.path}
-              className="group relative overflow-hidden p-10 rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal hover:bg-gray-50/80"
+              className="group relative overflow-hidden rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal hover:bg-gray-50/80"
               style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
             >
-              <div className="flex justify-between items-start mb-4 relative z-20">
-                <h3 className="text-xl md:text-2xl font-bold leading-[1.1] serif text-[#002534] pr-4">
-                  {item.id === 'physical' ? 'Full-Body Intelligence' :
-                   item.id === 'nutrition' ? 'Food & Nutrient Intelligence' :
-                   item.id === 'mental' ? 'Mental Motivation Analysis' :
-                   item.id === 'tracking' ? 'Wearable Integrations' :
-                   item.title}
-                </h3>
-                <div className="text-[#002534]/30 transition-transform duration-700 group-hover:rotate-45 group-hover:text-[#F26422] flex-shrink-0">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <line x1="7" y1="17" x2="17" y2="7" />
-                        <polyline points="7 7 17 7 17 17" />
-                    </svg>
-                </div>
-              </div>
+              {/* BLACK CAP (z-10) */}
+              <div className="absolute top-0 left-0 right-0 h-28 bg-[#002534] rounded-t-[2.5rem] z-10" />
 
-              <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
-                <img 
-                  src={item.imageUrl} 
-                  alt={item.title} 
-                  className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl"
-                />
+              {/* Inner Content Wrapper */}
+              <div className="p-10 h-full w-full">
+                <div className="flex justify-between items-start mb-4 relative z-20">
+                  <h3 className="text-xl md:text-2xl font-bold leading-[1.1] serif text-white pr-4">
+                    {item.id === 'physical' ? 'Full-Body Intelligence' :
+                     item.id === 'nutrition' ? 'Food & Nutrient Intelligence' :
+                     item.id === 'mental' ? 'Mental Motivation Analysis' :
+                     item.id === 'tracking' ? 'Wearable Integrations' :
+                     item.title}
+                  </h3>
+                  
+                  {/* Updated Arrow Icon */}
+                  <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full transition-transform duration-700 group-hover:rotate-45 relative z-20 flex-shrink-0">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#002534" strokeWidth="2.5">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                  </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
+                  <img 
+                    src={item.imageUrl} 
+                    alt={item.title} 
+                    className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl"
+                  />
+                </div>
               </div>
             </a>
           ))}
