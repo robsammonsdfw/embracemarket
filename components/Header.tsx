@@ -4,7 +4,6 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Updated navigation based on
   const TOP_NAV = [
     { name: 'Web App', path: 'https://app.embracehealth.ai' },
     { name: 'Telehealth Shop', path: 'https://shop.embracehealth.ai' },
@@ -23,28 +22,17 @@ const Header: React.FC = () => {
       {/* 1. ANNOUNCEMENT BAR */}
       <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6 flex justify-center items-center h-10">
         <div className="text-[10px] md:text-xs font-bold text-center tracking-tight md:tracking-wider uppercase">
-          {/* Link 1: App Ecosystem */}
-          <a 
-            href="https://app.embracehealth.ai" 
-            className="hover:text-[#00B6A0] transition-colors"
-          >
+          <a href="https://app.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
             One App. One Login. One Dashboard. The Full Picture
           </a>
-          
           <span className="mx-2 text-[#00B6A0]">+</span>
-          
-          {/* Link 2: Telehealth Shop */}
-          <a 
-            href="https://shop.embracehealth.ai" 
-            className="hover:text-[#00B6A0] transition-colors"
-          >
+          <a href="https://shop.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
             Tele-Medicine. Tele-Dentistry. Tele-Sleep
           </a>
         </div>
       </div>
 
       <header 
-        // CLEANUP: Height reduced from h-24 (96px) to h-20 (80px)
         className="fixed top-10 left-0 right-0 z-[100] bg-[#E6E7E9]/90 backdrop-blur-xl border-b border-[#002534]/5 h-20"
       >
         <div className="max-w-[1450px] mx-auto px-6 md:px-12 flex items-center justify-between h-full">
@@ -95,9 +83,8 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* --- MEGA MENU --- */}
+        {/* --- FULLY RESTORED MEGA MENU --- */}
         <div 
-          // CLEANUP: Mega Menu now drops from top-20 to match the thinner header
           className={`hidden xl:block absolute top-20 left-0 w-full bg-white border-b border-[#002534]/10 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden shadow-2xl ${
             isMenuOpen ? 'max-h-[550px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
           }`}
@@ -105,6 +92,8 @@ const Header: React.FC = () => {
           onMouseLeave={() => setIsMenuOpen(false)}
         >
           <div className="max-w-[1450px] mx-auto px-12 py-12 flex">
+            
+            {/* Column 1: Explore Features */}
             <div className="w-1/4 pr-12 border-r border-[#002534]/5">
               <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em] mb-8">Explore Features</p>
               <ul className="space-y-5">
@@ -117,6 +106,8 @@ const Header: React.FC = () => {
                 ))}
               </ul>
             </div>
+
+            {/* Column 2: Visual Article Cards */}
             <div className="flex-1 px-12 flex space-x-8">
               <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
@@ -125,6 +116,7 @@ const Header: React.FC = () => {
                 <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
                 <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
               </a>
+
               <div className="flex-1 group cursor-pointer">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
                   <img src="https://picsum.photos/seed/dna/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DNA Wellness" />
@@ -133,6 +125,8 @@ const Header: React.FC = () => {
                 <p className="text-sm text-[#002534]/50">Unlock your genetic potential.</p>
               </div>
             </div>
+
+            {/* Column 3: Direct CTA */}
             <div className="w-1/4 pl-12">
               <div className="bg-[#002534] rounded-[2.5rem] p-8 text-white h-full flex flex-col justify-between">
                 <div>
@@ -148,10 +142,9 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* --- MOBILE OVERLAY --- */}
+      {/* --- FULLY RESTORED MOBILE OVERLAY --- */}
       <div 
-        // CLEANUP: Positioned top-20 to match the thinner header
-        className={`fixed inset-0 bg-white z-[90] transition-transform duration-500 ease-in-out xl:hidden overflow-y-auto pt-20 ${
+        className={`fixed inset-0 bg-white z-[90] transition-transform duration-500 ease-in-out xl:hidden overflow-y-auto pt-32 ${
           isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -173,7 +166,6 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* SOCIAL LINKS */}
           <div className="space-y-6">
              <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em]">Follow Us</p>
              <div className="flex space-x-8 text-[#002534]">

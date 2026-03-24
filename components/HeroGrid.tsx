@@ -4,7 +4,6 @@ import { PRODUCT_GROUPS, MINOR_TREATMENTS } from '../constants';
 const HeroGrid: React.FC = () => {
   const [isUSUser, setIsUSUser] = useState<boolean | null>(null);
 
-  // Detect user location on mount
   useEffect(() => {
     fetch('https://ipapi.co/json/')
       .then((res) => res.json())
@@ -12,24 +11,19 @@ const HeroGrid: React.FC = () => {
         setIsUSUser(data.country_code === 'US');
       })
       .catch(() => {
-        // Fallback to true if API fails to ensure US users see the shop
         setIsUSUser(true);
       });
   }, []);
 
-  // Prevent layout shift during location detection
-  // CLEANUP: Padding increased from pt-32 to pt-40 to match the lowered grid position
-  if (isUSUser === null) return <div className="pt-40 pb-16 min-h-[600px] bg-[#E6E7E9]" />;
+  if (isUSUser === null) return <div className="pt-20 pb-16 min-h-[600px] bg-[#E6E7E9]" />;
 
   return (
-    // CLEANUP: Padding increased from pt-32 to pt-40 to prevent header overlap
-    <section className="pt-40 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
+    <section className="pt-20 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
-        {/* --- DYNAMIC HERO SECTION --- */}
-        <div className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-12 opacity-0 animate-reveal`} style={{ animationDelay: '0.1s' }}>
+        {/* TOP HERO COLUMNS - 14pt space below */}
+        <div className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-[14pt] opacity-0 animate-reveal`} style={{ animationDelay: '0.1s' }}>
           
-          {/* LEFT COLUMN: The Worldwide App */}
           <div className={`${isUSUser ? 'lg:w-1/2' : 'w-full'} bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group`}>
              <div className="relative z-10 mb-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-4">
@@ -70,7 +64,6 @@ const HeroGrid: React.FC = () => {
              </div>
           </div>
 
-          {/* RIGHT COLUMN: Telehealth (ONLY SHOWN TO US USERS) */}
           {isUSUser && (
             <div className="lg:w-1/2 bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group">
                <div className="relative z-10 mb-10">
@@ -114,8 +107,8 @@ const HeroGrid: React.FC = () => {
           )}
         </div>
 
-        {/* --- TOP ROW: PRIMARY HEALTH GOALS --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+        {/* TOP ROW WIDGETS - 14pt space below */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-[14pt]">
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
               key={group.id} 
@@ -161,7 +154,7 @@ const HeroGrid: React.FC = () => {
           ))}
         </div>
 
-        {/* --- BOTTOM ROW: APP INTELLIGENCE --- */}
+        {/* BOTTOM ROW WIDGETS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {MINOR_TREATMENTS.map((item, idx) => (
             <a
@@ -178,7 +171,7 @@ const HeroGrid: React.FC = () => {
                    item.id === 'tracking' ? 'Wearable Integrations' :
                    item.title}
                 </h3>
-                <div className="text-[#002534]/30 transition-transform duration-700 group-rotate-45 group-hover:text-[#F26422] flex-shrink-0">
+                <div className="text-[#002534]/30 transition-transform duration-700 group-hover:rotate-45 group-hover:text-[#F26422] flex-shrink-0">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <line x1="7" y1="17" x2="17" y2="7" />
                         <polyline points="7 7 17 7 17 17" />
