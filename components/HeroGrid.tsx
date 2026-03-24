@@ -15,15 +15,19 @@ const HeroGrid: React.FC = () => {
       });
   }, []);
 
-  if (isUSUser === null) return <div className="pt-20 pb-16 min-h-[600px] bg-[#E6E7E9]" />;
+  // Updated loading state padding to 30pt 
+  if (isUSUser === null) return <div className="pt-[30pt] pb-16 min-h-[600px] bg-[#E6E7E9]" />;
 
   return (
-    <section className="pt-20 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
+    // Updated section top padding to 30pt 
+    <section className="pt-[30pt] pb-16 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
         {/* TOP HERO COLUMNS - 14pt space below */}
-        <div className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-[14pt] opacity-0 animate-reveal`} style={{ animationDelay: '0.1s' }}>
-          
+        <div 
+          className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-[14pt] opacity-0 animate-reveal`} 
+          style={{ animationDelay: '0.1s' }}
+        >
           <div className={`${isUSUser ? 'lg:w-1/2' : 'w-full'} bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group`}>
              <div className="relative z-10 mb-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-4">
