@@ -18,10 +18,12 @@ const HeroGrid: React.FC = () => {
   }, []);
 
   // Prevent layout shift during location detection
-  if (isUSUser === null) return <div className="pt-32 pb-16 min-h-[600px] bg-[#E6E7E9]" />;
+  // CLEANUP: Padding increased from pt-32 to pt-40 to match the lowered grid position
+  if (isUSUser === null) return <div className="pt-40 pb-16 min-h-[600px] bg-[#E6E7E9]" />;
 
   return (
-    <section className="pt-32 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
+    // CLEANUP: Padding increased from pt-32 to pt-40 to prevent header overlap
+    <section className="pt-40 pb-16 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
         {/* --- DYNAMIC HERO SECTION --- */}
@@ -176,7 +178,7 @@ const HeroGrid: React.FC = () => {
                    item.id === 'tracking' ? 'Wearable Integrations' :
                    item.title}
                 </h3>
-                <div className="text-[#002534]/30 transition-transform duration-700 group-hover:rotate-45 group-hover:text-[#F26422] flex-shrink-0">
+                <div className="text-[#002534]/30 transition-transform duration-700 group-rotate-45 group-hover:text-[#F26422] flex-shrink-0">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <line x1="7" y1="17" x2="17" y2="7" />
                         <polyline points="7 7 17 7 17 17" />

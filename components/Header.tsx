@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Updated navigation based on 
+  // Updated navigation based on
   const TOP_NAV = [
     { name: 'Web App', path: 'https://app.embracehealth.ai' },
     { name: 'Telehealth Shop', path: 'https://shop.embracehealth.ai' },
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* 1. ANNOUNCEMENT BAR */}
-      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6 flex justify-center items-center">
+      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6 flex justify-center items-center h-10">
         <div className="text-[10px] md:text-xs font-bold text-center tracking-tight md:tracking-wider uppercase">
           {/* Link 1: App Ecosystem */}
           <a 
@@ -44,7 +44,8 @@ const Header: React.FC = () => {
       </div>
 
       <header 
-        className="fixed top-10 left-0 right-0 z-[100] bg-[#E6E7E9]/90 backdrop-blur-xl border-b border-[#002534]/5 h-24"
+        // CLEANUP: Height reduced from h-24 (96px) to h-20 (80px)
+        className="fixed top-10 left-0 right-0 z-[100] bg-[#E6E7E9]/90 backdrop-blur-xl border-b border-[#002534]/5 h-20"
       >
         <div className="max-w-[1450px] mx-auto px-6 md:px-12 flex items-center justify-between h-full">
           {/* Logo */}
@@ -96,7 +97,8 @@ const Header: React.FC = () => {
 
         {/* --- MEGA MENU --- */}
         <div 
-          className={`hidden xl:block absolute top-24 left-0 w-full bg-white border-b border-[#002534]/10 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden shadow-2xl ${
+          // CLEANUP: Mega Menu now drops from top-20 to match the thinner header
+          className={`hidden xl:block absolute top-20 left-0 w-full bg-white border-b border-[#002534]/10 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden shadow-2xl ${
             isMenuOpen ? 'max-h-[550px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
           }`}
           onMouseEnter={() => setIsMenuOpen(true)}
@@ -148,7 +150,8 @@ const Header: React.FC = () => {
 
       {/* --- MOBILE OVERLAY --- */}
       <div 
-        className={`fixed inset-0 bg-white z-[90] transition-transform duration-500 ease-in-out xl:hidden overflow-y-auto pt-32 ${
+        // CLEANUP: Positioned top-20 to match the thinner header
+        className={`fixed inset-0 bg-white z-[90] transition-transform duration-500 ease-in-out xl:hidden overflow-y-auto pt-20 ${
           isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
