@@ -4,10 +4,10 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Updated navigation based on 
   const TOP_NAV = [
-    { name: 'The Embrace Ecosystem', path: 'https://app.embracehealth.ai' },
-    { name: 'Telemedicine Shop', path: 'https://shop.embracehealth.ai' },
-    { name: 'About Us', path: '/about' },
+    { name: 'Web App', path: 'https://app.embracehealth.ai' },
+    { name: 'Telehealth Shop', path: 'https://shop.embracehealth.ai' },
   ];
 
   const EXPLORE_FEATURES = [
@@ -20,8 +20,15 @@ const Header: React.FC = () => {
 
   return (
     <>
+      {/* 1. ANNOUNCEMENT BAR */}
+      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6">
+        <p className="text-[10px] md:text-xs font-bold text-center tracking-tight md:tracking-wider uppercase">
+          One App. One Login. One Dashboard. The Full Picture <span className="mx-2 text-[#00B6A0]">+</span> Tele-Medicine. Tele-Dentistry. Tele-Sleep
+        </p>
+      </div>
+
       <header 
-        className="fixed top-0 left-0 right-0 z-[100] bg-[#E6E7E9]/90 backdrop-blur-xl border-b border-[#002534]/5 h-24"
+        className="fixed top-10 left-0 right-0 z-[100] bg-[#E6E7E9]/90 backdrop-blur-xl border-b border-[#002534]/5 h-24"
       >
         <div className="max-w-[1450px] mx-auto px-6 md:px-12 flex items-center justify-between h-full">
           {/* Logo */}
@@ -46,15 +53,15 @@ const Header: React.FC = () => {
               </a>
             ))}
             <div className="flex items-center space-x-3 ml-8 pl-8 border-l border-[#002534]/10">
-              <a href="#coaches" className="px-5 py-2.5 bg-[#00B6A0] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Coaches</a>
-              <a href="#brokers" className="px-5 py-2.5 bg-[#F26422] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Employers</a>
+              <a href="#coaches" className="px-5 py-2.5 bg-[#00B6A0] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Coaches/Providers</a>
+              <a href="#brokers" className="px-5 py-2.5 bg-[#F26422] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Employers/Brokers</a>
             </div>
           </nav>
 
           {/* ACTIONS */}
           <div className="flex items-center space-x-4 ml-auto xl:ml-0">
             <button className="hidden md:block px-8 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#002534] bg-white border border-[#002534]/10 rounded-full hover:bg-gray-50 transition-all shadow-sm">
-              Log in
+              Login
             </button>
 
             {/* Hamburger Button */}
@@ -71,7 +78,7 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* --- FULLY RESTORED MEGA MENU --- */}
+        {/* --- MEGA MENU --- */}
         <div 
           className={`hidden xl:block absolute top-24 left-0 w-full bg-white border-b border-[#002534]/10 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden shadow-2xl ${
             isMenuOpen ? 'max-h-[550px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
@@ -80,8 +87,6 @@ const Header: React.FC = () => {
           onMouseLeave={() => setIsMenuOpen(false)}
         >
           <div className="max-w-[1450px] mx-auto px-12 py-12 flex">
-            
-            {/* Column 1: Explore Features */}
             <div className="w-1/4 pr-12 border-r border-[#002534]/5">
               <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em] mb-8">Explore Features</p>
               <ul className="space-y-5">
@@ -94,8 +99,6 @@ const Header: React.FC = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Column 2: Visual Article Cards */}
             <div className="flex-1 px-12 flex space-x-8">
               <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
@@ -104,7 +107,6 @@ const Header: React.FC = () => {
                 <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
                 <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
               </a>
-
               <div className="flex-1 group cursor-pointer">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
                   <img src="https://picsum.photos/seed/dna/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DNA Wellness" />
@@ -113,8 +115,6 @@ const Header: React.FC = () => {
                 <p className="text-sm text-[#002534]/50">Unlock your genetic potential.</p>
               </div>
             </div>
-
-            {/* Column 3: Direct CTA */}
             <div className="w-1/4 pl-12">
               <div className="bg-[#002534] rounded-[2.5rem] p-8 text-white h-full flex flex-col justify-between">
                 <div>
@@ -149,19 +149,19 @@ const Header: React.FC = () => {
           <div className="space-y-6">
             <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em]">Partners</p>
             <div className="grid grid-cols-1 gap-4">
-              <a href="#coaches" className="w-full py-5 bg-[#00B6A0] text-white rounded-2xl font-bold text-center text-lg">Coaches</a>
-              <a href="#brokers" className="w-full py-5 bg-[#F26422] text-white rounded-2xl font-bold text-center text-lg">Employers</a>
+              <a href="#coaches" className="w-full py-5 bg-[#00B6A0] text-white rounded-2xl font-bold text-center text-lg">Coaches/Providers</a>
+              <a href="#brokers" className="w-full py-5 bg-[#F26422] text-white rounded-2xl font-bold text-center text-lg">Employers/Brokers</a>
             </div>
           </div>
 
-          <div className="space-y-4">
-             <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em]">App Features</p>
-             {EXPLORE_FEATURES.map(f => (
-               <a key={f.name} href={f.path} className="block py-4 text-xl font-bold text-[#002534] border-b border-gray-100 flex justify-between items-center">
-                 {f.name}
-                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18l6-6-6-6"/></svg>
-               </a>
-             ))}
+          {/* SOCIAL LINKS */}
+          <div className="space-y-6">
+             <p className="text-[10px] font-black text-[#002534]/30 uppercase tracking-[0.3em]">Follow Us</p>
+             <div className="flex space-x-8 text-[#002534]">
+                <a href="#" className="font-bold text-sm">Facebook</a>
+                <a href="#" className="font-bold text-sm">TikTok</a>
+                <a href="#" className="font-bold text-sm">Snapchat</a>
+             </div>
           </div>
         </div>
       </div>
