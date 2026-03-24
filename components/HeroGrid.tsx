@@ -27,32 +27,32 @@ const HeroGrid: React.FC = () => {
         {/* --- DYNAMIC HERO SECTION --- */}
         <div className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-12 opacity-0 animate-reveal`} style={{ animationDelay: '0.1s' }}>
           
-          {/* LEFT COLUMN: The Worldwide App [cite: 6] */}
+          {/* LEFT COLUMN: The Worldwide App */}
           <div className={`${isUSUser ? 'lg:w-1/2' : 'w-full'} bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group`}>
              <div className="relative z-10 mb-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-4">
-                  Worldwide App. [cite: 6]
+                  Worldwide App.
                 </h1>
                 <p className="text-lg text-[#002534]/60 mb-8 max-w-md">
-                  Re-imagine your body, track food, and take action, all from your smart phone. [cite: 7]
+                  Re-imagine your body, track food, and take action, all from your smart phone.
                 </p>
                 
                 <ul className="mb-8 space-y-3 mt-6">
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                     <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                    <span><strong className="font-bold">3D Body Scans:</strong> AI-enabled visual projections & progress tracking. [cite: 8]</span>
+                    <span><strong className="font-bold">3D Body Scans:</strong> AI-enabled visual projections & progress tracking.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                     <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                    <span><strong className="font-bold">AI Nutrition:</strong> Snap a photo or scan a barcode for instant nutrient data. [cite: 9]</span>
+                    <span><strong className="font-bold">AI Nutrition:</strong> Snap a photo or scan a barcode for instant nutrient data.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                     <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                    <span><strong className="font-bold">Activity Hub:</strong> Running + GPS + Workouts + Wearables + Community. [cite: 10]</span>
+                    <span><strong className="font-bold">Activity Hub:</strong> Running + GPS + Workouts + Wearables + Community.</span>
                   </li>
                   <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                     <svg className="w-5 h-5 text-[#00B6A0] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                    <span><strong className="font-bold">Personalization:</strong> Maximize performance with behavioral testing. [cite: 11]</span>
+                    <span><strong className="font-bold">Personalization:</strong> Maximize performance with behavioral testing.</span>
                   </li>
                 </ul>
 
@@ -68,33 +68,33 @@ const HeroGrid: React.FC = () => {
              </div>
           </div>
 
-          {/* RIGHT COLUMN: Telehealth (ONLY SHOWN TO US USERS) [cite: 12] */}
+          {/* RIGHT COLUMN: Telehealth (ONLY SHOWN TO US USERS) */}
           {isUSUser && (
             <div className="lg:w-1/2 bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group">
                <div className="relative z-10 mb-10">
                   <h1 className="text-4xl md:text-5xl font-bold text-[#B87333] serif tracking-tighter leading-[1.05] mb-4">
-                    Telehealth – Made in the USA. [cite: 12]
+                    Telehealth – Made in the USA.
                   </h1>
                   <p className="text-lg text-[#002534]/60 mb-8 max-w-md">
-                    Clinical care, prescriptions, and labs at your door all from US sources. [cite: 13]
+                    Clinical care, prescriptions, and labs at your door all from US sources.
                   </p>
                   
                   <ul className="mb-8 space-y-3 mt-6">
                     <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                       <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                      <span><strong className="font-bold">Start Your Journey:</strong> Secure online intakes—no waiting rooms. [cite: 14]</span>
+                      <span><strong className="font-bold">Start Your Journey:</strong> Secure online intakes—no waiting rooms.</span>
                     </li>
                     <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                       <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                      <span><strong className="font-bold">Doctor Review:</strong> Personalized plans from US-licensed physicians. [cite: 15]</span>
+                      <span><strong className="font-bold">Doctor Review:</strong> Personalized plans from US-licensed physicians.</span>
                     </li>
                     <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                       <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                      <span><strong className="font-bold">Discreet Delivery:</strong> Fast, free shipping for medication and labs. [cite: 16]</span>
+                      <span><strong className="font-bold">Discreet Delivery:</strong> Fast, free shipping for medication and labs.</span>
                     </li>
                     <li className="flex items-start text-[#002534] text-sm md:text-base font-medium">
                       <svg className="w-5 h-5 text-[#F26422] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                      <span><strong className="font-bold">Sleep Wellness:</strong> At-home sleep testing & therapy for apnea. [cite: 17]</span>
+                      <span><strong className="font-bold">Sleep Wellness:</strong> At-home sleep testing & therapy for apnea.</span>
                     </li>
                   </ul>
 
@@ -112,7 +112,7 @@ const HeroGrid: React.FC = () => {
           )}
         </div>
 
-        {/* --- TOP ROW: PRIMARY HEALTH GOALS [cite: 19] --- */}
+        {/* --- TOP ROW: PRIMARY HEALTH GOALS --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
@@ -123,7 +123,6 @@ const HeroGrid: React.FC = () => {
             >
               <div className="flex justify-between items-start mb-4 relative z-20">
                 <h3 className="text-2xl font-bold leading-[1.1] serif text-[#002534]">
-                  {/* Updated Tile Titles per [cite: 22, 23] */}
                   {group.id === 'sleep' ? 'Snoring &' : group.title.split(' ')[0]} <br />
                   <span className="text-[#F26422]">
                     {group.id === 'sleep' ? 'Sleep Apnea' : group.title.split(' ').slice(1).join(' ')}
@@ -138,7 +137,6 @@ const HeroGrid: React.FC = () => {
               </div>
               
               <p className="text-xs max-w-[150px] leading-relaxed text-[#002534]/40 transition-all group-hover:text-[#002534] relative z-20 mb-8">
-                {/* Updated descriptions per [cite: 21, 22, 23] */}
                 {group.id === 'sex' ? 'Clinically proven solutions for performance and libido for men.' : 
                  group.id === 'sleep' ? 'Get diagnosed with convenient home sleep testing.' :
                  group.id === 'labs' ? 'Genetic Insights for Obesity Phenotyping' :
@@ -152,7 +150,7 @@ const HeroGrid: React.FC = () => {
                   className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
                 />
                 <img 
-                  src={group.id === 'weight' ? '/glp1_branded.png' : group.imageUrl} // Updated 
+                  src={group.id === 'weight' ? '/glp1_branded.png' : group.imageUrl}
                   alt={group.title}
                   className="w-[85%] h-auto object-contain relative z-10 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105"
                 />
@@ -161,7 +159,7 @@ const HeroGrid: React.FC = () => {
           ))}
         </div>
 
-        {/* --- BOTTOM ROW: APP INTELLIGENCE [cite: 19] --- */}
+        {/* --- BOTTOM ROW: APP INTELLIGENCE --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {MINOR_TREATMENTS.map((item, idx) => (
             <a
@@ -172,7 +170,6 @@ const HeroGrid: React.FC = () => {
             >
               <div className="flex justify-between items-start mb-4 relative z-20">
                 <h3 className="text-xl md:text-2xl font-bold leading-[1.1] serif text-[#002534] pr-4">
-                  {/* Updated App Labels per  */}
                   {item.id === 'physical' ? 'Full-Body Intelligence' :
                    item.id === 'nutrition' ? 'Food & Nutrient Intelligence' :
                    item.id === 'mental' ? 'Mental Motivation Analysis' :
