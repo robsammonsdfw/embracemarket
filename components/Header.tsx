@@ -21,10 +21,26 @@ const Header: React.FC = () => {
   return (
     <>
       {/* 1. ANNOUNCEMENT BAR */}
-      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6">
-        <p className="text-[10px] md:text-xs font-bold text-center tracking-tight md:tracking-wider uppercase">
-          One App. One Login. One Dashboard. The Full Picture <span className="mx-2 text-[#00B6A0]">+</span> Tele-Medicine. Tele-Dentistry. Tele-Sleep
-        </p>
+      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6 flex justify-center items-center">
+        <div className="text-[10px] md:text-xs font-bold text-center tracking-tight md:tracking-wider uppercase">
+          {/* Link 1: App Ecosystem */}
+          <a 
+            href="https://app.embracehealth.ai" 
+            className="hover:text-[#00B6A0] transition-colors"
+          >
+            One App. One Login. One Dashboard. The Full Picture
+          </a>
+          
+          <span className="mx-2 text-[#00B6A0]">+</span>
+          
+          {/* Link 2: Telehealth Shop */}
+          <a 
+            href="https://shop.embracehealth.ai" 
+            className="hover:text-[#00B6A0] transition-colors"
+          >
+            Tele-Medicine. Tele-Dentistry. Tele-Sleep
+          </a>
+        </div>
       </div>
 
       <header 
