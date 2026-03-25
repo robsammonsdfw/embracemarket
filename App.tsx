@@ -385,42 +385,41 @@ const App: React.FC = () => {
                 ]}
               />
             } />
-
-            {/* 6. Sleep Health Landing Page (Updated with text from image_c1c98f.png) */}
-            <Route path="/app/sleep-health" element={
+{/* 6. Sleep Health Landing Page */}
+<Route path="/app/sleep-health" element={
               <FeatureLandingPage 
                 h1="Many people know something is wrong—but don’t know what to do next."
                 subhead="Get Started - We’ve made it easy for you."
-                directAnswer="Untreated sleep apnea can impact your energy, focus, and overall quality of life. Treatment can help you feel more rested, improve daily performance, sleep more comfortably, and reduce long-term health risks."
+                directAnswer="Untreated sleep apnea can impact your energy, focus, and overall quality of life. Treatment can help you: Feel more rested, Improve daily performance, Sleep more comfortably, and Reduce long-term health risks."
                 heroVideo="/sleep_hero.mp4" 
                 
-                ctaLink="https://dummy-quiz-link.com/sleep-test" 
+                ctaLink="https://shop.embracehealth.ai/products/sleep-apnea-test" 
                 topCtaText="Take Quiz"
-                topCtaSubtext="Find out if you qualify for an at-home sleep test in under 2 minutes."
+                topCtaSubtext=""
                 bottomCtaHeader="Ready to sleep better?"
                 bottomCtaText="Take Quiz"
                 bottomCtaSubtext="Take the first step toward reclaiming your energy."
 
                 processFlow={{
-                  heading: "STEP 1: Get diagnosed by taking our convenient Home Sleep Test",
-                  subheading: "What’s included: Three virtual consultations with a Board-Certified Sleep Physician consisting of:",
+                  heading: "STEP 1",
+                  subheading: "Get diagnosed by taking our convenient Home Sleep Test. What’s included: Three virtual consultations with a Board-Certified Sleep Physician consisting of:",
                   steps: [
                     {
-                      title: "1. Pre-Qualifying Consultation",
+                      title: "a. Pre-Qualifying Consultation.",
                       image: "/sleep_step1.png",
                       bullets: [
                         "Doctors will determine if you are a good candidate."
                       ]
                     },
                     {
-                      title: "2. Post-Delivery Consultation",
+                      title: "b. Post-Delivery Consultation.",
                       image: "/sleep_step2.png",
                       bullets: [
                         "Doctors will explain the setup process."
                       ]
                     },
                     {
-                      title: "3. Review Your Results",
+                      title: "c. Review Your Results.",
                       image: "/sleep_step3.png",
                       bullets: [
                         "Doctors will review your results and recommend treatment.",
@@ -432,16 +431,29 @@ const App: React.FC = () => {
 
                 sections={[
                   { 
-                    title: "STEP 2: Once you’ve been diagnosed, we offer:", 
-                    body: "CPAP Alternative Therapy with FDA-Cleared Oral Appliances for Mild to Moderate apnea or for those who are CPAP Intolerant or Non-Compliant.",
-                    detail: "Medical Insurance-Friendly Guidance for CPAP for Severe and Very Severe apnea. Coordinated Care with Board-Certified Sleep Physicians in all 50 states. Coordinated Care with Board-Certified Dentists (including your own dentist) in all 50 states (Additional fees may apply).",
+                    title: "Why Diagnosing and Treating Sleep Apnea Matters", 
+                    body: "Untreated sleep apnea can impact your energy, focus, and overall quality of life.",
+                    detail: "Treatment can help you:\n• Feel more rested\n• Improve daily performance\n• Sleep more comfortably\n• Reduce long-term health risks",
+                    image: "/diagnostics_compare.png"
+                  },
+                  { 
+                    title: "STEP 2", 
+                    body: "Once you’ve been diagnosed, we offer:\n• CPAP Alternative Therapy with FDA-Cleared Oral Appliances for Mild to Moderate apnea or for those who are CPAP Intolerant or Non-Compliant.\n• Medical Insurance-Friendly Guidance for CPAP for Severe and Very Severe apnea.",
+                    detail: "• Coordinated Care with Board-Certified Sleep Physicians in all 50 states.\n• Coordinated Care with Board-Certified Dentists (including your own dentist) in all 50 states (Additional fees may apply).",
                     image: "/oral_appliance.png"
+                  },
+                  {
+                    title: "A budget-friendly semi-custom approach",
+                    body: "A fully custom oral appliance can cost thousands of dollars, sometimes partially covered by Medicare of your medical insurance. We recommend you ‘try before you buy’ with our semi-custom approach that is more budget-friendly.",
+                    detail: "After your results are in, you can authorize your dentist to purchase our kit directly and fit you in their office. In less than 20 minutes you can walk out with a trial appliance. Our virtual dentists cover all 50 states in case you don’t have access to a dentist for geographic reasons.\n\nLearn more...(Needs to redirect to marketing page for HST and OAT which we don't have built. See brochure attached for content and layout).",
+                    image: "/dentist_network.png"
                   }
                 ]}
+                
                 comparison={[
                   { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
-                  { label: "Testing Equipment", us: "WatchPAT® ONE (Wrist/Finger)", them: "Wires glued to head/chest" },
-                  { label: "Therapy Experience", us: "Quiet Oral Appliance", them: "Noisy CPAP Machine & Hoses" },
+                  { label: "Test Method", us: "At-Home WatchPAT®", them: "In-Lab Sleep Study" },
+                  { label: "Therapy Options", us: "Custom Oral Appliances", them: "CPAP Machines" },
                   { label: "Patient Compliance", us: "Proven 90%+ Success", them: "High Abandonment Rate" }
                 ]}
                 faqs={[
