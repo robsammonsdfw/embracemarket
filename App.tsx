@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
+import LabsSection from './components/LabsSection';
+import TestosteroneFeature from './components/TestosteroneFeature';
 import PromptsList from './components/PromptsList';
 import Footer from './components/Footer';
 import FeatureLandingPage from './components/FeatureLandingPage';
@@ -48,7 +50,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* 2. THE SLEEP SECTION (Using former Testosterone Layout Logic) */}
+    {/* 2. THE SLEEP HOOK: Animated background with grounded foreground image */}
     <section className="relative w-full bg-[#002534] min-h-[600px] md:h-[750px] overflow-hidden flex items-center">
       
       {/* The Dynamic Movie (Full Width Background) */}
@@ -60,7 +62,6 @@ const HomePage = () => (
           playsInline 
           className="w-full h-full object-cover"
         >
-          {/* Note: Update this to your desired sleep background video */}
           <source src="/sleep_bg.mp4" type="video/mp4" />
         </video>
         {/* Gradient to fade edges into the dark blue */}
@@ -69,17 +70,16 @@ const HomePage = () => (
 
       <div className="max-w-[1450px] mx-auto px-6 md:px-12 w-full h-full grid lg:grid-cols-2 items-center relative z-20">
         
-        {/* LEFT SIDE: Grounded Person (Properly scaled) */}
+        {/* LEFT SIDE: Grounded Person (Properly scaled foreground image) */}
         <div className="absolute bottom-0 left-0 lg:left-12 w-full lg:w-1/2 h-[85%] flex justify-center lg:justify-start items-end pointer-events-none">
           <img 
-            /* Note: Update this to your desired sleep foreground image */
             src="/sleep_man.png" 
             className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             alt="Struggling to sleep" 
           />
         </div>
 
-        {/* RIGHT SIDE: Strategic Verbiage (Aligned in the grid) */}
+        {/* RIGHT SIDE: Strategic Verbiage */}
         <div className="lg:col-start-2 py-20 lg:py-0">
           <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white">
             Still tired...<br />
@@ -89,28 +89,37 @@ const HomePage = () => (
             If you are experiencing daytime fatigue, waking up frequently, or can't tolerate your CPAP machine, it's time to find your baseline.
           </p>
           
-          <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-10 hover:text-white transition-colors">
+          <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-8 hover:text-white transition-colors">
             Did you know poor sleep is directly correlated to weight retention? Learn the science.
           </a>
 
-          <ul className="space-y-4 mb-12">
-            <li className="flex items-center text-white/90 font-bold text-lg">
-              <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Waking Frequently
+          {/* All 5 specific bullet points */}
+          <ul className="space-y-3 mb-10">
+            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Wake up frequently during the night
             </li>
-            <li className="flex items-center text-white/90 font-bold text-lg">
-              <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Daytime Fatigue
+            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Feel tired during the day
             </li>
-            <li className="flex items-center text-white/90 font-bold text-lg">
-              <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              CPAP Intolerance
+            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Struggle to tolerate your CPAP machine
+            </li>
+            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Experience headaches or dry mouth
+            </li>
+            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Experience drowsy-driving
             </li>
           </ul>
 
           <a 
             href="/app/sleep-health" 
-            className="inline-block px-12 py-5 bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
+            className="inline-block px-10 py-4 bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
           >
             Explore Sleep Solutions
           </a>
@@ -377,50 +386,45 @@ const App: React.FC = () => {
               />
             } />
 
-            {/* 6. Sleep Health Landing Page */}
+            {/* 6. Sleep Health Landing Page (Updated with text from image_c1c98f.png) */}
             <Route path="/app/sleep-health" element={
               <FeatureLandingPage 
-                h1="A simple path to better sleep"
-                subhead="Frictionless, at-home sleep apnea testing and personalized, non-invasive treatment plans designed for your baseline."
-                directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
+                h1="Many people know something is wrong—but don’t know what to do next."
+                subhead="Get Started - We’ve made it easy for you."
+                directAnswer="Untreated sleep apnea can impact your energy, focus, and overall quality of life. Treatment can help you feel more rested, improve daily performance, sleep more comfortably, and reduce long-term health risks."
                 heroVideo="/sleep_hero.mp4" 
                 
                 ctaLink="https://dummy-quiz-link.com/sleep-test" 
-                topCtaText="Take The First Step"
-                topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+                topCtaText="Take Quiz"
+                topCtaSubtext="Find out if you qualify for an at-home sleep test in under 2 minutes."
                 bottomCtaHeader="Ready to sleep better?"
-                bottomCtaText="Take The First Step"
-                bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+                bottomCtaText="Take Quiz"
+                bottomCtaSubtext="Take the first step toward reclaiming your energy."
 
                 processFlow={{
-                  heading: "A simple, transparent process",
-                  subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
+                  heading: "STEP 1: Get diagnosed by taking our convenient Home Sleep Test",
+                  subheading: "What’s included: Three virtual consultations with a Board-Certified Sleep Physician consisting of:",
                   steps: [
                     {
-                      title: "Start Your Journey",
-                      image: "/step1_phone.png",
+                      title: "1. Pre-Qualifying Consultation",
+                      image: "/sleep_step1.png",
                       bullets: [
-                        "Select Your Treatment Focus",
-                        "Choose Your Medication",
-                        "Checkout & Complete Your Health Questionnaire"
+                        "Doctors will determine if you are a good candidate."
                       ]
                     },
                     {
-                      title: "Doctor Review",
-                      image: "/step2_rx.png",
+                      title: "2. Post-Delivery Consultation",
+                      image: "/sleep_step2.png",
                       bullets: [
-                        "A licensed US physician reviews your information.",
-                        "Physician will determine what is medically appropriate for you.",
-                        "Your prescription is sent to our pharmacy."
+                        "Doctors will explain the setup process."
                       ]
                     },
                     {
-                      title: "Discrete Delivery",
-                      image: "/step3_box.png",
+                      title: "3. Review Your Results",
+                      image: "/sleep_step3.png",
                       bullets: [
-                        "Shipping is included.",
-                        "Discreet packaging is used.",
-                        "Delivered to your doorstep."
+                        "Doctors will review your results and recommend treatment.",
+                        "Your results report will include a medical insurance-accepted Letter of Medical Necessity (LMN)."
                       ]
                     }
                   ]
@@ -428,28 +432,22 @@ const App: React.FC = () => {
 
                 sections={[
                   { 
-                    title: "The frictionless home test", 
-                    body: "Forget cumbersome, expensive, in-lab sleep studies. EmbraceHealth brings the test directly to your door.",
-                    detail: "The at-home WatchPAT® ONE test is disposable, accurate, provides results within 24-48 hours, and costs only $259. Experience an 89% correlation with PSG gold standard, all from the comfort of your own bed.",
-                    image: "/diagnostics_compare.png"
-                  },
-                  { 
-                    title: "A better way to treat sleep apnea", 
-                    body: "If CPAP therapy has been a struggle, we offer proven, comfortable CPAP alternatives like personalized oral sleep appliances.",
-                    detail: "Our non-invasive therapies deliver improved real-world outcomes: better sleep, reduced blood pressure, and improved cognition. They are comfortable, quiet, portable, and deliver proven 90%+ compliance compared to just 50% for standard CPAP.",
-                    image: "/therapy_compare.png"
-                  },
+                    title: "STEP 2: Once you’ve been diagnosed, we offer:", 
+                    body: "CPAP Alternative Therapy with FDA-Cleared Oral Appliances for Mild to Moderate apnea or for those who are CPAP Intolerant or Non-Compliant.",
+                    detail: "Medical Insurance-Friendly Guidance for CPAP for Severe and Very Severe apnea. Coordinated Care with Board-Certified Sleep Physicians in all 50 states. Coordinated Care with Board-Certified Dentists (including your own dentist) in all 50 states (Additional fees may apply).",
+                    image: "/oral_appliance.png"
+                  }
                 ]}
                 comparison={[
                   { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
-                  { label: "Test Method", us: "At-Home WatchPAT® (98% success rate)", them: "In-Lab Sleep Study ( cumbersome)" },
-                  { label: "Therapy Options", us: "Comfortable CPAP Alternatives (Custom Oral Appliances)", them: "Generic CPAP Machines" },
-                  { label: "Patient Compliance", us: "Proven 90%+", them: "~50% for CPAP" }
+                  { label: "Testing Equipment", us: "WatchPAT® ONE (Wrist/Finger)", them: "Wires glued to head/chest" },
+                  { label: "Therapy Experience", us: "Quiet Oral Appliance", them: "Noisy CPAP Machine & Hoses" },
+                  { label: "Patient Compliance", us: "Proven 90%+ Success", them: "High Abandonment Rate" }
                 ]}
                 faqs={[
-                  { q: "Is the home sleep test accurate?", a: "Yes, the WatchPAT® test is FDA-cleared and provides a highly accurate correlation (89%) with the gold standard gold in-lab PSG tests." },
-                  { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for your convenience." },
-                  { q: "Do I have to wear a large CPAP mask?", a: "No. Our personalized therapies use comfortable oral appliances that are quiet, non-invasive, and require no hoses or straps." }
+                  { q: "How much does the at-home test cost?", a: "The WatchPAT® ONE home sleep test and the three included physician consultations cost $259." },
+                  { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for the treatment phase and the custom oral appliances." },
+                  { q: "What if my apnea is severe?", a: "Oral appliances are generally indicated for mild to moderate obstructive sleep apnea. If your test reveals severe apnea, our specialists will help guide you toward the most appropriate clinical therapy, which may include CPAP." }
                 ]}
               />
             } />
