@@ -2,8 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
-import LabsSection from './components/LabsSection';
-import TestosteroneFeature from './components/TestosteroneFeature';
 import PromptsList from './components/PromptsList';
 import Footer from './components/Footer';
 import FeatureLandingPage from './components/FeatureLandingPage';
@@ -50,7 +48,77 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* 2. THE BASELINE SECTION: Conversational logic (White Background) */}
+    {/* 2. THE SLEEP SECTION (Using former Testosterone Layout Logic) */}
+    <section className="relative w-full bg-[#002534] min-h-[600px] md:h-[750px] overflow-hidden flex items-center">
+      
+      {/* The Dynamic Movie (Full Width Background) */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover"
+        >
+          {/* Note: Update this to your desired sleep background video */}
+          <source src="/sleep_bg.mp4" type="video/mp4" />
+        </video>
+        {/* Gradient to fade edges into the dark blue */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#002534] via-transparent to-[#002534]"></div>
+      </div>
+
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 w-full h-full grid lg:grid-cols-2 items-center relative z-20">
+        
+        {/* LEFT SIDE: Grounded Person (Properly scaled) */}
+        <div className="absolute bottom-0 left-0 lg:left-12 w-full lg:w-1/2 h-[85%] flex justify-center lg:justify-start items-end pointer-events-none">
+          <img 
+            /* Note: Update this to your desired sleep foreground image */
+            src="/sleep_man.png" 
+            className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            alt="Struggling to sleep" 
+          />
+        </div>
+
+        {/* RIGHT SIDE: Strategic Verbiage (Aligned in the grid) */}
+        <div className="lg:col-start-2 py-20 lg:py-0">
+          <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white">
+            Still tired...<br />
+            <span className="text-[#F26422]">Even after a full night's sleep?</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed max-w-lg">
+            If you are experiencing daytime fatigue, waking up frequently, or can't tolerate your CPAP machine, it's time to find your baseline.
+          </p>
+          
+          <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-10 hover:text-white transition-colors">
+            Did you know poor sleep is directly correlated to weight retention? Learn the science.
+          </a>
+
+          <ul className="space-y-4 mb-12">
+            <li className="flex items-center text-white/90 font-bold text-lg">
+              <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Waking Frequently
+            </li>
+            <li className="flex items-center text-white/90 font-bold text-lg">
+              <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Daytime Fatigue
+            </li>
+            <li className="flex items-center text-white/90 font-bold text-lg">
+              <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              CPAP Intolerance
+            </li>
+          </ul>
+
+          <a 
+            href="/app/sleep-health" 
+            className="inline-block px-12 py-5 bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
+          >
+            Explore Sleep Solutions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. THE BASELINE SECTION: DNA / Conversational logic (White Background) */}
     <section className="py-24 bg-white">
       <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
         <div className="animate-reveal">
@@ -93,105 +161,6 @@ const HomePage = () => (
             Your browser does not support the video tag.
           </video>
         </div>
-      </div>
-    </section>
-
-    {/* --- SECTION: FULL-WIDTH TEAL BAND WITH GROUNDED ASSET --- */}
-    <section className="relative w-full bg-[#00B6A0] min-h-[600px] md:h-[750px] overflow-hidden flex items-center">
-      
-      {/* 1. The Dynamic Movie (Full Width Background) */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="w-full h-full object-cover grayscale brightness-150 contrast-125"
-        >
-          <source src="/lowt_scale.mp4" type="video/mp4" />
-        </video>
-        {/* Gradient to fade edges into the teal */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00B6A0] via-transparent to-[#00B6A0]"></div>
-      </div>
-
-      <div className="max-w-[1450px] mx-auto px-6 md:px-12 w-full h-full grid lg:grid-cols-2 items-center relative z-20">
-        
-        {/* LEFT SIDE: Grounded Person (Properly scaled) */}
-        <div className="absolute bottom-0 left-0 lg:left-12 w-full lg:w-1/2 h-[85%] flex justify-center lg:justify-start items-end pointer-events-none">
-          <img 
-            src="/lowtman.png" 
-            className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,37,52,0.4)]"
-            alt="Hormone optimization" 
-          />
-        </div>
-
-        {/* RIGHT SIDE: Strategic Verbiage (Alined in the grid) */}
-        <div className="lg:col-start-2 py-20 lg:py-0">
-          <span className="inline-block px-4 py-1.5 bg-[#002534]/5 border border-[#002534]/10 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-[#002534] mb-8">
-            Biological Mastery
-          </span>
-          <h2 className="text-6xl md:text-8xl font-bold serif tracking-tighter leading-[0.85] mb-8 text-[#002534]">
-            Optimize <br /> your drive.
-          </h2>
-          <p className="text-xl text-[#002534]/60 mb-12 max-w-lg leading-relaxed italic">
-            "Reclaim your metabolic baseline. Stop guessing about your energy and start acting on unique clinical data."
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <a 
-              href="/treatments/testosterone" 
-              className="w-full sm:w-auto px-12 py-5 bg-[#002534] text-white font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-black transition-all shadow-xl text-center"
-            >
-              Start Free Consultation
-            </a>
-            <p className="text-[9px] text-[#002534]/40 max-w-[140px] leading-tight uppercase tracking-tighter font-bold">
-              *Requires clinical labs and physician approval.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* --- NEW HOMEPAGE HOOK: SLEEP HEALTH (CENTERED HERO STYLE) --- */}
-    <section className="py-32 bg-[#002534] text-white relative overflow-hidden flex items-center justify-center text-center">
-      <div className="max-w-[1000px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center animate-reveal">
-        
-        <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6">
-          Still tired...<br />
-          <span className="text-[#F26422]">Even after a full night's sleep?</span>
-        </h2>
-        
-        <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed max-w-3xl">
-          If you are experiencing daytime fatigue, waking up frequently, or can't tolerate your CPAP machine, it's time to find your baseline.
-        </p>
-
-        {/* Sleep / Weight Correlation Link */}
-        <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-12 hover:text-white transition-colors">
-          Did you know poor sleep is directly correlated to weight retention? Learn the science.
-        </a>
-
-        {/* Symptoms Bullet List (Centered horizontally) */}
-        <ul className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-14">
-          <li className="flex items-center text-white/90 font-bold text-lg md:text-xl">
-            <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            Waking Frequently
-          </li>
-          <li className="flex items-center text-white/90 font-bold text-lg md:text-xl">
-            <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            Daytime Fatigue
-          </li>
-          <li className="flex items-center text-white/90 font-bold text-lg md:text-xl">
-            <svg className="w-6 h-6 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            CPAP Intolerance
-          </li>
-        </ul>
-
-        <a 
-          href="/app/sleep-health" 
-          className="inline-block px-12 py-5 bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
-        >
-          Explore Sleep Solutions
-        </a>
       </div>
     </section>
 
