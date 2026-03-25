@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PRODUCT_GROUPS, MINOR_TREATMENTS } from '../constants';
+import { PRODUCT_GROUPS, MINOR_TREATMENTS, COLORS } from '../constants';
 
 const HeroGrid: React.FC = () => {
   const [isUSUser, setIsUSUser] = useState<boolean | null>(null);
@@ -21,11 +21,10 @@ const HeroGrid: React.FC = () => {
     <section className="pt-[160px] pb-16 px-6 md:px-12 bg-[#E6E7E9]">
       <div className="max-w-[1450px] mx-auto">
         
-        {/* TOP HERO COLUMNS */}
-        <div 
-          className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-[14pt] opacity-0 animate-reveal`} 
-          style={{ animationDelay: '0.1s' }}
-        >
+        {/* --- DYNAMIC HERO SECTION: 50/50 Dual Ecosystem Split --- */}
+        <div className={`flex flex-col ${isUSUser ? 'lg:flex-row' : ''} gap-6 mb-[14pt] opacity-0 animate-reveal`} style={{ animationDelay: '0.1s' }}>
+          
+          {/* LEFT 50% COLUMN: The App Ecosystem */}
           <div className={`${isUSUser ? 'lg:w-1/2' : 'w-full'} bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group`}>
              <div className="relative z-10 mb-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-4">
@@ -66,6 +65,7 @@ const HeroGrid: React.FC = () => {
              </div>
           </div>
 
+          {/* RIGHT 50% COLUMN: The Telemedicine Shop */}
           {isUSUser && (
             <div className="lg:w-1/2 bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group">
                <div className="relative z-10 mb-10">
@@ -109,7 +109,7 @@ const HeroGrid: React.FC = () => {
           )}
         </div>
 
-        {/* TOP ROW WIDGETS */}
+        {/* --- TOP ROW: PRIMARY HEALTH GOALS --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-[14pt]">
           {PRODUCT_GROUPS.map((group, idx) => (
             <a 
@@ -118,9 +118,11 @@ const HeroGrid: React.FC = () => {
               className={`group relative overflow-hidden rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal ${group.hoverBg}`}
               style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
-              {/* FIXED: Removed fixed height. Cap dynamically sizes to content. High z-index (30) to stay on top. */}
-              <div className="absolute top-0 left-0 right-0 bg-[#002534] z-30 p-8">
-                <div className="flex justify-between items-start mb-4">
+              {/* FIXED: Black Cap Standardized (1/4 of widget height, 105px). sits ON TOP of image with z-30 cite: HeroGrid.tsx, update home page.jpg */}
+              <div className="absolute top-0 left-0 right-0 h-[105px] bg-[#002534] rounded-t-[2.5rem] z-30 p-8 flex flex-col justify-start">
+                
+                {/* Text inside cap, stacked vertically for full width cite: update home page.jpg */}
+                <div className="flex justify-between items-start w-full relative">
                   <h3 className="text-2xl font-bold leading-[1.1] serif text-white">
                     {group.id === 'sleep' ? 'Snoring &' : group.title.split(' ')[0]} <br />
                     <span className="text-[#F26422]">
@@ -128,8 +130,8 @@ const HeroGrid: React.FC = () => {
                     </span>
                   </h3>
                   
-                  {/* White circle, black arrow SVG */}
-                  <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full transition-transform duration-700 group-hover:rotate-45 flex-shrink-0">
+                  {/* Arrow Iconcite: index.tsx */}
+                  <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full transition-transform duration-700 group-hover:rotate-45 relative z-20 flex-shrink-0">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#002534" strokeWidth="2.5">
                           <line x1="7" y1="17" x2="17" y2="7" />
                           <polyline points="7 7 17 7 17 17" />
@@ -137,15 +139,16 @@ const HeroGrid: React.FC = () => {
                   </div>
                 </div>
                 
-                <p className="text-xs max-w-[150px] leading-relaxed text-white/70 transition-all group-hover:text-white m-0">
-                  {group.id === 'sex' ? 'Clinically proven solutions for performance and libido for men.' : 
-                   group.id === 'sleep' ? 'Get diagnosed with convenient home sleep testing.' :
-                   group.id === 'labs' ? 'Genetic Insights for Obesity Phenotyping' :
+                {/* description nesting inside cap cite: update home page.jpg */}
+                {/* description color white on black cite: index.tsx */}
+                <p className="text-xs max-w-[150px] leading-relaxed text-white/70 transition-all group-hover:text-white relative mt-1">
+                  {group.id === 'sex' ? 'Proven solutions for libido for men.' : 
+                   group.id === 'sleep' ? 'Convenient home sleep testing.' :
+                   group.id === 'labs' ? 'Insights for Obesity Phenotyping' :
                    group.description}
                 </p>
               </div>
               
-              {/* Images sit in the background (implicit low z-index) and slide up behind the black cap */}
               <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
                 <img 
                   src={group.shadowUrl} 
@@ -153,16 +156,18 @@ const HeroGrid: React.FC = () => {
                   className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
                 />
                 <img 
-                  src={group.imageUrl}
+                  {/* PRESERVING EXACT LOGIC FROM baselined filecite: HeroGrid.tsx */}
+                  src={group.id === 'weight' ? '/glp1_branded.png' : group.imageUrl} 
                   alt={group.title}
-                  className="w-[85%] h-auto object-contain relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105"
+                  {/* image sits below cap with z-10cite: HeroGrid.tsx, update home page.jpg */}
+                  className="w-[85%] h-auto object-contain relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 z-10"
                 />
               </div>
             </a>
           ))}
         </div>
 
-        {/* BOTTOM ROW WIDGETS */}
+        {/* --- BOTTOM ROW: APP INTELLIGENCE --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {MINOR_TREATMENTS.map((item, idx) => (
             <a
@@ -171,31 +176,36 @@ const HeroGrid: React.FC = () => {
               className="group relative overflow-hidden rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal hover:bg-gray-50/80"
               style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
             >
-              {/* FIXED: Removed fixed height. High z-index (30) to stay on top. */}
-              <div className="absolute top-0 left-0 right-0 bg-[#002534] z-30 p-8 flex items-start justify-between">
-                <h3 className="text-xl md:text-2xl font-bold leading-[1.1] serif text-white pr-4">
-                  {item.id === 'physical' ? 'Full-Body Intelligence' :
-                   item.id === 'nutrition' ? 'Food & Nutrient Intelligence' :
-                   item.id === 'mental' ? 'Mental Motivation Analysis' :
-                   item.id === 'tracking' ? 'Wearable Integrations' :
-                   item.title}
-                </h3>
+              {/* FIXED: Black Cap Standardized (105px), on top with z-30cite: index.tsx, update home page.jpg */}
+              <div className="absolute top-0 left-0 right-0 h-[105px] bg-[#002534] rounded-t-[2.5rem] z-30 p-8 flex flex-col justify-start">
                 
-                {/* White circle, black arrow SVG */}
-                <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full transition-transform duration-700 group-hover:rotate-45 flex-shrink-0">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#002534" strokeWidth="2.5">
-                        <line x1="7" y1="17" x2="17" y2="7" />
-                        <polyline points="7 7 17 7 17 17" />
-                    </svg>
+                <div className="flex justify-between items-start w-full relative">
+                  {/* text is inside cap, white */}
+                  {/* font logic from provided index.tsx */}
+                  <h3 className={`font-bold leading-[1.1] serif text-white pr-4 ${item.title.length > 25 ? 'text-lg' : 'text-xl md:text-2xl'}`}>
+                    {item.id === 'physical' ? 'Full-Body Intelligence' :
+                     item.id === 'nutrition' ? 'Food Intelligence' :
+                     item.id === 'mental' ? 'Mental Analysis' :
+                     item.id === 'tracking' ? 'Wearable Integrations' :
+                     item.title}
+                  </h3>
+                  
+                  {/* Updated Iconcite: index.tsx */}
+                  <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full transition-transform duration-700 group-hover:rotate-45 relative flex-shrink-0">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#002534" strokeWidth="2.5">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                  </div>
                 </div>
               </div>
 
-              {/* Images sit in the background (implicit low z-index) and slide up behind the black cap */}
               <div className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none flex items-end justify-center mb-[-5%]">
                 <img 
                   src={item.imageUrl} 
                   alt={item.title} 
-                  className="w-[85%] h-auto object-contain relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl"
+                  {/* Image is z-10 below z-30 capcite: HeroGrid.tsx */}
+                  className="w-[85%] h-auto object-contain relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl z-10"
                 />
               </div>
             </a>
