@@ -368,47 +368,47 @@ const App: React.FC = () => {
             {/* 6. Sleep Health Landing Page */}
             <Route path="/app/sleep-health" element={
               <FeatureLandingPage 
-                h1="A simple path to better sleep"
-                subhead="Frictionless, at-home sleep apnea testing and personalized, non-invasive treatment plans designed for your baseline."
-                directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
+                h1="Still Tired… Even After a Full Night of Sleep?"
+                subhead="If you are experiencing daytime fatigue, waking up frequently, or can't tolerate your CPAP machine, it's time to find your baseline."
+                directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate, FDA-cleared home testing, and offer comfortable, custom Oral Appliances as a proven alternative to CPAP machines."
                 heroVideo="/sleep_hero.mp4" 
                 
-                ctaLink="https://dummy-quiz-link.com/sleep-test" 
-                topCtaText="Take The First Step"
-                topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+                ctaLink="https://shop.embracehealth.ai/products/sleep-apnea-test" 
+                topCtaText="Take The Sleep Quiz"
+                topCtaSubtext="Find out if you qualify for an at-home sleep test in under 2 minutes."
                 bottomCtaHeader="Ready to sleep better?"
-                bottomCtaText="Take The First Step"
-                bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+                bottomCtaText="Start Your Evaluation"
+                bottomCtaSubtext="Take the first step toward reclaiming your energy."
 
                 processFlow={{
-                  heading: "A simple, transparent process",
-                  subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
+                  heading: "Step 1: Get Diagnosed (From Your Own Bed)",
+                  subheading: "Skip the expensive, uncomfortable sleep lab. We bring the clinic to you with 3 virtual consultations and an FDA-cleared test.",
                   steps: [
                     {
-                      title: "Start Your Journey",
-                      image: "/step1_phone.png",
+                      title: "1. Pre-Qualifying Consult",
+                      image: "/sleep_step1.png",
                       bullets: [
-                        "Select Your Treatment Focus",
-                        "Choose Your Medication",
-                        "Checkout & Complete Your Health Questionnaire"
+                        "Meet virtually with a US-licensed sleep specialist.",
+                        "Discuss your specific symptoms and medical history.",
+                        "Determine if the at-home WatchPAT® ONE test is right for you."
                       ]
                     },
                     {
-                      title: "Doctor Review",
-                      image: "/step2_rx.png",
+                      title: "2. The At-Home Test",
+                      image: "/sleep_step2.png",
                       bullets: [
-                        "A licensed US physician reviews your information.",
-                        "Physician will determine what is medically appropriate for you.",
-                        "Your prescription is sent to our pharmacy."
+                        "Test is mailed discreetly to your door.",
+                        "Wear the simple wrist and finger sensor for just one night.",
+                        "Data is uploaded automatically via your smartphone."
                       ]
                     },
                     {
-                      title: "Discrete Delivery",
-                      image: "/step3_box.png",
+                      title: "3. Results & Treatment Plan",
+                      image: "/sleep_step3.png",
                       bullets: [
-                        "Shipping is included.",
-                        "Discreet packaging is used.",
-                        "Delivered to your doorstep."
+                        "Meet with your specialist to review your clinical data.",
+                        "Understand your Apnea-Hypopnea Index (AHI).",
+                        "Discuss CPAP vs. Oral Appliance treatment paths."
                       ]
                     }
                   ]
@@ -416,28 +416,28 @@ const App: React.FC = () => {
 
                 sections={[
                   { 
-                    title: "The frictionless home test", 
-                    body: "Forget cumbersome, expensive, in-lab sleep studies. EmbraceHealth brings the test directly to your door.",
-                    detail: "The at-home WatchPAT® ONE test is disposable, accurate, provides results within 24-48 hours, and costs only $259. Experience an 89% correlation with PSG gold standard, all from the comfort of your own bed.",
-                    image: "/diagnostics_compare.png"
+                    title: "Step 2: A Comfortable CPAP Alternative", 
+                    body: "If you have mild to moderate sleep apnea, or simply cannot tolerate a CPAP machine, we specialize in Oral Appliance Therapy.",
+                    detail: "These FDA-cleared devices fit like a sports mouthguard or retainer. By gently shifting your lower jaw forward, they keep your airway completely open while you sleep—without hoses, masks, or noise.",
+                    image: "/oral_appliance.png"
                   },
                   { 
-                    title: "A better way to treat sleep apnea", 
-                    body: "If CPAP therapy has been a struggle, we offer proven, comfortable CPAP alternatives like personalized oral sleep appliances.",
-                    detail: "Our non-invasive therapies deliver improved real-world outcomes: better sleep, reduced blood pressure, and improved cognition. They are comfortable, quiet, portable, and deliver proven 90%+ compliance compared to just 50% for standard CPAP.",
-                    image: "/therapy_compare.png"
+                    title: "Try it before you buy it", 
+                    body: "We coordinate your care with specialized dentists in all 50 states.",
+                    detail: "Instead of jumping straight into a highly expensive, fully-custom appliance, our providers utilize clinical semi-custom appliances. This allows you to 'try before you buy' and prove the therapy works for your specific biology before committing to a permanent device.",
+                    image: "/dentist_network.png"
                   },
                 ]}
                 comparison={[
-                  { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
-                  { label: "Test Method", us: "At-Home WatchPAT® (98% success rate)", them: "In-Lab Sleep Study ( cumbersome)" },
-                  { label: "Therapy Options", us: "Comfortable CPAP Alternatives (Custom Oral Appliances)", them: "Generic CPAP Machines" },
-                  { label: "Patient Compliance", us: "Proven 90%+", them: "~50% for CPAP" }
+                  { label: "Testing Location", us: "Your Own Bed", them: "Clinical Sleep Lab" },
+                  { label: "Testing Equipment", us: "WatchPAT® ONE (Wrist/Finger)", them: "Wires glued to head/chest" },
+                  { label: "Therapy Experience", us: "Quiet Oral Appliance", them: "Noisy CPAP Machine & Hoses" },
+                  { label: "Patient Compliance", us: "Proven 90%+ Success", them: "High Abandonment Rate" }
                 ]}
                 faqs={[
-                  { q: "Is the home sleep test accurate?", a: "Yes, the WatchPAT® test is FDA-cleared and provides a highly accurate correlation (89%) with the gold standard gold in-lab PSG tests." },
-                  { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for your convenience." },
-                  { q: "Do I have to wear a large CPAP mask?", a: "No. Our personalized therapies use comfortable oral appliances that are quiet, non-invasive, and require no hoses or straps." }
+                  { q: "How much does the at-home test cost?", a: "The WatchPAT® ONE home sleep test and the three included physician consultations cost $259." },
+                  { q: "Is this covered by my insurance?", a: "We are in-network with Medicare and major PPO carriers for the treatment phase and the custom oral appliances." },
+                  { q: "What if my apnea is severe?", a: "Oral appliances are generally indicated for mild to moderate obstructive sleep apnea. If your test reveals severe apnea, our specialists will help guide you toward the most appropriate clinical therapy, which may include CPAP." }
                 ]}
               />
             } />
