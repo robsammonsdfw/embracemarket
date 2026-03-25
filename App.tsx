@@ -127,33 +127,39 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* 3. THE BASELINE SECTION: DNA / Conversational logic (White Background) */}
+    {/* 3. THE DNA SECTION (White Background) */}
     <section className="py-24 bg-white">
       <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
         <div className="animate-reveal">
-          <h2 className="text-6xl md:text-8xl font-bold serif text-[#002534] tracking-tighter leading-[0.85] mb-8">
-            Find your <br /> baseline.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold serif text-[#002534] tracking-tighter leading-[1.05] mb-6">
+            DNA Testing for Obesity Phenotyping <br />
+            <span className="text-[#00B6A0]">Made Simple & Easy.</span>
           </h2>
-          <p className="text-2xl text-[#002534]/50 mb-10 leading-relaxed font-light italic max-w-lg">
-            "Better data leads to better decisions. Clinical testing reimagined for your home."
+          
+          <p className="text-xl text-[#002534]/80 mb-6 leading-relaxed">
+            We’ve brought together the brightest minds in health and fitness to deliver cutting-edge science, expert guidance, and proven strategies for lasting results.
           </p>
-          <div className="grid grid-cols-2 gap-6 mb-12">
-            <div>
-              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Diagnostics</p>
-              <p className="text-[#002534] font-bold">98% Accuracy</p>
-            </div>
-            <div>
-              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Speed</p>
-              <p className="text-[#002534] font-bold">48hr Results</p>
-            </div>
+          
+          <p className="text-xl text-[#002534]/80 mb-10 leading-relaxed">
+            By analyzing traits that influence appetite and energy balance, our DNA Test identifies a patient’s root-cause (phenotype) and informs what will work better based on peer-reviewed clinical studies.
+          </p>
+          
+          <div className="mb-10 bg-[#F9F7F2] p-6 rounded-3xl border border-[#002534]/5">
+            <h3 className="text-xl font-bold text-[#002534] mb-2 flex items-center">
+              Privacy Guaranteed
+            </h3>
+            <p className="text-base text-[#002534]/70 leading-relaxed">
+              Your DNA privacy is our utmost priority. Rigorous security measures are employed to ensure your data remains confidential and protected throughout your health journey.
+            </p>
           </div>
+
           <a 
             href="https://shop.embracehealth.ai/pages/dna-test-kits"
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all text-center"
+            className="inline-block text-[#00B6A0] font-bold text-lg underline underline-offset-4 hover:text-[#002534] transition-colors"
           >
-            Start My DNA Test
+            Learn more...
           </a>
         </div>
 
