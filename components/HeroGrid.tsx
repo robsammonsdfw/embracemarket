@@ -116,7 +116,7 @@ const HeroGrid: React.FC = () => {
               className={`group relative overflow-hidden rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal ${group.hoverBg}`}
               style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
-              <div className="absolute top-0 left-0 right-0 h-[105px] bg-[#002534] rounded-t-[2.5rem] z-30 px-8 pt-6 pb-2 flex flex-col justify-start">
+              <div className="absolute top-0 left-0 right-0 h-[120px] bg-[#002534] rounded-t-[2.5rem] z-30 px-8 pt-6 pb-4 flex flex-col justify-start">
                 <div className="flex justify-between items-start w-full relative mb-1">
                   <h3 className="text-xl font-bold leading-tight serif text-white">
                     {group.id === 'sleep' ? 'Snoring &' : group.title.split(' ')[0]} <br />
@@ -148,7 +148,7 @@ const HeroGrid: React.FC = () => {
                   className="absolute bottom-4 w-[75%] h-auto object-contain opacity-40 transition-transform duration-700 ease-out group-hover:scale-110 mix-blend-multiply"
                 />
                 <img 
-                  src={group.id === 'weight' ? '/glp1_branded.png' : group.imageUrl} 
+                  src={group.imageUrl} 
                   alt={group.title}
                   className="w-[85%] h-auto object-contain relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 z-10"
                 />
@@ -166,7 +166,7 @@ const HeroGrid: React.FC = () => {
               className="group relative overflow-hidden rounded-[2.5rem] min-h-[420px] bg-white transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] card-shadow-hover opacity-0 animate-reveal hover:bg-gray-50/80"
               style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
             >
-              <div className="absolute top-0 left-0 right-0 h-[105px] bg-[#002534] rounded-t-[2.5rem] z-30 px-8 pt-6 pb-2 flex flex-col justify-start">
+              <div className="absolute top-0 left-0 right-0 h-[120px] bg-[#002534] rounded-t-[2.5rem] z-30 px-8 pt-6 pb-4 flex flex-col justify-start">
                 <div className="flex justify-between items-start w-full relative">
                   <h3 className={`font-bold leading-tight serif text-white pr-2 ${item.title.length > 25 ? 'text-lg' : 'text-xl'}`}>
                     {item.id === 'physical' ? 'Full-Body Intelligence' :
