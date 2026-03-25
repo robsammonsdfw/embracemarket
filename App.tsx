@@ -21,7 +21,7 @@ const HomePage = () => (
   <>
     <HeroGrid />
 
-    {/* 1. THE ACTION BAR: Immediate high-value trust signals */}
+    {/* 1. THE ACTION BAR: GLP-1 Options */}
     <section className="bg-[#B87333] py-8 text-white relative overflow-hidden">
       <div className="max-w-[1450px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
         <div className="flex items-center gap-5">
@@ -32,7 +32,7 @@ const HomePage = () => (
             </svg>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold serif tracking-tighter leading-tight">
-            Access a range of GLP-1 treatments
+            GLP-1 Options
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8">
@@ -44,7 +44,7 @@ const HomePage = () => (
             <span>100% Online</span>
           </div>
           <a href="https://shop.embracehealth.ai/collections/weight-loss" className="px-10 py-4 bg-white text-[#B87333] font-bold rounded-full shadow-lg hover:scale-105 transition-all text-sm">
-            See treatment plans
+            Explore Treatments
           </a>
         </div>
       </div>
@@ -52,52 +52,52 @@ const HomePage = () => (
 
     {/* 2. THE BASELINE SECTION: Conversational logic (White Background) */}
     <section className="py-24 bg-white">
-  <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
-    <div className="animate-reveal">
-      <h2 className="text-6xl md:text-8xl font-bold serif text-[#002534] tracking-tighter leading-[0.85] mb-8">
-        Find your <br /> baseline.
-      </h2>
-      <p className="text-2xl text-[#002534]/50 mb-10 leading-relaxed font-light italic max-w-lg">
-        "Better data leads to better decisions. Clinical testing reimagined for your home."
-      </p>
-      <div className="grid grid-cols-2 gap-6 mb-12">
-        <div>
-          <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Diagnostics</p>
-          <p className="text-[#002534] font-bold">98% Accuracy</p>
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
+        <div className="animate-reveal">
+          <h2 className="text-6xl md:text-8xl font-bold serif text-[#002534] tracking-tighter leading-[0.85] mb-8">
+            Find your <br /> baseline.
+          </h2>
+          <p className="text-2xl text-[#002534]/50 mb-10 leading-relaxed font-light italic max-w-lg">
+            "Better data leads to better decisions. Clinical testing reimagined for your home."
+          </p>
+          <div className="grid grid-cols-2 gap-6 mb-12">
+            <div>
+              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Diagnostics</p>
+              <p className="text-[#002534] font-bold">98% Accuracy</p>
+            </div>
+            <div>
+              <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Speed</p>
+              <p className="text-[#002534] font-bold">48hr Results</p>
+            </div>
+          </div>
+          <a 
+            href="https://shop.embracehealth.ai/pages/dna-test-kits"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all text-center"
+          >
+            Start My DNA Test
+          </a>
         </div>
-        <div>
-          <p className="text-[#00B6A0] font-black text-xs uppercase tracking-widest mb-2">Speed</p>
-          <p className="text-[#002534] font-bold">48hr Results</p>
+
+        {/* RIGHT SIDE: Video replaces the static image */}
+        <div className="relative bg-[#F9F7F2] rounded-[4rem] p-4 md:p-8 overflow-hidden flex justify-center items-center shadow-inner group">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-auto rounded-[3rem] z-10 drop-shadow-2xl transition-transform duration-1000 group-hover:scale-[1.02]"
+          >
+            <source src="/labsviles.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
-      <a 
-  href="https://shop.embracehealth.ai/pages/dna-test-kits"
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="inline-block px-12 py-5 bg-[#002534] text-white font-bold rounded-full hover:shadow-2xl transition-all text-center"
->
-  Start My DNA Test
-</a>
-    </div>
+    </section>
 
-    {/* RIGHT SIDE: Video replaces the static image */}
-    <div className="relative bg-[#F9F7F2] rounded-[4rem] p-4 md:p-8 overflow-hidden flex justify-center items-center shadow-inner group">
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        className="w-full h-auto rounded-[3rem] z-10 drop-shadow-2xl transition-transform duration-1000 group-hover:scale-[1.02]"
-      >
-        <source src="/labsviles.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</section>
-
-{/* --- SECTION: FULL-WIDTH TEAL BAND WITH GROUNDED ASSET --- */}
-<section className="relative w-full bg-[#00B6A0] min-h-[600px] md:h-[750px] overflow-hidden flex items-center">
+    {/* --- SECTION: FULL-WIDTH TEAL BAND WITH GROUNDED ASSET --- */}
+    <section className="relative w-full bg-[#00B6A0] min-h-[600px] md:h-[750px] overflow-hidden flex items-center">
       
       {/* 1. The Dynamic Movie (Full Width Background) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -161,94 +161,94 @@ const App: React.FC = () => {
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[#F9F7F2]">
-        <Header onLoginClick={() => console.log('Login Clicked')} />
+        <Header />
         
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             
-{/* 1. Physical Intelligence */}
-<Route path="/app/physical-intelligence" element={
-  <FeatureLandingPage 
-    h1="Train with feedback you can actually use"
-    subhead="Form coaching, 3D scanning, vitals sync, workout planning, and running support—built into one connected system."
-    directAnswer="EmbraceHealth Physical Intelligence combines camera-based movement analysis, body visualization, wearable sync, workout planning, and running support so users can train with clearer feedback and less friction."
-    heroVideo="/fitness_int.mp4" // Correctly calling your new video file
-    sections={[
-      { 
-        title: "Move with better mechanics", 
-        body: "AI Form Coach gives users a simple score, clear cues, and a visible history of improvement.",
-        detail: "Instead of filming a lift and guessing later, users see what needs work and what already improved in real-time." ,
-      image: "/ai_form.png"
-      },
-      { 
-        title: "See progress beyond the scale", 
-        body: "3D body scans, guided progress photos, and body evolution views make change easier to trust.",
-        detail: "When users can see shape, posture, and visual momentum, consistency becomes easier to maintain." ,
-        image: "/3d_scan.png"
-      },
-      { 
-        title: "Keep your data in one place", 
-        body: "Vision Sync and wearable-linked views reduce manual entry for steps, sleep, and calories.",
-        detail: "Your daily signals become part of one progress workflow instead of living across disconnected apps." ,
-        image: "/vision_scan.png"
-      }
-    ]}
-    comparison={[
-      { label: "Real-time Feedback", us: "AI Form Coach (Sency.ai)", them: "Manual Video Review" },
-      { label: "Visual Progress", us: "3D Body Evolutions", them: "Standard Scale Weight" },
-      { label: "Data Hub", us: "One Dashboard", them: "5+ Disconnected Apps" }
-    ]}
-    faqs={[
-      { q: "Do I need special hardware?", a: "No, our AI Form Coach works directly through your smartphone camera." },
-      { q: "Which wearables sync?", a: "We support Apple Health, Google Fit, Oura, and Garmin." },
-      { q: "What about running?", a: "The app includes a dedicated Running Coach for gait and performance tracking." }
-    ]}
-  />
-} />
+            {/* 1. Physical Intelligence */}
+            <Route path="/app/physical-intelligence" element={
+              <FeatureLandingPage 
+                h1="Train with feedback you can actually use"
+                subhead="Form coaching, 3D scanning, vitals sync, workout planning, and running support—built into one connected system."
+                directAnswer="EmbraceHealth Physical Intelligence combines camera-based movement analysis, body visualization, wearable sync, workout planning, and running support so users can train with clearer feedback and less friction."
+                heroVideo="/fitness_int.mp4"
+                sections={[
+                  { 
+                    title: "Move with better mechanics", 
+                    body: "AI Form Coach gives users a simple score, clear cues, and a visible history of improvement.",
+                    detail: "Instead of filming a lift and guessing later, users see what needs work and what already improved in real-time." ,
+                  image: "/ai_form.png"
+                  },
+                  { 
+                    title: "See progress beyond the scale", 
+                    body: "3D body scans, guided progress photos, and body evolution views make change easier to trust.",
+                    detail: "When users can see shape, posture, and visual momentum, consistency becomes easier to maintain." ,
+                    image: "/3d_scan.png"
+                  },
+                  { 
+                    title: "Keep your data in one place", 
+                    body: "Vision Sync and wearable-linked views reduce manual entry for steps, sleep, and calories.",
+                    detail: "Your daily signals become part of one progress workflow instead of living across disconnected apps." ,
+                    image: "/vision_scan.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Real-time Feedback", us: "AI Form Coach (Sency.ai)", them: "Manual Video Review" },
+                  { label: "Visual Progress", us: "3D Body Evolutions", them: "Standard Scale Weight" },
+                  { label: "Data Hub", us: "One Dashboard", them: "5+ Disconnected Apps" }
+                ]}
+                faqs={[
+                  { q: "Do I need special hardware?", a: "No, our AI Form Coach works directly through your smartphone camera." },
+                  { q: "Which wearables sync?", a: "We support Apple Health, Google Fit, Oura, and Garmin." },
+                  { q: "What about running?", a: "The app includes a dedicated Running Coach for gait and performance tracking." }
+                ]}
+              />
+            } />
 
-{/* 2. Nutrition & Kitchen Intelligence */}
-<Route path="/app/nutrition-kitchen" element={
-  <FeatureLandingPage 
-    h1="Nutrition that starts with your camera"
-    subhead="Photo-based food logging, recipe generation, meal planning, and kitchen workflows that make healthy eating easier to follow."
-    directAnswer="EmbraceHealth Nutrition helps users log food faster, generate ideas from what they already have, build condition-aware meal plans, and turn plans into grocery action."
-    heroVideo="/nutrition_hero.mp4" 
-    sections={[
-      { 
-        title: "Log food faster", 
-        body: "Photo Macro Logging reduces the friction of manual food search.",
-        detail: "Instead of typing every item, users can snap a meal, review the estimate, and move on with their day.",
-        image: "/nutrition_macro.png" // <--- Adds an image to Section 1
-      },
-      { 
-        title: "Turn ingredients into decisions", 
-        body: "Pantry Chef and MasterChef Replicator take uncertainty out of eating.",
-        detail: "Users can scan a fridge for ideas or reverse-engineer a restaurant meal into a smarter at-home version.",
-        image: "/pantry_chef.png" // <--- Adds an image to Section 2
-      },
-      { 
-        title: "Plan what you'll actually follow", 
-        body: "Clinical Meal Planner and Kitchen Library help users build repeatable meal systems, not random one-off recipes.",
-        detail: "Drag-and-drop planning and grocery automation turn good intentions into execution.",
-        image: "/meal_planner.png" // <--- Adds an image to Section 3
-      }
-    ]}
-    comparison={[
-      { label: "Food Logging", us: "Photo Macro Logging", them: "Manual Database Search (MyFitnessPal)" },
-      { label: "Recipe Ideas", us: "AI Pantry Chef & Replicator", them: "Generic Recipe Blogs" },
-      { label: "Meal Planning", us: "Clinical & Condition-Aware", them: "Rigid PDF Plans" }
-    ]}
-    faqs={[
-      { q: "How accurate is the photo logging?", a: "Our computer-vision model is trained on food volume and density to provide highly accurate macro and calorie estimates." },
-      { q: "Can it handle restaurant meals?", a: "Yes, the MasterChef Replicator can estimate nutrition facts from menu descriptions or photos of restaurant dishes." },
-      { q: "Does it build grocery lists automatically?", a: "Yes, when you build a meal plan in the Kitchen Library, the app automatically converts the ingredients into a sorted grocery list." }
-    ]}
-  />
-} />
+            {/* 2. Nutrition & Kitchen Intelligence */}
+            <Route path="/app/nutrition-kitchen" element={
+              <FeatureLandingPage 
+                h1="Nutrition that starts with your camera"
+                subhead="Photo-based food logging, recipe generation, meal planning, and kitchen workflows that make healthy eating easier to follow."
+                directAnswer="EmbraceHealth Nutrition helps users log food faster, generate ideas from what they already have, build condition-aware meal plans, and turn plans into grocery action."
+                heroVideo="/nutrition_hero.mp4" 
+                sections={[
+                  { 
+                    title: "Log food faster", 
+                    body: "Photo Macro Logging reduces the friction of manual food search.",
+                    detail: "Instead of typing every item, users can snap a meal, review the estimate, and move on with their day.",
+                    image: "/nutrition_macro.png"
+                  },
+                  { 
+                    title: "Turn ingredients into decisions", 
+                    body: "Pantry Chef and MasterChef Replicator take uncertainty out of eating.",
+                    detail: "Users can scan a fridge for ideas or reverse-engineer a restaurant meal into a smarter at-home version.",
+                    image: "/pantry_chef.png"
+                  },
+                  { 
+                    title: "Plan what you'll actually follow", 
+                    body: "Clinical Meal Planner and Kitchen Library help users build repeatable meal systems, not random one-off recipes.",
+                    detail: "Drag-and-drop planning and grocery automation turn good intentions into execution.",
+                    image: "/meal_planner.png"
+                  }
+                ]}
+                comparison={[
+                  { label: "Food Logging", us: "Photo Macro Logging", them: "Manual Database Search (MyFitnessPal)" },
+                  { label: "Recipe Ideas", us: "AI Pantry Chef & Replicator", them: "Generic Recipe Blogs" },
+                  { label: "Meal Planning", us: "Clinical & Condition-Aware", them: "Rigid PDF Plans" }
+                ]}
+                faqs={[
+                  { q: "How accurate is the photo logging?", a: "Our computer-vision model is trained on food volume and density to provide highly accurate macro and calorie estimates." },
+                  { q: "Can it handle restaurant meals?", a: "Yes, the MasterChef Replicator can estimate nutrition facts from menu descriptions or photos of restaurant dishes." },
+                  { q: "Does it build grocery lists automatically?", a: "Yes, when you build a meal plan in the Kitchen Library, the app automatically converts the ingredients into a sorted grocery list." }
+                ]}
+              />
+            } />
 
-{/* 3. Mental Health */}
-<Route path="/app/mental-health" element={
+            {/* 3. Mental Health */}
+            <Route path="/app/mental-health" element={
               <FeatureLandingPage 
                 h1="Know your capacity before your day starts"
                 subhead="Readiness scoring, self-awareness assessments, mood check-ins, and sleep pathways designed to support follow-through."
@@ -365,87 +365,85 @@ const App: React.FC = () => {
               />
             } />
 
-{/* 6. Sleep Health Landing Page */}
-<Route path="/app/sleep-health" element={
-      <FeatureLandingPage 
-        h1="A simple path to better sleep"
-        subhead="Frictionless, at-home sleep apnea testing and personalized, non-invasive treatment plans designed for your baseline."
-        directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
-        heroVideo="/sleep_hero.mp4" 
-        
-        ctaLink="https://dummy-quiz-link.com/sleep-test" 
-        topCtaText="Take The First Step"
-        topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
-        bottomCtaHeader="Ready to sleep better?"
-        bottomCtaText="Take The First Step"
-        bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+            {/* 6. Sleep Health Landing Page */}
+            <Route path="/app/sleep-health" element={
+              <FeatureLandingPage 
+                h1="A simple path to better sleep"
+                subhead="Frictionless, at-home sleep apnea testing and personalized, non-invasive treatment plans designed for your baseline."
+                directAnswer="EmbraceHealth Sleep eliminates the complexities of clinical sleep studies. We provide highly accurate home testing, integrate with major insurance, and offer comfortable CPAP alternatives like custom oral appliances for proven results."
+                heroVideo="/sleep_hero.mp4" 
+                
+                ctaLink="https://dummy-quiz-link.com/sleep-test" 
+                topCtaText="Take The First Step"
+                topCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
+                bottomCtaHeader="Ready to sleep better?"
+                bottomCtaText="Take The First Step"
+                bottomCtaSubtext="Click the button to take your Sleep Quiz now and get help with sleep apnea."
 
-// --- THE CONNECTED 3-STEP PROCESS ---
-processFlow={{
-  heading: "A simple, transparent process",
-  subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
-  steps: [
-    {
-      title: "Start Your Journey",
-      image: "/step1_phone.png", // <--- ADD THIS
-      bullets: [
-        "Select Your Treatment Focus",
-        "Choose Your Medication",
-        "Checkout & Complete Your Health Questionnaire"
-      ]
-    },
-    {
-      title: "Doctor Review",
-      image: "/step2_rx.png", // <--- ADD THIS
-      bullets: [
-        "A licensed US physician reviews your information.",
-        "Physician will determine what is medically appropriate for you.",
-        "Your prescription is sent to our pharmacy."
-      ]
-    },
-    {
-      title: "Discrete Delivery",
-      image: "/step3_box.png", // <--- ADD THIS
-      bullets: [
-        "Shipping is included.",
-        "Discreet packaging is used.",
-        "Delivered to your doorstep."
-      ]
-    }
-  ]
-}}
+                processFlow={{
+                  heading: "A simple, transparent process",
+                  subheading: "EmbraceHealth handles everything from online evaluation to delivery of treatment and free ongoing care.",
+                  steps: [
+                    {
+                      title: "Start Your Journey",
+                      image: "/step1_phone.png",
+                      bullets: [
+                        "Select Your Treatment Focus",
+                        "Choose Your Medication",
+                        "Checkout & Complete Your Health Questionnaire"
+                      ]
+                    },
+                    {
+                      title: "Doctor Review",
+                      image: "/step2_rx.png",
+                      bullets: [
+                        "A licensed US physician reviews your information.",
+                        "Physician will determine what is medically appropriate for you.",
+                        "Your prescription is sent to our pharmacy."
+                      ]
+                    },
+                    {
+                      title: "Discrete Delivery",
+                      image: "/step3_box.png",
+                      bullets: [
+                        "Shipping is included.",
+                        "Discreet packaging is used.",
+                        "Delivered to your doorstep."
+                      ]
+                    }
+                  ]
+                }}
 
-        sections={[
+                sections={[
+                  { 
+                    title: "The frictionless home test", 
+                    body: "Forget cumbersome, expensive, in-lab sleep studies. EmbraceHealth brings the test directly to your door.",
+                    detail: "The at-home WatchPAT® ONE test is disposable, accurate, provides results within 24-48 hours, and costs only $259. Experience an 89% correlation with PSG gold standard, all from the comfort of your own bed.",
+                    image: "/diagnostics_compare.png"
+                  },
+                  { 
+                    title: "A better way to treat sleep apnea", 
+                    body: "If CPAP therapy has been a struggle, we offer proven, comfortable CPAP alternatives like personalized oral sleep appliances.",
+                    detail: "Our non-invasive therapies deliver improved real-world outcomes: better sleep, reduced blood pressure, and improved cognition. They are comfortable, quiet, portable, and deliver proven 90%+ compliance compared to just 50% for standard CPAP.",
+                    image: "/therapy_compare.png"
+                  },
+                ]}
+                comparison={[
+                  { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
+                  { label: "Test Method", us: "At-Home WatchPAT® (98% success rate)", them: "In-Lab Sleep Study ( cumbersome)" },
+                  { label: "Therapy Options", us: "Comfortable CPAP Alternatives (Custom Oral Appliances)", them: "Generic CPAP Machines" },
+                  { label: "Patient Compliance", us: "Proven 90%+", them: "~50% for CPAP" }
+                ]}
+                faqs={[
+                  { q: "Is the home sleep test accurate?", a: "Yes, the WatchPAT® test is FDA-cleared and provides a highly accurate correlation (89%) with the gold standard gold in-lab PSG tests." },
+                  { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for your convenience." },
+                  { q: "Do I have to wear a large CPAP mask?", a: "No. Our personalized therapies use comfortable oral appliances that are quiet, non-invasive, and require no hoses or straps." }
+                ]}
+              />
+            } />
 
-          { 
-            title: "The frictionless home test", 
-            body: "Forget cumbersome, expensive, in-lab sleep studies. EmbraceHealth brings the test directly to your door.",
-            detail: "The at-home WatchPAT® ONE test is disposable, accurate, provides results within 24-48 hours, and costs only $259. Experience an 89% correlation with PSG gold standard, all from the comfort of your own bed.",
-            image: "/diagnostics_compare.png" // prompt below
-          },
-          { 
-            title: "A better way to treat sleep apnea", 
-            body: "If CPAP therapy has been a struggle, we offer proven, comfortable CPAP alternatives like personalized oral sleep appliances.",
-            detail: "Our non-invasive therapies deliver improved real-world outcomes: better sleep, reduced blood pressure, and improved cognition. They are comfortable, quiet, portable, and deliver proven 90%+ compliance compared to just 50% for standard CPAP.",
-            image: "/therapy_compare.png" // prompt below
-          },
-
-        ]}
-        comparison={[
-          { label: "Testing Location", us: "At Home", them: "Clinical Sleep Lab" },
-          { label: "Test Method", us: "At-Home WatchPAT® (98% success rate)", them: "In-Lab Sleep Study ( cumbersome)" },
-          { label: "Therapy Options", us: "Comfortable CPAP Alternatives (Custom Oral Appliances)", them: "Generic CPAP Machines" },
-          { label: "Patient Compliance", us: "Proven 90%+", them: "~50% for CPAP" }
-        ]}
-        faqs={[
-          { q: "Is the home sleep test accurate?", a: "Yes, the WatchPAT® test is FDA-cleared and provides a highly accurate correlation (89%) with the gold standard gold in-lab PSG tests." },
-          { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for your convenience." },
-          { q: "Do I have to wear a large CPAP mask?", a: "No. Our personalized therapies use comfortable oral appliances that are quiet, non-invasive, and require no hoses or straps." }
-        ]}
-      />
-    } />
-{/* 7. The Science of GLP-1 Article */}
-<Route path="/article/science-of-glp1" element={
+            {/* 7. The Science of GLP-1 Article */}
+            <Route path="/article/science-of-glp1" element={
               <FeatureLandingPage 
                 h1="The Science of GLP-1"
                 subhead="How modern medicine is changing weight loss."
@@ -457,7 +455,7 @@ processFlow={{
                 bottomCtaHeader="Ready to address your metabolic health?"
                 bottomCtaText="Start Your Evaluation"
                 bottomCtaSubtext="Complete your secure intake form to begin."
-                ctaLink="/app/weight-loss-quiz" // Update this to your actual intake flow
+                ctaLink="/app/weight-loss-quiz"
 
                 sections={[
                   { 
@@ -548,8 +546,8 @@ processFlow={{
                 ]}
               />
             } />
-{/* Catch-all route to prevent blank screens. Sends users home if a link is broken. */}
-<Route path="*" element={<Navigate to="/" replace />} />
+            {/* Catch-all route to prevent blank screens. Sends users home if a link is broken. */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 
