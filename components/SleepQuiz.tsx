@@ -26,7 +26,7 @@ const SleepQuiz: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F7F2] py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="min-h-screen bg-[#F9F7F2] pt-[160px] pb-16 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-3xl mx-auto">
         
         {/* PROGRESS BAR */}
