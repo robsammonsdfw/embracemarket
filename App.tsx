@@ -172,7 +172,7 @@ const HomePage = () => (
             playsInline 
             className="w-full h-auto rounded-[3rem] z-10 drop-shadow-2xl transition-transform duration-1000 group-hover:scale-[1.02]"
           >
-            <source src="/labsviles.mp4" type="video/mp4" />
+            <source src="/dna_helix.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -232,7 +232,7 @@ const App: React.FC = () => {
                   { q: "What about running?", a: "The app includes a dedicated Running Coach for gait and performance tracking." }
                 ]}
               />
-            } />
+            } />wwa
 
             {/* 2. Nutrition & Kitchen Intelligence */}
             <Route path="/app/nutrition-kitchen" element={
