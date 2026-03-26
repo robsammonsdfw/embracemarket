@@ -7,6 +7,7 @@ import TestosteroneFeature from './components/TestosteroneFeature';
 import PromptsList from './components/PromptsList';
 import Footer from './components/Footer';
 import FeatureLandingPage from './components/FeatureLandingPage';
+import SleepQuiz from './components/SleepQuiz';
 
 // Scroll to top component to ensure new pages start at the top
 const ScrollToTop = () => {
@@ -193,7 +194,7 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            
+            <Route path="/sleep-quiz" element={<SleepQuiz />} />
             {/* 1. Physical Intelligence */}
             <Route path="/app/physical-intelligence" element={
               <FeatureLandingPage 
@@ -400,7 +401,7 @@ const App: React.FC = () => {
                 directAnswer="Untreated sleep apnea can impact your energy, focus, and overall quality of life. Treatment can help you feel more rested, improve daily performance, sleep more comfortably, and reduce long-term health risks."
                 heroVideo="/sleep_hero.mp4" 
                 
-                ctaLink="https://dummy-quiz-link.com/sleep-test" 
+                ctaLink="/sleep-quiz"
                 topCtaText="Take Quiz"
                 topCtaSubtext="Find out if you qualify for an at-home sleep test in under 2 minutes."
                 bottomCtaHeader="Ready to sleep better?"
