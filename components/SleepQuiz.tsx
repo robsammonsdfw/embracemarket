@@ -25,16 +25,8 @@ const SleepQuiz: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Stop native browser refresh
-
-    // --- THE GUARD: INTERCEPT PREMATURE SUBMISSIONS ---
-    // If the browser triggers a submit before Step 3, advance the page and STOP.
-    if (step < totalSteps) {
-      setStep(step + 1);
-      window.scrollTo(0, 0);
-      return; 
-    }
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent) => {
+    e.preventDefault();
 
     // 1. Auth Check (Temporarily forced to false until we build the Shopify Login)
     const isAuthenticated = false; 
@@ -107,7 +99,8 @@ const SleepQuiz: React.FC = () => {
         </div>
 
         {/* QUIZ FORM */}
-        <form onSubmit={handleSubmit} className="bg-white shadow-xl rounded-3xl p-8 md:p-12">
+        {/* We intercept and kill any native form submission here to prevent implicit submission */}
+        <form onSubmit={(e) => e.preventDefault()} className="bg-white shadow-xl rounded-3xl p-8 md:p-12">
           
           {/* --- PAGE 1: STOP-BANG --- */}
           {step === 1 && (
@@ -272,13 +265,14 @@ const SleepQuiz: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="px-10 py-3 bg-[#002534] text-white font-bold rounded-full shadow-lg hover:bg-[#00B6A0] transition-all text-sm"
+                className="px-10 py-3 bg-[#00B6A0] text-white font-bold rounded-full shadow-lg hover:bg-[#002534] transition-all text-sm"
               >
                 Next
               </button>
             ) : (
               <button
-                type="submit"
+                type="button"
+                onClick={handleSubmit}
                 className="px-10 py-3 bg-[#F26422] text-white font-bold rounded-full shadow-lg hover:bg-[#d9561a] transition-all text-sm"
               >
                 Finish Assessment
