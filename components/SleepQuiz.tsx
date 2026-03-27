@@ -26,7 +26,15 @@ const SleepQuiz: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop native browser refresh
+
+    // --- THE GUARD: INTERCEPT PREMATURE SUBMISSIONS ---
+    // If the browser triggers a submit before Step 3, advance the page and STOP.
+    if (step < totalSteps) {
+      setStep(step + 1);
+      window.scrollTo(0, 0);
+      return; 
+    }
 
     // 1. Auth Check (Temporarily forced to false until we build the Shopify Login)
     const isAuthenticated = false; 
