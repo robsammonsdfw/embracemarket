@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SleepQuiz: React.FC = () => {
@@ -10,6 +10,40 @@ const SleepQuiz: React.FC = () => {
   const [stopBang, setStopBang] = useState<Record<number, string>>({});
   const [epworth, setEpworth] = useState<Record<number, number>>({});
   const [medicalHistory, setMedicalHistory] = useState<Record<string, boolean>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // --- CROSS-DOMAIN AUTHENTICATION HANDLER ---
+  useEffect(() => {
+    // Check if we just returned from the app.embracehealth.ai login page
+    const urlParams = new URLSearchParams(window.location.search);
+    const tokenFromUrl = urlParams.get('token');
+
+    if (tokenFromUrl) {
+      // 1. Save the token locally on the marketing domain
+      localStorage.setItem('embracehealth-api-token', tokenFromUrl);
+
+      // 2. Clean the URL so the token doesn't linger in the browser history
+      window.history.replaceState({}, document.title, window.location.pathname);
+
+      // 3. Check for pending quiz data and auto-submit
+      const pendingDataStr = localStorage.getItem('pendingSleepQuiz');
+      if (pendingDataStr) {
+        try {
+          const pendingData = JSON.parse(pendingDataStr);
+          // Restore state for UI consistency
+          setStopBang(pendingData.stopBang);
+          setEpworth(pendingData.epworth);
+          setMedicalHistory(pendingData.medicalHistory);
+          setStep(totalSteps); // Jump to the final step
+          
+          // Execute the submission
+          submitQuizData(pendingData.stopBang, pendingData.epworth, pendingData.medicalHistory, tokenFromUrl);
+        } catch (e) {
+          console.error("Failed to parse pending quiz data", e);
+        }
+      }
+    }
+  }, []);
 
   const handleNext = () => {
     if (step < totalSteps) {
@@ -25,45 +59,29 @@ const SleepQuiz: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent) => {
-    e.preventDefault();
-
-    // 1. Auth Check
-    const isAuthenticated = false; // TODO: Replace with actual auth check
-    const currentUserId = null; 
-
-    if (!isAuthenticated) {
-      // Save progress locally (Note: Only accessible on this exact domain)
-      localStorage.setItem('pendingSleepQuiz', JSON.stringify({ stopBang, epworth, medicalHistory }));
-      
-      // UPDATED: Hard redirect to the app subdomain login instead of React Router navigate
-      window.location.href = 'https://app.embracehealth.ai/login?redirect=sleep-quiz';
-      return; 
-    }
-
-    // 2. Exact API Endpoint from your AWS API Gateway
+  const submitQuizData = async (stopBangData: any, epworthData: any, medicalHistoryData: any, authToken: string) => {
+    setIsSubmitting(true);
     const API_URL = import.meta.env?.VITE_API_URL || process.env?.REACT_APP_API_URL || 'https://xmpbc16u1f.execute-api.us-west-1.amazonaws.com/default';
 
-    // 3. Secure Fetch Call
     try {
       const response = await fetch(`${API_URL}/sleep-quiz`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('embracehealth-api-token')}`
+          'Authorization': `Bearer ${authToken}`
         },
         body: JSON.stringify({
-          userId: currentUserId,
-          stopBang,
-          epworth,
-          medicalHistory
+          stopBang: stopBangData,
+          epworth: epworthData,
+          medicalHistory: medicalHistoryData
         })
       });
 
       if (response.ok) {
-        const data = await response.json();
-        console.log("Quiz saved with ID:", data.id);
+        // Clean up pending data
+        localStorage.removeItem('pendingSleepQuiz');
         alert("Quiz Completed! Your results have been securely sent to your physician.");
+        // Redirect the user into the main app dashboard now that they are done
         window.location.href = 'https://app.embracehealth.ai/dashboard';
       } else {
         const errorData = await response.json();
@@ -73,7 +91,28 @@ const SleepQuiz: React.FC = () => {
     } catch (error) {
       console.error("Network or Submission failed:", error);
       alert("Unable to connect to the server. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent) => {
+    e.preventDefault();
+
+    const currentToken = localStorage.getItem('embracehealth-api-token');
+
+    if (!currentToken) {
+      // 1. Save their progress locally
+      localStorage.setItem('pendingSleepQuiz', JSON.stringify({ stopBang, epworth, medicalHistory }));
+      
+      // 2. Hard redirect to the app subdomain login, passing the current URL as a return path
+      const returnUrl = encodeURIComponent(window.location.href);
+      window.location.href = `https://app.embracehealth.ai/login?return_to=${returnUrl}`;
+      return; 
+    }
+
+    // If they already have a token, just submit normally
+    submitQuizData(stopBang, epworth, medicalHistory, currentToken);
   };
 
   return (
@@ -101,7 +140,6 @@ const SleepQuiz: React.FC = () => {
         </div>
 
         {/* QUIZ FORM */}
-        {/* We intercept and kill any native form submission here to prevent implicit submission */}
         <form onSubmit={(e) => e.preventDefault()} className="bg-white shadow-xl rounded-3xl p-8 md:p-12">
           
           {/* --- PAGE 1: STOP-BANG --- */}
@@ -258,7 +296,7 @@ const SleepQuiz: React.FC = () => {
                   ? 'opacity-0 pointer-events-none' 
                   : 'bg-white text-[#002534] border-2 border-[#002534]/20 hover:border-[#002534] hover:bg-gray-50'
               }`}
-              disabled={step === 1}
+              disabled={step === 1 || isSubmitting}
             >
               Back
             </button>
@@ -267,7 +305,8 @@ const SleepQuiz: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="px-10 py-3 bg-[#00B6A0] text-white font-bold rounded-full shadow-lg hover:bg-[#002534] transition-all text-sm"
+                disabled={isSubmitting}
+                className="px-10 py-3 bg-[#00B6A0] text-white font-bold rounded-full shadow-lg hover:bg-[#002534] transition-all text-sm disabled:opacity-50"
               >
                 Next
               </button>
@@ -275,9 +314,10 @@ const SleepQuiz: React.FC = () => {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="px-10 py-3 bg-[#F26422] text-white font-bold rounded-full shadow-lg hover:bg-[#d9561a] transition-all text-sm"
+                disabled={isSubmitting}
+                className="px-10 py-3 bg-[#F26422] text-white font-bold rounded-full shadow-lg hover:bg-[#d9561a] transition-all text-sm flex items-center disabled:opacity-50"
               >
-                Finish Assessment
+                {isSubmitting ? 'Saving...' : 'Finish Assessment'}
               </button>
             )}
           </div>
