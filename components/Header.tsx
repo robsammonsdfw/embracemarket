@@ -63,12 +63,17 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
-          {/* ACTIONS */}
-          <div className="flex items-center space-x-4 ml-auto xl:ml-0">
-            <button className="hidden md:block px-8 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#002534] bg-white border border-[#002534]/10 rounded-full hover:bg-gray-50 transition-all shadow-sm">
+{/* ACTIONS */}
+<div className="flex items-center space-x-4 ml-auto xl:ml-0">
+            {/* UPDATED: Changed from button to anchor tag pointing to the app subdomain */}
+            <a 
+              href="https://app.embracehealth.ai/login" 
+              className="hidden md:block px-8 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#002534] bg-white border border-[#002534]/10 rounded-full hover:bg-gray-50 transition-all shadow-sm"
+            >
               Login
-            </button>
+            </a>
 
+            {/* Hamburger Button */}
             {/* Hamburger Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

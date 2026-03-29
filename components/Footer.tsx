@@ -41,17 +41,17 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Resources Column */}
-          <div>
+{/* Resources Column */}
+<div>
              <p className="text-[10px] font-bold tracking-widest text-white/20 mb-8 uppercase">RESOURCES</p>
              <ul className="space-y-4 text-white/50 font-medium text-sm">
               <li><a href="/about" className="hover:text-[#F26422] transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-[#F26422] transition-colors">Help Center</a></li>
-              <li><a href="/login" className="hover:text-[#F26422] transition-colors">My Account</a></li>
+              {/* UPDATED: Points to external app login */}
+              <li><a href="https://app.embracehealth.ai/login" className="hover:text-[#F26422] transition-colors">My Account</a></li>
               <li><a href="#" className="hover:text-[#F26422] transition-colors">Clinical Standards</a></li>
             </ul>
           </div>
-
           {/* Legal Column */}
           <div>
              <p className="text-[10px] font-bold tracking-widest text-white/20 mb-8 uppercase">LEGAL</p>

@@ -28,14 +28,16 @@ const SleepQuiz: React.FC = () => {
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent) => {
     e.preventDefault();
 
-    // 1. Auth Check (Temporarily forced to false until we build the Shopify Login)
-    const isAuthenticated = false; 
+    // 1. Auth Check
+    const isAuthenticated = false; // TODO: Replace with actual auth check
     const currentUserId = null; 
 
     if (!isAuthenticated) {
-      // Save their progress to local storage so they don't lose their answers!
+      // Save progress locally (Note: Only accessible on this exact domain)
       localStorage.setItem('pendingSleepQuiz', JSON.stringify({ stopBang, epworth, medicalHistory }));
-      navigate('/login');
+      
+      // UPDATED: Hard redirect to the app subdomain login instead of React Router navigate
+      window.location.href = 'https://app.embracehealth.ai/login?redirect=sleep-quiz';
       return; 
     }
 
@@ -48,7 +50,7 @@ const SleepQuiz: React.FC = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          // 'Authorization': `Bearer ${localStorage.getItem('token')}` // Uncomment when login is ready
+          'Authorization': `Bearer ${localStorage.getItem('embracehealth-api-token')}`
         },
         body: JSON.stringify({
           userId: currentUserId,
@@ -62,7 +64,7 @@ const SleepQuiz: React.FC = () => {
         const data = await response.json();
         console.log("Quiz saved with ID:", data.id);
         alert("Quiz Completed! Your results have been securely sent to your physician.");
-        // navigate('/dashboard'); // Uncomment when dashboard is ready
+        window.location.href = 'https://app.embracehealth.ai/dashboard';
       } else {
         const errorData = await response.json();
         console.error("Backend Error:", errorData);
