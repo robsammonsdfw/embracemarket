@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <li><a href="https://shop.embracehealth.ai/collections/weight-loss" className="hover:text-[#00B6A0] transition-colors">Weight Loss</a></li>
               <li><a href="https://shop.embracehealth.ai/collections/hair-loss" className="hover:text-[#00B6A0] transition-colors">Hair Regrowth</a></li>
               <li><a href="https://shop.embracehealth.ai/collections/erectile-dysfunction" className="hover:text-[#00B6A0] transition-colors">Sexual Health</a></li>
-              <li><a href="https://shop.embracehealth.ai/collections/testosterone" className="hover:text-[#00B6A0] transition-colors">Testosterone</a></li>
+              <li><a href="https://shop.embracehealth.ai/collections/low-testosterone" className="hover:text-[#00B6A0] transition-colors">Testosterone</a></li>
             </ul>
           </div>
 
