@@ -12,9 +12,17 @@ const SleepQuiz: React.FC = () => {
   const [medicalHistory, setMedicalHistory] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // --- CROSS-DOMAIN AUTHENTICATION HANDLER ---
+  // --- HELPER: GET CROSS-DOMAIN COOKIE ---
+  const getCookie = (name: string) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop()?.split(';').shift();
+    return null;
+  };
+
+  // --- CROSS-DOMAIN AUTHENTICATION HANDLER (Fallback / Return Flow) ---
   useEffect(() => {
-    // Check if we just returned from the app.embracehealth.ai login page
+    // Check if we just returned from the app.embracehealth.ai login page via URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const tokenFromUrl = urlParams.get('token');
 
@@ -99,7 +107,8 @@ const SleepQuiz: React.FC = () => {
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent) => {
     e.preventDefault();
 
-    const currentToken = localStorage.getItem('embracehealth-api-token');
+    // Check for the cross-domain cookie first, then fall back to local storage
+    const currentToken = getCookie('embracehealth-api-token') || localStorage.getItem('embracehealth-api-token');
 
     if (!currentToken) {
       // 1. Save their progress locally
