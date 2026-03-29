@@ -89,8 +89,9 @@ const SleepQuiz: React.FC = () => {
         // Clean up pending data
         localStorage.removeItem('pendingSleepQuiz');
         alert("Quiz Completed! Your results have been securely sent to your physician.");
-        // Redirect the user into the main app dashboard now that they are done
-        window.location.href = 'https://app.embracehealth.ai/dashboard';
+        
+        // UPDATED: Keep the user on the marketing site by navigating to the home page
+        navigate('/');
       } else {
         const errorData = await response.json();
         console.error("Backend Error:", errorData);
