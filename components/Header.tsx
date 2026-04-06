@@ -58,7 +58,7 @@ const Header: React.FC = () => {
               </a>
             ))}
             <div className="flex items-center space-x-3 ml-8 pl-8 border-l border-[#002534]/10">
-              <a href="#coaches" className="px-5 py-2.5 bg-[#00B6A0] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Coaches/Providers</a>
+              <a href="https://coach.embracehealth.ai" className="px-5 py-2.5 bg-[#00B6A0] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Coaches/Providers</a>
               <a href="https://employer.embracehealth.ai" className="px-5 py-2.5 bg-[#F26422] text-white text-[10px] font-black uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Employers/Brokers</a>
             </div>
           </nav>
