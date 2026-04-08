@@ -19,18 +19,19 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* 1. ANNOUNCEMENT BAR */}
-      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6 flex justify-center items-center h-14">
-        <div className="text-[14px] md:text-xs font-bold text-center tracking-tight md:tracking-wider uppercase">
-          <a href="https://app.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
-            One App.      One Login.      One Dashboard.         The Full Picture
-          </a>
-          <span className="mx-2 text-[#00B6A0]">+</span>
-          <a href="https://shop.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
-            Tele-Medicine.       Tele-Dentistry.        Tele-Sleep
-          </a>
-        </div>
-      </div>
+{/* 1. ANNOUNCEMENT BAR */}
+<div className="fixed top-0 left-0 right-0 z-[110] bg-[#002534] text-white py-2 px-6 flex justify-center items-center h-14">
+  {/* UPDATED: Increased font size to text-sm and changed tracking to wide for better legibility */}
+  <div className="text-[14px] md:text-sm font-bold text-center tracking-wide uppercase">
+    <a href="https://app.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
+      One App. &nbsp; One Login. &nbsp; One Dashboard. &nbsp; The Full Picture
+    </a>
+    <span className="mx-6 text-[#00B6A0]">+</span>
+    <a href="https://shop.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
+      Tele-Medicine. &nbsp; Tele-Dentistry. &nbsp; Tele-Sleep
+    </a>
+  </div>
+</div>
 
       <header 
         className="fixed top-10 left-0 right-0 z-[100] bg-[#E6E7E9]/90 backdrop-blur-xl border-b border-[#002534]/5 h-20"
