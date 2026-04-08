@@ -125,7 +125,7 @@ const Header: React.FC = () => {
       playsInline
       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
     >
-      <source src="/prismmobile.mp4" type="video/mp4" />
+      <source src="/HeroPrism.mp4" type="video/mp4" />
     </video>
   </div>
   <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
