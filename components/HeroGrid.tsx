@@ -100,7 +100,7 @@ const HeroGrid: React.FC = () => {
 
                <div className="w-full h-[220px] bg-[#E6E7E9] rounded-[2rem] border border-[#002534]/5 flex items-center justify-center overflow-hidden relative mt-4">
                   <video autoPlay loop muted playsInline className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <source src="/telemed_hero.mp4" type="video/mp4" />
+                    <source src="/telemedhero.mp4" type="video/mp4" />
                   </video>
                </div>
             </div>
