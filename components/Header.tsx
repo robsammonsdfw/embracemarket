@@ -24,12 +24,11 @@ const Header: React.FC = () => {
   {/* UPDATED: Increased font size to text-sm and changed tracking to wide for better legibility */}
   <div className="text-[14px] md:text-sm font-bold text-center tracking-wide uppercase">
     <a href="https://app.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
-      One App. &nbsp; One Login. &nbsp; One Dashboard. &nbsp; The Full Picture
+    Web app  &nbsp; + &nbsp;  Mobile app &nbsp; •
     </a>
     <span className="mx-6 text-[#00B6A0]">+</span>
     <a href="https://shop.embracehealth.ai" className="hover:text-[#00B6A0] transition-colors">
-      Tele-Medicine. &nbsp; Tele-Dentistry. &nbsp; Tele-Sleep
-    </a>
+      U.S. clinical programs available where permitted &nbsp;  •  &nbsp; Cash-pay only
   </div>
 </div>
 
