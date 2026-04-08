@@ -115,13 +115,22 @@ const Header: React.FC = () => {
 
             {/* Column 2: Visual Article Cards */}
             <div className="flex-1 px-12 flex space-x-8">
-              <a href="/article/science-of-glp1" className="flex-1 group cursor-pointer block">
-                <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
-                  <img src="https://picsum.photos/seed/glp1/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="GLP-1 Science" />
-                </div>
-                <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
-                <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
-              </a>
+            <a href="https://glp1.embracehealth.ai" className="flex-1 group cursor-pointer block">
+  <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
+    {/* UPDATED: Replaced img with video using prismmobile.mp4 */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+    >
+      <source src="/prismmobile.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <h4 className="text-xl font-bold serif text-[#002534]">The Science of GLP-1</h4>
+  <p className="text-sm text-[#002534]/50">How modern medicine is changing weight loss.</p>
+</a>
 
               <div className="flex-1 group cursor-pointer">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
