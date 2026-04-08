@@ -27,10 +27,10 @@ const HeroGrid: React.FC = () => {
           <div className={`${isUSUser ? 'lg:w-1/2' : 'w-full'} bg-white p-6 md:p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group`}>
              <div className="relative z-10 mb-4">
                 <h1 className="text-3xl md:text-4xl font-bold text-[#002534] serif tracking-tighter leading-[1.05] mb-2">
-                  Worldwide App.
+                  Global Web App.
                 </h1>
                 <p className="text-base text-[#002534]/60 mb-4 max-w-md">
-                  Re-imagine your body, track food, and take action, all from your smart phone.
+                  Re-imagine your body, track food, and take action, all from your smart phone. One App, One Login, One Dashboard.  The Full Picture
                 </p>
                 
                 <ul className="mb-6 space-y-1.5 mt-2">
@@ -68,10 +68,10 @@ const HeroGrid: React.FC = () => {
             <div className="lg:w-1/2 bg-white p-6 md:p-8 rounded-[3rem] shadow-sm border border-[#002534]/5 flex flex-col justify-between relative overflow-hidden group">
                <div className="relative z-10 mb-4">
                   <h1 className="text-3xl md:text-4xl font-bold text-[#B87333] serif tracking-tighter leading-[1.05] mb-2">
-                    Telehealth – Made in the USA.
+                    Telemedicine – Made For the USA.
                   </h1>
                   <p className="text-base text-[#002534]/60 mb-4 max-w-md">
-                    Clinical care, prescriptions, and labs at your door all from US sources.
+                    Clinical care, prescriptions, and labs at your door all from US sources. Sleep Health, Oral Health.
                   </p>
                   
                   <ul className="mb-6 space-y-1.5 mt-2">
