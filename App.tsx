@@ -33,17 +33,18 @@ const HomePage = () => (
             </svg>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold serif tracking-tighter leading-tight">
-            GLP-1 Options
+            Weight Loss Options
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="hidden xl:flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
-            <span>Licensed MDs</span>
-            <span className="w-1 h-1 bg-white/30 rounded-full"></span>
-            <span>Free Shipping</span>
-            <span className="w-1 h-1 bg-white/30 rounded-full"></span>
-            <span>100% Online</span>
-          </div>
+        <div className="hidden xl:flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
+    {/* Added normal-case here to override the parent's uppercase class */}
+    <span className="normal-case">Licensed MD's</span> 
+    <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+    <span>Free Shipping</span>
+    <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+    <span>100% Online</span>
+</div>
           <a href="https://shop.embracehealth.ai/collections/weight-loss" className="px-10 py-4 bg-white text-[#B87333] font-bold rounded-full shadow-lg hover:scale-105 transition-all text-sm">
             Explore Treatments
           </a>
