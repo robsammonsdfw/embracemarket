@@ -452,7 +452,7 @@ const App: React.FC = () => {
                     title: "STEP 2: Once you’ve been diagnosed, we offer:", 
                     body: "CPAP Alternative Therapy with FDA-Cleared Oral Appliances for Mild to Moderate apnea or for those who are CPAP Intolerant or Non-Compliant.",
                     detail: "Medical Insurance-Friendly Guidance for CPAP for Severe and Very Severe apnea. Coordinated Care with Board-Certified Sleep Physicians in all 50 states. Coordinated Care with Board-Certified Dentists (including your own dentist) in all 50 states (Additional fees may apply).",
-                    image: "/oral_appliance.png"
+                    video: "/oatsecond.mp4"
                   }
                 ]}
                 comparison={[
