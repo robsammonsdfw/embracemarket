@@ -189,7 +189,7 @@ const HeroGrid: React.FC = () => {
                 <img 
                   src={item.imageUrl} 
                   alt={item.title} 
-                  className="w-[85%] h-auto object-contain relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl z-10"
+                  className="h-[260px] w-auto object-contain object-bottom relative transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:scale-105 drop-shadow-2xl z-10"
                 />
               </div>
             </a>
