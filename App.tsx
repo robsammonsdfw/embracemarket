@@ -139,8 +139,9 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* 3. THE DNA SECTION (White Background) */}
-    <section className="py-24 bg-white">
+{/* 3. THE DNA SECTION (White Background) */}
+{/* CHANGED: Replaced py-24 with pt-10 pb-24 lg:pt-16 to pull the text up on both mobile and desktop */}
+<section className="pt-10 pb-24 lg:pt-16 bg-white">
       <div className="max-w-[1450px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
         <div className="animate-reveal">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold serif text-[#002534] tracking-tighter leading-[1.05] mb-6">
