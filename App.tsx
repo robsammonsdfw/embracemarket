@@ -53,8 +53,9 @@ const HomePage = () => (
     </section>
 
     {/* 2. THE SLEEP HOOK: Animated background with grounded foreground image */}
-    <section className="relative w-full bg-[#002534] min-h-[600px] md:h-[750px] overflow-hidden flex items-center">
-      
+   {/* CHANGED: Replaced md:h-[750px] with md:min-h-[800px] and added py-20 lg:py-32 to let the container stretch to fit the text and button */}
+<section className="relative w-full bg-[#002534] min-h-[600px] md:min-h-[800px] py-20 lg:py-32 overflow-hidden flex items-center">
+
       {/* The Dynamic Movie (Full Width Background) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <video 
@@ -81,8 +82,8 @@ const HomePage = () => (
           />
         </div>
 
-        {/* RIGHT SIDE: Strategic Verbiage -> Added pl-20 here for padding */}
-        <div className="lg:col-start-2 pt-8 pb-[22rem] lg:py-0 lg:pl-20 relative z-30">
+{/* RIGHT SIDE: Strategic Verbiage */}
+<div className="lg:col-start-2 pt-8 pb-[22rem] lg:pb-0 lg:py-0 lg:pl-20 relative z-30">
           <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white">
           Sleep Apnea Care...<br />
             <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
