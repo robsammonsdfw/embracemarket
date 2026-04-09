@@ -67,7 +67,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
 
 // THESE ARE THE "WAIT, THERE'S MORE" LOWER 5 WIDGETS
 export const MINOR_TREATMENTS = [
-  { id: 'physical', title: 'Physical Intelligence', path: '/app/physical-intelligence', imageUrl: '/physnew.png' },
+  { id: 'physical', title: 'Physical Intelligence', description: '3D Body Mapping, Training & Performance Tools.', path: '/app/physical-intelligence', imageUrl: '/physnew.png' },
   { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', path: '/app/nutrition-kitchen', imageUrl: '/kitchen.png' },
   { id: 'mental', title: 'Mental Health', path: '/app/mental-health', imageUrl: '/mental.png' },
   { id: 'tracking', title: 'Progress Tracking', path: '/app/progress-tracking', imageUrl: '/progtrk.png' },
