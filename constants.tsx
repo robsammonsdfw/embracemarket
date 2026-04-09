@@ -26,7 +26,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
   {
     id: 'sex',
     title: 'Have Better Sex', // Updated
-    description: 'Clinically proven solutions for performance and libido.',
+    description: 'Proven solutions for improved libido.',
     imageUrl: '/sex.png',
     shadowUrl: '/sex-shadow.png',
     path: 'https://shop.embracehealth.ai/collections/erectile-dysfunction', // Shopify Link
@@ -36,7 +36,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
   {
     id: 'hair',
     title: 'Regrow Hair', // Updated
-    description: 'Stop hair loss and start growing with prescription power.',
+    description: 'Stop hair loss and start regrowing.',
     imageUrl: '/hair.png',
     shadowUrl: '/hair-shadow.png',
     path: 'https://shop.embracehealth.ai/collections/hair-loss', // Shopify Link
@@ -46,7 +46,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
   {
     id: 'sleep',
     title: 'Sleep Health', // Updated from Testosterone
-    description: 'Personalized plans to help you get your rest back.',
+    description: 'Convenient Home Sleep Testing.',
     imageUrl: '/sleep.png', // Keep asset for now or swap to sleep asset
     shadowUrl: '/sleep-shadow.png',
     path: '/app/sleep-health', // Shopify Link
@@ -56,7 +56,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
   {
     id: 'labs',
     title: 'DNA Tests', // Updated from Clear Skin
-    description: 'Genetic insights and clinical testing reimagined for you.',
+    description: 'Insights for Obesity Phenotyping.',
     imageUrl: '/body.png', // Swap to DNA kit image if available
     shadowUrl: '/body-shadow.png',
     path: 'https://shop.embracehealth.ai/pages/dna-test-kits', // Shopify Link
@@ -67,7 +67,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
 
 // THESE ARE THE "WAIT, THERE'S MORE" LOWER 5 WIDGETS
 export const MINOR_TREATMENTS = [
-  { id: 'physical', title: 'Physical Intelligence', path: '/app/physical-intelligence', imageUrl: '/physint.png' },
+  { id: 'physical', title: 'Physical Intelligence', path: '/app/physical-intelligence', imageUrl: '/physnew.png' },
   { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', path: '/app/nutrition-kitchen', imageUrl: '/kitchen.png' },
   { id: 'mental', title: 'Mental Health', path: '/app/mental-health', imageUrl: '/mental.png' },
   { id: 'tracking', title: 'Progress Tracking', path: '/app/progress-tracking', imageUrl: '/progtrk.png' },
