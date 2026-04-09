@@ -54,8 +54,8 @@ const HomePage = () => (
 
     {/* 2. THE SLEEP HOOK: Animated background with grounded foreground image */}
 {/* RESTORED: Fixed height on desktop (780px). Image will sit perfectly on the bottom again. */}
-<section className="relative w-full bg-[#002534] min-h-[100svh] md:h-[750px] overflow-hidden flex lg:items-center">
-
+{/* ADDED md:min-h-0 to kill the full-screen height force on desktop */}
+<section className="relative w-full bg-[#002534] min-h-[100svh] md:min-h-0 md:h-[760px] overflow-hidden flex lg:items-center">
       {/* The Dynamic Movie (Full Width Background) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <video 
