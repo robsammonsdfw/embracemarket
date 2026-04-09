@@ -409,9 +409,9 @@ const App: React.FC = () => {
             <Route path="/app/sleep-health" element={
               <FeatureLandingPage 
                 h1="Many people know something is wrong—but don’t know what to do next."
-                subhead="Get Started - We’ve made it easy for you."
+                subhead="Start with a Home Sleep Test (HST) to confirm obstructive sleep apnea. If diagnosed, our board certified sleep physicians help you choose effective therapy—CPAP or Oral Appliance Therapy (OAT)—based on your needs and comfort."
                 directAnswer="Untreated sleep apnea can impact your energy, focus, and overall quality of life. Treatment can help you feel more rested, improve daily performance, sleep more comfortably, and reduce long-term health risks."
-                heroVideo="/sleep_hero.mp4" 
+                heroVideo="/oatvideo.mp4" 
                 
                 ctaLink="/sleep-quiz"
                 topCtaText="Take Quiz"
