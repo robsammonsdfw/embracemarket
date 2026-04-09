@@ -84,38 +84,47 @@ const HomePage = () => (
         {/* RIGHT SIDE: Strategic Verbiage -> Added pl-20 here for padding */}
         <div className="lg:col-start-2 py-20 lg:py-0 lg:pl-20">
           <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white">
-            Still tired...<br />
-            <span className="text-[#F26422]">Even after a full night's sleep?</span>
+          Sleep Apnea Care...<br />
+            <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
           </h2>
           <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed max-w-lg">
-            If you are experiencing daytime fatigue, waking up frequently, or can't tolerate your CPAP machine, it's time to find your baseline.
+          Start with a Home Sleep Test (HST) to confirm obstructive sleep apnea. If diagnosed, our board certified sleep physicians help you choose effective therapy—CPAP or Oral Appliance Therapy (OAT)—based on your needs and comfort.
           </p>
           
           <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-8 hover:text-white transition-colors">
             Did you know poor sleep is directly correlated to weight retention? Learn the science.
           </a>
 
-          {/* All 5 specific bullet points */}
-          <ul className="space-y-3 mb-10">
+{/* All 3 specific bullet points with custom icons */}
+<ul className="space-y-3 mb-10">
+            {/* 1. Home Sleep Testing - Moon Icon */}
             <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
-              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Wake up frequently during the night
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+              Home Sleep Testing (HST) – "Simple at-home testing to confirm OSA"
             </li>
+            
+            {/* 2. Results Review - Clinical Document Icon */}
             <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
-              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Feel tired during the day
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+              Results Review – "Clear next steps based on severity + symptoms"
             </li>
+            
+            {/* 3. Treatment Options - Medical Shield Icon */}
             <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
-              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Struggle to tolerate your CPAP machine
-            </li>
-            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
-              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Experience headaches or dry mouth
-            </li>
-            <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
-              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Experience drowsy-driving
+              <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <line x1="12" y1="8" x2="12" y2="16" />
+                <line x1="8" y1="12" x2="16" y2="12" />
+              </svg>
+              Treatment Options – CPAP or OAT (oral appliance).
             </li>
           </ul>
 
