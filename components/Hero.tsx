@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   ];
 
   const LOWER_FEATURES = [
-    { name: 'Physical Intelligence', path: '#' },
+    { name: 'Physical Intelligence', path: '#', desc: '3D Body Mapping, Training & Performance Tools.' },
     { name: 'Nutrition & Kitchen Intelligence', path: '#' },
     { name: 'Mental Health', path: '#' },
     { name: 'Progress Tracking', path: '#' },
