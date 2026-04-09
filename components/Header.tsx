@@ -134,7 +134,15 @@ const Header: React.FC = () => {
 
               <div className="flex-1 group cursor-pointer">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
-                  <img src="https://picsum.photos/seed/dna/800/500" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DNA Wellness" />
+                <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+    >
+      <source src="/dna_helix.mp4" type="video/mp4" />
+    </video>
                 </div>
                 <h4 className="text-xl font-bold serif text-[#002534]">DNA-Driven Wellness</h4>
                 <p className="text-sm text-[#002534]/50">Unlock your genetic potential.</p>
