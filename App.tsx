@@ -191,8 +191,6 @@ const HomePage = () => (
         </div>
       </div>
     </section>
-
-    <PromptsList />
   </>
 );
 
