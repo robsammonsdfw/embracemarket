@@ -68,9 +68,9 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
 // THESE ARE THE "WAIT, THERE'S MORE" LOWER 5 WIDGETS
 export const MINOR_TREATMENTS = [
   { id: 'physical', title: 'Physical Intelligence', description: '3D Body Mapping, Training & Performance Tools.', path: '/app/physical-intelligence', imageUrl: '/physnew.png' },
-  { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', path: '/app/nutrition-kitchen', imageUrl: '/kitchen.png' },
-  { id: 'mental', title: 'Mental Health', path: '/app/mental-health', imageUrl: '/mental.png' },
-  { id: 'tracking', title: 'Progress Tracking', path: '/app/progress-tracking', imageUrl: '/progtrk.png' },
-  { id: 'features', title: 'Browse All App Features', path: '/app/features', imageUrl: '/alapps.png' },
+  { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', description:'Track your macros with a pic, AI meal planning', path: '/app/nutrition-kitchen', imageUrl: '/kitchen.png' },
+  { id: 'mental', title: 'Mental Health', description:'Psych testing for improved motivation', path: '/app/mental-health', imageUrl: '/mental.png' },
+  { id: 'tracking', title: 'Progress Tracking', description:'Sync your FitBit, Google Fit, Apple Watch, and any other wearables data', path: '/app/progress-tracking', imageUrl: '/progtrk.png' },
+  { id: 'features', title: 'Browse All App Features', description:'', path: '/app/features', imageUrl: '/alapps.png' },
 ];
 export const NAV_EXPLORE = PRODUCT_GROUPS.map(g => ({ label: g.title, path: g.path }));
