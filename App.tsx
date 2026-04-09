@@ -425,25 +425,25 @@ const App: React.FC = () => {
                   subheading: "What’s included: Three virtual consultations with a Board-Certified Sleep Physician consisting of:",
                   steps: [
                     {
-                      title: "1. Pre-Qualifying Consultation",
+                      title: "1. Home Sleep Testing (HST)",
                       image: "/sleep_step1.png",
                       bullets: [
-                        "Doctors will determine if you are a good candidate."
+                        "Simple at-home testing to confirm OSA."
                       ]
                     },
                     {
-                      title: "2. Post-Delivery Consultation",
+                      title: "2. Results Review ",
                       image: "/sleep_step2.png",
                       bullets: [
-                        "Doctors will explain the setup process."
+                        "Clear next steps based on severity + symptoms."
                       ]
                     },
                     {
-                      title: "3. Review Your Results",
+                      title: "3. Treatment Options ",
                       image: "/sleep_step3.png",
                       bullets: [
-                        "Doctors will review your results and recommend treatment.",
-                        "Your results report will include a medical insurance-accepted Letter of Medical Necessity (LMN)."
+                        "CPAP or ",
+                        "OAT (oral appliance)"
                       ]
                     }
                   ]
