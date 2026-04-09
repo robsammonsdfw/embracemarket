@@ -133,6 +133,7 @@ const Header: React.FC = () => {
 </a>
 
               <div className="flex-1 group cursor-pointer">
+              <a href="https://glp1.embracehealth.ai" className="flex-1 group cursor-pointer block">
                 <div className="rounded-3xl overflow-hidden aspect-[16/10] mb-4 bg-gray-100">
                 <video
       autoPlay
@@ -146,6 +147,7 @@ const Header: React.FC = () => {
                 </div>
                 <h4 className="text-xl font-bold serif text-[#002534]">DNA-Driven Wellness</h4>
                 <p className="text-sm text-[#002534]/50">Unlock your genetic potential.</p>
+                </a>
               </div>
             </div>
 
