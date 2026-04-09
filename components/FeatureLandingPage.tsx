@@ -158,15 +158,20 @@ const FeatureLandingPage: React.FC<LandingPageProps> = ({
                 <p className="text-xl text-[#002534]/70 leading-relaxed mb-6">{section.body}</p>
                 {section.detail && <p className="text-lg text-[#002534]/50 leading-relaxed border-l-2 border-[#002534]/10 pl-6 italic">{section.detail}</p>}
               </div>
-              <div className="md:w-1/2 w-full aspect-square bg-white rounded-[2.5rem] shadow-sm border border-[#002534]/5 flex items-center justify-center p-12 overflow-hidden relative">
-                 {section.image ? (
-                    <img src={section.image} alt={section.title} className="w-full h-full object-cover" />
-                 ) : (
-                    <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
-                      Screenshot / Video Placeholder
-                    </p>
-                 )}
-              </div>
+              <div className="md:w-1/2 w-full aspect-square bg-white rounded-[2.5rem] shadow-sm border border-[#002534]/5 flex items-center justify-center overflow-hidden relative">
+             {/* UPDATED: Now checks for a video prop first, then an image prop, then falls back to the placeholder */}
+             {section.video ? (
+                <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                  <source src={section.video} type="video/mp4" />
+                </video>
+             ) : section.image ? (
+                <img src={section.image} alt={section.title} className="w-full h-full object-cover" />
+             ) : (
+                <p className="opacity-20 font-bold uppercase tracking-widest text-xs text-center p-12">
+                  Screenshot / Video Placeholder
+                </p>
+             )}
+          </div>
             </div>
           ))}
         </div>
