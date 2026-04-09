@@ -53,9 +53,9 @@ const HomePage = () => (
     </section>
 
     {/* 2. THE SLEEP HOOK: Animated background with grounded foreground image */}
-   {/* CHANGED: Replaced md:h-[750px] with md:min-h-[800px] and added py-20 lg:py-32 to let the container stretch to fit the text and button */}
-<section className="relative w-full bg-[#002534] min-h-[600px] md:min-h-[800px] py-20 lg:py-32 overflow-hidden flex items-center">
-
+{/* RESTORED: Fixed height on desktop (780px). Image will sit perfectly on the bottom again. */}
+<section className="relative w-full bg-[#002534] min-h-[100svh] md:h-[780px] overflow-hidden flex lg:items-center">
+  
       {/* The Dynamic Movie (Full Width Background) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <video 
