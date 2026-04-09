@@ -464,9 +464,9 @@ const App: React.FC = () => {
                   { label: "Patient Compliance", us: "Proven 90%+ Success", them: "High Abandonment Rate" }
                 ]}
                 faqs={[
-                  { q: "How much does the at-home test cost?", a: "The WatchPAT® ONE home sleep test and the three included physician consultations cost $259." },
-                  { q: "Is this covered by insurance?", a: "We are in-network with Medicare and major PPO carriers for the treatment phase and the custom oral appliances." },
-                  { q: "What if my apnea is severe?", a: "Oral appliances are generally indicated for mild to moderate obstructive sleep apnea. If your test reveals severe apnea, our specialists will help guide you toward the most appropriate clinical therapy, which may include CPAP." }
+                  { q: "Do I need to come into an office?", a: "In many cases, no. Initial consultations and even sleep studies can be completed remotely via telehealth and home sleep test kits." },
+                  { q: "What’s the difference between CPAP and oral appliance therapy?", a: "The CPAP uses a machine to blow a steady stream of pressurized air through a mask to keep your airway open where the Oral Appliance is a custom-fit mouthguard worn at night that physically shifts your jaw forward to prevent the airway from collapsing." },
+                  { q: "What if I already have a CPAP?", a: "That’s great! If you are happy with it, you should continue your treatment. However, if you find the CPAP uncomfortable, difficult to travel with, or \"mask intolerant\", an oral appliance can be a highly effective alternative or supplemental treatment option." }
                 ]}
               />
             } />
