@@ -5,8 +5,8 @@ const Hero: React.FC = () => {
 
   const MAIN_WIDGETS = [
     { name: 'Lose Weight', path: `${SHOPIFY_BASE}/collections/weight-loss`, desc: 'Access a range of GLP-1 treatment plans.' },
-    { name: 'Have Better Sex', path: `${SHOPIFY_BASE}/collections/erectile-dysfunction`, desc: 'Clinically proven solutions for performance.' },
-    { name: 'Regrow Hair', path: `${SHOPIFY_BASE}/collections/hair-loss`, desc: 'Stop hair loss and start growing.' },
+    { name: 'Have Better Sex', path: `${SHOPIFY_BASE}/collections/erectile-dysfunction`, desc: 'Proven solutions for improved libido.' },
+    { name: 'Regrow Hair', path: `${SHOPIFY_BASE}/collections/hair-loss`, desc: 'Stop hair loss and start regrowing.' },
     { name: 'Sleep Health', path: `${SHOPIFY_BASE}/collections/sleep`, desc: 'Better rest for a better life.' },
     { name: 'Labs & DNA', path: `${SHOPIFY_BASE}/pages/dna-test-kits`, desc: 'Genetic insights for health.' },
   ];

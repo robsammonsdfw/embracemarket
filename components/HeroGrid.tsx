@@ -134,8 +134,8 @@ const HeroGrid: React.FC = () => {
                 </div>
                 
                 <p className="text-xs leading-tight text-white/70 transition-all group-hover:text-white m-0">
-                  {group.id === 'sex' ? 'Proven solutions for libido for men.' : 
-                   group.id === 'sleep' ? 'Convenient home sleep testing.' :
+                  {group.id === 'sex' ? 'Proven solutions for improved libido.' : 
+                   group.id === 'sleep' ? 'Convenient Home Sleep Testing.' :
                    group.id === 'labs' ? 'Insights for Obesity Phenotyping' :
                    group.description}
                 </p>
