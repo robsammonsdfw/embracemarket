@@ -172,7 +172,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="inline-block text-[#00B6A0] font-bold text-lg underline underline-offset-4 hover:text-[#002534] transition-colors"
           >
-            Learn more...
+            Learn more and Buy...
           </a>
         </div>
 
