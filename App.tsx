@@ -426,21 +426,21 @@ const App: React.FC = () => {
                   steps: [
                     {
                       title: "1. Home Sleep Testing (HST)",
-                      image: "/sleep_step1.png",
+                      image: "/sleeptest.png",
                       bullets: [
                         "Simple at-home testing to confirm OSA."
                       ]
                     },
                     {
                       title: "2. Results Review ",
-                      image: "/sleep_step2.png",
+                      image: "/results.png",
                       bullets: [
                         "Clear next steps based on severity + symptoms."
                       ]
                     },
                     {
                       title: "3. Treatment Options ",
-                      image: "/sleep_step3.png",
+                      image: "/options.png",
                       bullets: [
                         "CPAP or ",
                         "OAT (oral appliance)"
