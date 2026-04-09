@@ -71,6 +71,6 @@ export const MINOR_TREATMENTS = [
   { id: 'nutrition', title: 'Nutrition & Kitchen Intelligence', path: '/app/nutrition-kitchen', imageUrl: '/kitchen.png' },
   { id: 'mental', title: 'Mental Health', path: '/app/mental-health', imageUrl: '/mental.png' },
   { id: 'tracking', title: 'Progress Tracking', path: '/app/progress-tracking', imageUrl: '/progtrk.png' },
-  { id: 'features', title: 'Browse All App Features', path: '/app/features', imageUrl: '/allapps.png' },
+  { id: 'features', title: 'Browse All App Features', path: '/app/features', imageUrl: '/alapps.png' },
 ];
 export const NAV_EXPLORE = PRODUCT_GROUPS.map(g => ({ label: g.title, path: g.path }));
