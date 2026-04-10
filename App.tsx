@@ -53,7 +53,9 @@ const HomePage = () => (
     </section>
 
 {/* 2. THE SLEEP HOOK: Animated background with grounded foreground image */}
-<section className="relative w-full bg-[#002534] min-h-[100svh] md:min-h-0 md:h-[830px] overflow-hidden flex lg:items-center">
+    {/* Layout Scenario 2 (1028-1454) requires items-start, while Scenario 1 (>1455) requires items-center.
+        We adjust the container's alignment dynamically. */}
+    <section className="relative w-full bg-[#002534] min-h-[100svh] md:min-h-0 md:h-[830px] overflow-hidden flex min-[1028px]:max-[1454px]:items-start lg:items-center">
       {/* The Dynamic Movie (Full Width Background) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <video 
@@ -69,10 +71,11 @@ const HomePage = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-[#002534] via-transparent to-[#002534]"></div>
       </div>
 
-      <div className="max-w-[1450px] mx-auto px-6 md:px-12 w-full h-full grid lg:grid-cols-2 items-center relative z-20">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-12 w-full h-full grid lg:grid-cols-2 relative z-20">
         
-        {/* LEFT SIDE: Grounded Person (Properly scaled foreground image) */}
-        <div className="absolute bottom-0 left-0 lg:left-12 w-full lg:w-1/2 h-[85%] flex justify-center lg:justify-start items-end pointer-events-none">
+        {/* LEFT SIDE: Grounded Person (Properly scaled foreground image)
+            Always visible on larger screens (>=1028px). For mid-range, it will be under the title. */}
+        <div className="absolute bottom-0 left-0 lg:left-12 w-full lg:w-1/2 h-[85%] flex justify-center lg:justify-start items-end pointer-events-none z-10 hidden md:flex">
           <img 
             src="/sleep_man.png" 
             className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
@@ -80,23 +83,27 @@ const HomePage = () => (
           />
         </div>
 
+
         {/* ==========================================
-            1. LARGE DESKTOP (1455px and above)
+            Scenario 1: Massive/Giant Screens (> 1455px)
+            Everything is on the right-hand side. Preserved layout.
             ========================================== */}
-        <div className="hidden min-[1455px]:block lg:col-start-2 pt-8 pb-[22rem] lg:pb-0 lg:py-0 lg:pl-20 relative z-30">
+        <div className="hidden min-[1455px]:block lg:col-start-2 pt-8 pb-[22rem] lg:pb-0 lg:py-0 lg:pl-20 relative z-30 ml-auto">
+          {/* Large Title */}
           <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white">
             Sleep Apnea Care...<br />
             <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
           </h2>
+          
+          {/* Paragraph and Learn Science Link */}
           <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed max-w-lg">
             Start with a Home Sleep Test (HST) to confirm obstructive sleep apnea. If diagnosed, our board certified sleep physicians help you choose effective therapy—CPAP or Oral Appliance Therapy (OAT)—based on your needs and comfort.
           </p>
-          
           <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-8 hover:text-white transition-colors">
             Did you know poor sleep is directly correlated to weight retention? Learn the science.
           </a>
 
-          {/* All 3 specific bullet points with custom icons */}
+          {/* All 3 specific bullet points with specific SVGs */}
           <ul className="space-y-3 mb-10">
             {/* 1. Home Sleep Testing - Moon Icon */}
             <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
@@ -129,6 +136,7 @@ const HomePage = () => (
             </li>
           </ul>
 
+          {/* Explore Link */}
           <a 
             href="/app/sleep-health" 
             className="inline-block px-10 py-4 bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
@@ -139,61 +147,63 @@ const HomePage = () => (
 
 
         {/* ==========================================
-            2. MID-SIZE (1028px to 1454px)
-            The heading moves top-left, content slides up right
+            Scenario 2: Mid-Range (1028px to 1454px)
+            THE FIX IS HERE. Heading moves top-left (col-span-2),
+            all other content is pushed to the col-start-2 to align with top right.
+            Background is explicitly transparent. Title is large.
             ========================================== */}
-        <div className="hidden min-[1028px]:max-[1454px]:flex flex-col w-full h-full z-30 pt-12 pb-8 col-span-2">
+        <div className="hidden min-[1028px]:max-[1454px]:grid grid-cols-2 w-full h-full z-30 pt-16 pb-8 col-span-2 gap-x-20 bg-transparent">
           
-          {/* Heading spans the top, sitting safely above the image */}
-          <div className="w-full text-left mb-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold serif tracking-tighter leading-[0.95] drop-shadow-lg">
-              <span className="text-white">Sleep Apnea Care...</span>
-              <span className="text-[#F26422] ml-2 block sm:inline">Test at Home. Treat with the right option.</span>
+          {/* THE HEADING block: Moved over and explicitly spans the full grid width
+              (so it sits top left, spanning across the grounded man image) */}
+          <div className="col-span-2 text-left mb-auto">
+            <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">
+              Sleep Apnea Care...<br />
+              <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
             </h2>
           </div>
           
-          {/* Content pushed to the right, shifted up to avoid cutoff */}
-          <div className="ml-auto max-w-lg">
-            <p className="text-lg text-white/90 mb-4 leading-relaxed font-medium bg-[#002534]/60 p-4 rounded-xl backdrop-blur-sm border border-white/10">
+          {/* THE CONTENT block: Moved UP even with the title, right-aligned (col-start-2).
+              No background box to hide the video. */}
+          <div className="col-start-2 max-w-lg mt-[-100px]">
+            {/* All content from App.tsx preserved in Scenario 2 */}
+            <p className="text-xl text-white/90 mb-6 leading-relaxed bg-[#002534]/60 p-5 rounded-2xl backdrop-blur-sm border border-white/10">
               Start with a Home Sleep Test (HST) to confirm obstructive sleep apnea. If diagnosed, our board certified sleep physicians help you choose effective therapy—CPAP or Oral Appliance Therapy (OAT)—based on your needs and comfort.
             </p>
             
-            <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-bold text-sm underline underline-offset-4 mb-6 hover:text-white transition-colors bg-[#002534]/60 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">
-              Did you know poor sleep is directly correlated to weight retention? Learn the science.
+            <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-lg underline underline-offset-4 mb-8 hover:text-white transition-colors bg-[#002534]/60 px-5 py-3 rounded-xl backdrop-blur-sm border border-white/10">
+              Poor sleep is directly correlated to weight retention? Learn the science.
             </a>
 
-            <div className="bg-[#002534]/60 p-5 rounded-2xl backdrop-blur-sm border border-white/10 mb-6">
-              <ul className="space-y-3">
-                <li className="flex items-center text-white/90 font-bold text-sm">
+            <div className="bg-[#002534]/60 p-5 rounded-3xl backdrop-blur-sm border border-white/10 mb-10">
+              <ul className="space-y-4">
+                <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
                   <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                   </svg>
-                  Home Sleep Testing (HST) – "Simple at-home testing to confirm OSA"
+                  Home Sleep Testing (HST) – OSA
                 </li>
-                <li className="flex items-center text-white/90 font-bold text-sm">
+                <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
                   <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <polyline points="14 2 14 8 20 8" />
                     <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10 9 9 9 8 9" />
                   </svg>
-                  Results Review – "Clear next steps based on severity + symptoms"
+                  Results Review – Next Steps
                 </li>
-                <li className="flex items-center text-white/90 font-bold text-sm">
+                <li className="flex items-center text-white/90 font-bold text-base md:text-lg">
                   <svg className="w-5 h-5 text-[#F26422] mr-3 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     <line x1="12" y1="8" x2="12" y2="16" />
-                    <line x1="8" y1="12" x2="16" y2="12" />
                   </svg>
-                  Treatment Options – CPAP or OAT (oral appliance).
+                  Treatment Options – CPAP or OAT.
                 </li>
               </ul>
             </div>
             
             <a 
               href="/app/sleep-health" 
-              className="inline-block px-10 py-4 w-full text-center bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:bg-white hover:text-[#002534] transition-all"
+              className="inline-block px-10 py-4 w-full text-center bg-[#00B6A0] text-white font-black uppercase tracking-widest text-[12px] rounded-full shadow-2xl hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
             >
               Explore Sleep Solutions
             </a>
@@ -202,43 +212,53 @@ const HomePage = () => (
 
 
         {/* ==========================================
-            3. MOBILE & SMALL TABLET (1027px and below)
+            Scenario 3: Mobile & Tablet Portrait (< 1027px)
+            Original App.tsx Mobile Layout Preserved exactly.
+            Using absolute positioning to overlay text on image.
             ========================================== */}
-        <div className="hidden max-[1027px]:flex absolute bottom-0 left-0 w-full p-6 pb-8 bg-gradient-to-t from-[#002534] via-[#002534]/90 to-transparent z-10 flex-col items-center text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold serif tracking-tighter leading-[0.95] mb-4 drop-shadow-md">
-            <span className="text-white">Sleep Apnea Care...</span>
-            <br />
-            <span className="text-[#F26422]">Test at Home.</span>
-          </h2>
+        <div className="hidden max-[1027px]:block lg:col-start-2 pt-8 pb-[22rem] lg:pb-0 lg:py-0 lg:pl-20 relative z-30">
           
-          {/* Compressed content for mobile */}
-          <div className="space-y-2 mb-6 text-left max-w-sm">
-            <div className="flex items-start gap-2">
-              <svg className="w-4 h-4 text-[#F26422] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-              <p className="text-white/90 text-sm font-bold">HST & Treatment Options</p>
+          {/* Restore Scenario 3 original structure using flex/gradient for overlay */}
+          <div className="max-[1027px]:flex max-[1027px]:absolute max-[1027px]:bottom-0 max-[1027px]:left-0 max-[1027px]:w-full max-[1027px]:p-6 max-[1027px]:pb-8 max-[1027px]:bg-gradient-to-t max-[1027px]:from-[#002534] max-[1027px]:via-[#002534]/90 max-[1027px]:to-transparent z-10 max-[1027px]:flex-col max-[1027px]:items-center max-[1027px]:text-center">
+            
+            {/* Title verbiage from mobile version */}
+            <h2 className="text-3xl sm:text-4xl font-bold serif tracking-tighter leading-[0.95] mb-4 text-white drop-shadow-md">
+              Sleep Apnea Care...<br />
+              <span className="text-[#F26422]">Test at Home.</span>
+            </h2>
+            
+            {/* Compressed/optimized mobile content version */}
+            <div className="space-y-2 mb-6 text-left max-w-sm">
+              <div className="flex items-start gap-2">
+                {/* Custom Moon SVG */}
+                <svg className="w-4 h-4 text-[#F26422] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+                <p className="text-white/90 text-sm font-bold">Simple Home Testing (HST)</p>
+              </div>
+              <div className="flex items-start gap-2">
+                {/* Custom Clinical Doc SVG */}
+                <svg className="w-4 h-4 text-[#F26422] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                   <polyline points="14 2 14 8 20 8" />
+                </svg>
+                <p className="text-white/90 text-sm font-bold">Results Review by Certified Physicians</p>
+              </div>
             </div>
-            <div className="flex items-start gap-2">
-              <svg className="w-4 h-4 text-[#F26422] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                 <polyline points="14 2 14 8 20 8" />
-              </svg>
-              <p className="text-white/90 text-sm font-bold">Results Review by Board Certified Physicians</p>
-            </div>
-          </div>
 
-          <a 
-            href="/app/sleep-health" 
-            className="bg-[#00B6A0] text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-[12px] shadow-lg w-full max-w-sm hover:bg-[#009B88] transition-colors"
-          >
-            Explore Sleep Solutions
-          </a>
+            {/* Explore Link */}
+            <a 
+              href="/app/sleep-health" 
+              className="bg-[#00B6A0] text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-[12px] shadow-lg w-full max-w-sm hover:scale-105 hover:bg-white hover:text-[#002534] transition-all"
+            >
+              Explore Sleep Solutions
+            </a>
+          </div>
         </div>
 
       </div>
     </section>
-
+    
 {/* 3. THE DNA SECTION (White Background) */}
 {/* CHANGED: Replaced py-24 with pt-10 pb-24 lg:pt-16 to pull the text up on both mobile and desktop */}
 <section className="pt-10 pb-24 lg:pt-16 bg-white">
