@@ -97,7 +97,7 @@ const HomePage = () => (
             <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
           </h2>
           <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed max-w-lg">
-          Start with a Home Sleep Test (HST) to confirm obstructive sleep apnea. If diagnosed, our board certified sleep physicians help you choose effective therapy—CPAP or Oral Appliance Therapy (OAT)—based on your needs and comfort.
+          Start with a Home Sleep Test (HST) to confirm obstructive sleep apnea or snoring. If diagnosed, our board certified sleep physicians help you choose effective therapy—CPAP or Oral Appliance Therapy (OAT)—based on your needs and comfort.
           </p>
           
           <a href="/article/science-of-glp1" className="inline-block text-[#00B6A0] font-medium text-base md:text-lg underline underline-offset-4 mb-8 hover:text-white transition-colors">
