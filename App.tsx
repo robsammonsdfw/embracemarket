@@ -82,7 +82,7 @@ const HomePage = () => (
           />
         </div>
 {/* 1023-1068 FIX: Top-Left Title (Only visible in this window) */}
-<div className="hidden min-[1023px]:max-[1068px]:block absolute top-12 left-6 md:left-12 w-[45%] z-40">
+<div className="hidden min-[1024px]:max-[1068px]:block absolute top-12 left-6 md:left-12 w-[45%] z-40">
           <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] text-white">
             Sleep Apnea Care...<br />
             <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
@@ -92,7 +92,7 @@ const HomePage = () => (
 <div className="lg:col-start-2 pt-8 pb-[22rem] lg:pb-0 lg:py-0 lg:pl-20 relative z-30">
           
           {/* JUST ADD min-[1023px]:max-[1068px]:hidden TO THIS LINE */}
-          <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white min-[1023px]:max-[1068px]:hidden">
+          <h2 className="text-5xl md:text-7xl font-bold serif tracking-tighter leading-[0.95] mb-6 text-white min-[1024px]:max-[1068px]:hidden">
             Sleep Apnea Care...<br />
             <span className="text-[#F26422]">Test at Home. Treat with the right option.</span>
           </h2>
