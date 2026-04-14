@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center text-3xl font-bold serif mb-8">
               <span className="text-[#00B6A0]">embrace</span>
               <span className="text-[#F26422]">health</span>
+              <span className="text-[#D3D3D3]">.ai</span>
             </div>
             <p className="text-white/40 max-w-xs leading-relaxed text-sm mb-8">
               Modern healthcare, DNA-driven results, and personalized prescriptions delivered with clinical precision.
