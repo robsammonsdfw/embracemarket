@@ -17,8 +17,8 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
     id: 'weight',
     title: 'Lose Weight', // Updated
     description: 'Access a range of GLP-1 treatment plans.',
-    imageUrl: '/weight.png', 
-    shadowUrl: '/weight-shadow.png',
+    imageUrl: '/weightloss.png', 
+    shadowUrl: '/weightloss-shadow.png',
     path: 'https://shop.embracehealth.ai/collections/weight-loss', // Shopify Link
     hoverBg: 'hover:bg-[#FFF4ED]', 
     prompt: "High-end product shot of GLP-1 vial, blue cap, clean pharmaceutical style.",
